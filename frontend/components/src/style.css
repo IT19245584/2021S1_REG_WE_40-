@@ -1,0 +1,25 @@
+.bg-black{
+    background-color: black;
+}
+
+.text-blue{
+    color:rgb(1, 1, 34);
+}
+
+.text-gold{
+    color:rgb(241, 109, 2);;
+}
+
+.bg-orange{
+    background-color: rgb(241, 109, 2);
+}
+
+.btn-orange{
+    border: 2px solid rgb(241, 109, 2);
+    color:rgb(241, 109, 2);
+}
+
+.btn-orange:hover {
+    color:white;
+    background-color: rgb(241, 109, 2);
+}
