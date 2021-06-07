@@ -1,0 +1,5 @@
+npm i axios
+npm i parcel@2.0.0-nightly.686
+npm i react
+npm i react-dom
+npm i react-router-dom
