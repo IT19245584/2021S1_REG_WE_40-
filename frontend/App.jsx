@@ -5,6 +5,8 @@ import OrganizingCommittee from './components/LandingPage/Committee/OrganizingCo
 import TechnicalCommittee from './components/LandingPage/Committee/TechnicalCommittee';
 import ContactUs from './components/LandingPage/ContactUs/ContactUs';
 import KeyNotes from './components/LandingPage/KeyNotes/Keynotes';
+import AboutUs from './components/LandingPage/AboutUs/AboutUs';
+
 
 function App() {
     return (
@@ -16,6 +18,7 @@ function App() {
                     <Route exact path='/tec'><TechnicalCommittee /></Route>
                     <Route exact path='/contact'><ContactUs /></Route>
                     <Route exact path='/keynote'><KeyNotes /></Route>
+                    <Route exact path='/about'><AboutUs/></Route>
                 </Switch>
             </Router>
         </div>
