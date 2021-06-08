@@ -52,7 +52,7 @@ class ContactBody extends Component {
                                     Message: <textarea class="form-control border border-dark mb-3" id="form4Example4" rows="4" required/>
                                   
                                 </div>                       
-                                <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+                                <center><button type="submit" class="btn btn-primary btn-block mb-4">Send</button></center>
                             </form>
                         </div>
                         <div class="col">
