@@ -6,6 +6,7 @@ import TechnicalCommittee from './components/LandingPage/Committee/TechnicalComm
 import ContactUs from './components/LandingPage/ContactUs/ContactUs';
 import KeyNotes from './components/LandingPage/KeyNotes/Keynotes';
 import AboutUs from './components/LandingPage/AboutUs/AboutUs';
+import EditorDashboard from './components/Admin/Editor/EditorDashboard';
 
 
 function App() {
@@ -13,12 +14,16 @@ function App() {
         <div>
             <Router>
                 <Switch>
+                    {/* Landing Pages */}
                     <Route exact path="/"><Index /></Route>
                     <Route exact path='/org'><OrganizingCommittee /></Route>
                     <Route exact path='/tec'><TechnicalCommittee /></Route>
                     <Route exact path='/contact'><ContactUs /></Route>
                     <Route exact path='/keynote'><KeyNotes /></Route>
                     <Route exact path='/about'><AboutUs/></Route>
+
+                    {/* Editor Pages */}
+                    <Route exact path='/edhome'><EditorDashboard/></Route>
                 </Switch>
             </Router>
         </div>
