@@ -10,6 +10,7 @@ import EditorDashboard from './components/Admin/Editor/EditorDashboard';
 import ImportantDate from './components/LandingPage/ImportantDates/ImportantDates';
 import PastProceeding from './components/LandingPage/PastProceeding/PastProceeding';
 import AddOrg from './components/Admin/Editor/Committee/OrganizingCommittee/AddOrganizingCommittee';
+import AddTec from './components/Admin/Editor/Committee/TechnicalCommittee/AddTechnicalCommittee';
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                     {/* Editor Pages */}
                     <Route exact path='/edhome'><EditorDashboard/></Route>
                     <Route exact path='/addorg'><AddOrg/></Route>
+                    <Route exact path='/addtec'><AddTec/></Route>
                 </Switch>
             </Router>
         </div>
