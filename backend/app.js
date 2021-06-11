@@ -24,7 +24,11 @@ connection.once('open',()=>{
 // const systemReg = require('./routes/systemReg');
 // app.use('/systemReg', systemReg);
 
+const OrganizingCommittee = require('./routers/OrganizingCommittee');
+app.use('./orgCommittee',OrganizingCommittee);
 
+const TechnicalCommittee = require('./routers/TechnicalCommittee');
+app.use('./techCommittee',TechnicalCommittee);
 
 app.listen(port,() =>{
     console.log(`Server is running on port: ${port}`);
