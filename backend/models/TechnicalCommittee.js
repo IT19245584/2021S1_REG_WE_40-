@@ -30,5 +30,5 @@ const TechnicalCommitteeSchema = new Schema({
     timestamps:true
 });
 
-const Technical_Committee_Schema = mongoose.model('Organizing_Committee_Schema',TechnicalCommitteeSchema);
+const Technical_Committee_Schema = mongoose.model('Technical_Committee_Schema',TechnicalCommitteeSchema);
 module.exports = Technical_Committee_Schema;
