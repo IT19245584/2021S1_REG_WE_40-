@@ -7,6 +7,8 @@ import ContactUs from './components/LandingPage/ContactUs/ContactUs';
 import KeyNotes from './components/LandingPage/KeyNotes/Keynotes';
 import AboutUs from './components/LandingPage/AboutUs/AboutUs';
 import EditorDashboard from './components/Admin/Editor/EditorDashboard';
+import ImportantDate from './components/LandingPage/ImportantDates/ImportantDates';
+import PastProceeding from './components/LandingPage/PastProceeding/PastProceeding';
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
                     <Route exact path='/contact'><ContactUs /></Route>
                     <Route exact path='/keynote'><KeyNotes /></Route>
                     <Route exact path='/about'><AboutUs/></Route>
+                    <Route exact path='/date'><ImportantDate/></Route>
+                    <Route exact path='/past'><PastProceeding/></Route>
 
                     {/* Editor Pages */}
                     <Route exact path='/edhome'><EditorDashboard/></Route>
