@@ -23,14 +23,15 @@ function App() {
                     <Route exact path='/tec'><TechnicalCommittee /></Route>
                     <Route exact path='/contact'><ContactUs /></Route>
                     <Route exact path='/keynote'><KeyNotes /></Route>
-                    <Route exact path='/about'><AboutUs/></Route>
-                    <Route exact path='/date'><ImportantDate/></Route>
-                    <Route exact path='/past'><PastProceeding/></Route>
+                    <Route exact path='/about'><AboutUs /></Route>
+                    <Route exact path='/date'><ImportantDate /></Route>
+                    <Route exact path='/past'><PastProceeding /></Route>
 
                     {/* Editor Pages */}
-                    <Route exact path='/edhome'><EditorDashboard/></Route>
-                    <Route exact path='/addorg'><AddOrg/></Route>
-                    <Route exact path='/addtec'><AddTec/></Route>
+                    <Route exact path='/edhome'><EditorDashboard /></Route>
+                    <Route exact path='/addorg'><AddOrg /></Route>
+                    <Route exact path='/addtec'><AddTec /></Route>
+
                 </Switch>
             </Router>
         </div>
