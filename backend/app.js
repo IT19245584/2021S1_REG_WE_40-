@@ -30,6 +30,18 @@ app.use('/orgCommittee',OrganizingCommittee);
 const TechnicalCommittee = require('./routers/TechnicalCommittee');
 app.use('/techCommittee',TechnicalCommittee);
 
+const AboutUs = require('./routers/AboutUs');
+app.use('/aboutus',AboutUs);
+
+const ImportantDates = require('./routers/ImportantDates');
+app.use('/importantDates',ImportantDates);
+
+const GuestSpeaker = require('./routers/GuestSpeaker');
+app.use('/guestSpeaker',GuestSpeaker);
+
+const KeynoteSpeaker = require('./routers/KeynoteSpeaker');
+app.use('/keynoteSpeaker',KeynoteSpeaker);
+
 app.listen(port,() =>{
     console.log(`Server is running on port: ${port}`);
 });
