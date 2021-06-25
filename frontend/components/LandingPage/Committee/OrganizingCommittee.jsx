@@ -35,9 +35,9 @@ class OrganizingCommittee extends Component {
                 <div>
                     <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '120rem', margin: 'auto', padding: '10px' }}>
                         <div className="card-body" >
-                            <div class="row">
+                            <div className="row">
                                 {this.state?.org?.length > 0 && this.state.org.map((item, index) =>
-                                    <div class="col-sm-6 mb-5" key={index}>
+                                    <div className="col-sm-6 mb-5" key={index}>
                                         <h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '45px' }}>{item.name}</h5>
                                         <br></br>
                                         <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '20rem', margin: '0 auto', padding: '10px', position: 'relative' }}>
