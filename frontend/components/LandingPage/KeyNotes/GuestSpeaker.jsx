@@ -13,8 +13,8 @@ class GuestSpeaker extends Component {
         return (
             <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '120rem', margin: 'auto', padding: '10px' }}>
                         <div className="card-body" >
-                            <div class="row">
-                                <div class="col-sm-6 mb-5">
+                            <div className="row">
+                                <div className="col-sm-6 mb-5">
                                     <h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '45px' }}>{this.state.Name}</h5>
                                     <br></br>
                                     <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '20rem', margin: '0 auto', padding: '10px', position: 'relative' }}>
@@ -29,7 +29,7 @@ class GuestSpeaker extends Component {
 
                                     </div>
                                 </div>
-                                <div class="col-sm-6 mb-5">
+                                <div className="col-sm-6 mb-5">
                                     <h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '45px' }}>{this.state.Name}</h5>
                                     <br></br>
                                     <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '20rem', margin: '0 auto', padding: '10px', position: 'relative' }}>
@@ -44,7 +44,7 @@ class GuestSpeaker extends Component {
 
                                     </div>
                                 </div>
-                                <div class="col-sm-6 mb-5">
+                                <div className="col-sm-6 mb-5">
                                     <h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '45px' }}>{this.state.Name}</h5>
                                     <br></br>
                                     <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '20rem', margin: '0 auto', padding: '10px', position: 'relative' }}>

@@ -9,10 +9,10 @@ class AboutUsDetails extends Component {
         return (
             <div>
                 <br></br>
-                <center><hr className="w-75" /></center>
-                <div class="row row-cols-1 row-cols-md-2 g-4"style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
-                    <div class="col">
-                        <div class="card card border border-light shadow-0 mb-3" style={{textAlign:"center"}}  >
+                <center><hr classNameName="w-75" /></center>
+                <div className="row row-cols-1 row-cols-md-2 g-4"style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
+                    <div className="col">
+                        <div className="card card border border-light shadow-0 mb-3" style={{textAlign:"center"}}  >
                             <h1>Conference Details</h1>
                             <br></br>
                             <p >Start : November 2</p>
@@ -20,8 +20,8 @@ class AboutUsDetails extends Component {
                             <p>Wbsite : www.sliit.lk</p>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card card border border-light shadow-0 mb-3" style={{textAlign:"center"}} >
+                    <div className="col">
+                        <div className="card card border border-light shadow-0 mb-3" style={{textAlign:"center"}} >
                             <h1>Organizer</h1>
                             <br></br>
                             <p>Phone : 0768777199</p>

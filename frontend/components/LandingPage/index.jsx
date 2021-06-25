@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import HomePageNav from '../navbars/homePageNav';
 import Footer from '../footer/footer';
-import '../src/style.css';
+import '../assert/style.css';
 import ContactUs from '../LandingPage/ContactUs/ContactBody';
 import AboutUs from './AboutUs/AboutUsBody';
 
@@ -11,32 +11,32 @@ function Index() {
             <HomePageNav />
             <img src="https://i.imgur.com/wwjSkZY.jpeg" class="img-fluid" width="100%" alt="..."></img>
             <div className="bg-black border-top border-dark pt-3 pb-3 ps-5 pe-5">
-                <div class="row ps-5">
-                    <div class="col-sm-4 ">
-                        <i class="bi bi-geo-alt-fill h2 text-white"></i>
-                        <span className="text-muted h5 fw-normal text-uppercase">Isipathana Hall</span>
+                <div className="row ps-5">
+                    <div className="col-sm-4 ">
+                        <i className="bi bi-geo-alt-fill h2 text-white"></i>
+                        <span className="text-muted h5 fw-normal text-uppercase">SLIIT Main Auditorium</span>
                     </div>
-                    <div class="col-sm-4 ">
-                        <i class="bi bi-calendar-week-fill h2 text-white"></i>
-                        <span className="text-muted h5 fw-normal text-uppercase">&nbsp;Octomber 1-2, 2021</span>
+                    <div className="col-sm-4 ">
+                        <i className="bi bi-calendar-week-fill h2 text-white"></i>
+                        <span className="text-muted h5 fw-normal text-uppercase">&nbsp;July 1-2, 2021</span>
                     </div>
-                    <div class="col-sm-4">
-                        <i class="bi bi-bookmark-star-fill h2 text-white"></i>
+                    <div className="col-sm-4">
+                        <i className="bi bi-bookmark-star-fill h2 text-white"></i>
                         <span className="text-muted h5 fw-normal text-uppercase fst-italic">&nbsp;" AF For Future "</span>
                     </div>
                 </div>
             </div>
             <div className="container" style={{ marginTop: '5%' }}>
                 <div className="text-center container">
-                    <div class="row ps-5">
-                        <div class="col-sm-1 "></div>
-                        <div class="col-sm-10 ">
+                    <div className="row ps-5">
+                        <div className="col-sm-1 "></div>
+                        <div className="col-sm-10 ">
                             <h5 className="text-uppercase fw-normal text-gold text-decoration-underline" style={{ paddingTop: '10%' }}>
                                 About Us<br />
                             </h5>
                             <span className=" h2 text-dark text-uppercase" style={{ textDecoration: 'none' }}>3RD INTERNATIONAL CONFERENCE ON Application Framework 2021</span>
                         </div>
-                        <div class="col-sm-1 "></div>
+                        <div className="col-sm-1 "></div>
                     </div>
                     <AboutUs/>
                     <a href='/about'><button type="button" class="btn btn-orange  btn-sm" style={{ letterSpacing: '2px' }}>More Details <i class="bi bi-arrow-right-circle-fill"></i></button></a>
@@ -48,35 +48,35 @@ function Index() {
             <div className="text-center" style={{ marginTop: '7%' }}>
                 <span className=" h2 text-dark text-uppercase" style={{ textDecoration: 'none' }}>... YOU CAN DO ...</span>
             </div>
-            <div class="card-group container">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div className="card-group container">
+                <div className="card">
+                    <img src="..." className="card-img-top" alt="..." />
+                    <div className="card-body">
+                        <h5 className="card-title">Card title</h5>
+                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                    <div className="card-footer">
+                        <small className="text-muted">Last updated 3 mins ago</small>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <div className="card">
+                    <img src="..." className="card-img-top" alt="..." />
+                    <div className="card-body">
+                        <h5 className="card-title">Card title</h5>
+                        <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                    <div className="card-footer">
+                        <small className="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div className="card">
+                    <img src="..." className="card-img-top" alt="..." />
+                    <div className="card-body">
+                        <h5 className="card-title">Card title</h5>
+                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div className="card-footer">
+                        <small className="text-muted">Last updated 3 mins ago</small>
                     </div>
                 </div>
             </div>
@@ -122,33 +122,33 @@ function Index() {
             </div>
             <div className="container" style={{ marginTop: '12%', marginBottom: '5%' }}>
                 <div className="text-center container">
-                    <div class="row ps-5">
-                        <div class="col-sm-1 "></div>
-                        <div class="col-sm-10 ">
+                    <div className="row ps-5">
+                        <div className="col-sm-1 "></div>
+                        <div className="col-sm-10 ">
                             <span className=" h2 text-dark text-uppercase" style={{ textDecoration: 'none' }}>Past AFGlobal Conferences</span>
                         </div>
-                        <div class="col-sm-1 "></div>
+                        <div className="col-sm-1 "></div>
                     </div>
                     <br />
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="https://i.imgur.com/2Q14ACw.jpeg" class="d-block w-100" alt="..." />
+                    <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+                        <div className="carousel-inner">
+                            <div className="carousel-item active">
+                                <img src="https://i.imgur.com/2Q14ACw.jpeg" className="d-block w-100" alt="..." />
                             </div>
-                            <div class="carousel-item">
+                            <div className="carousel-item">
                                 <img src="https://i.imgur.com/6Wi7jHg.jpg" class="d-block w-100" alt="..." />
                             </div>
-                            <div class="carousel-item">
+                            <div className="carousel-item">
                                 <img src="https://i.imgur.com/udR8OLd.jpeg" class="d-block w-100" alt="..." />
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
+                        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
