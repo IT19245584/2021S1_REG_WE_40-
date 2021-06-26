@@ -39,7 +39,7 @@ function Index() {
                         <div className="col-sm-1 "></div>
                     </div>
                     <AboutUs/>
-                    <a href='/about'><button type="button" class="btn btn-orange  btn-sm" style={{ letterSpacing: '2px' }}>More Details <i class="bi bi-arrow-right-circle-fill"></i></button></a>
+                    <a href='/about'><button type="button" className="btn btn-orange  btn-sm" style={{ letterSpacing: '2px' }}>More Details <i className="bi bi-arrow-right-circle-fill"></i></button></a>
                 </div>
             </div>
             <center className="pt-5">
@@ -88,7 +88,7 @@ function Index() {
                     <table width="80%" className="text-center ">
                         <tr>
                             <td>
-                                <img src="https://i.imgur.com/j3uLOBU.jpeg" alt="..." class="rounded mx-auto d-block"></img>
+                                <img src="https://i.imgur.com/j3uLOBU.jpeg" alt="..." className="rounded mx-auto d-block"></img>
                                 <div className="pt-3 text-white">
                                     <h4 className="text-capitalize">PROFESSOR LALITH GAMAGE<br />
                                         <span style={{ fontSize: '16px' }} className="fw-light text-capitalize">President/CEO Of SLIIT</span></h4>
@@ -96,7 +96,7 @@ function Index() {
 
                             </td>
                             <td>
-                                <img src="https://i.imgur.com/jDnUn2Z.jpeg" alt="..." class="rounded mx-auto d-block"></img>
+                                <img src="https://i.imgur.com/jDnUn2Z.jpeg" alt="..." className="rounded mx-auto d-block"></img>
                                 <div className="pt-3 text-white">
                                     <h4 className="text-capitalize">Prof. Koliya Pulasinghe <br />
                                         <span style={{ fontSize: '16px' }} className="fw-light text-capitalize">Professor - Faculty Of Computing </span></h4>
@@ -111,7 +111,7 @@ function Index() {
                     </div>
                     <center>
                         <div>
-                            <img src="https://i.imgur.com/p5wl2Jz.jpg" alt="..." class="rounded mx-auto d-block"></img>
+                            <img src="https://i.imgur.com/p5wl2Jz.jpg" alt="..." className="rounded mx-auto d-block"></img>
                             <div className="pt-3 text-light">
                                 <h4 className="text-capitalize">Mr. Reshan Dewapura<br />
                                     <span style={{ fontSize: '16px' }} className="fw-light text-capitalize"> Professional Speaker</span></h4>
@@ -136,10 +136,10 @@ function Index() {
                                 <img src="https://i.imgur.com/2Q14ACw.jpeg" className="d-block w-100" alt="..." />
                             </div>
                             <div className="carousel-item">
-                                <img src="https://i.imgur.com/6Wi7jHg.jpg" class="d-block w-100" alt="..." />
+                                <img src="https://i.imgur.com/6Wi7jHg.jpg" className="d-block w-100" alt="..." />
                             </div>
                             <div className="carousel-item">
-                                <img src="https://i.imgur.com/udR8OLd.jpeg" class="d-block w-100" alt="..." />
+                                <img src="https://i.imgur.com/udR8OLd.jpeg" className="d-block w-100" alt="..." />
                             </div>
                         </div>
                         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

@@ -41,37 +41,37 @@ class AddOrganizingCommittee extends Component {
     render() {
         return (
             <div>
-                <div classNameName="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
-                    <h1 tag='div' classNameName='display-1 pb-3 mb-3 border-bottom'>Add Organizing Committee</h1>
+                <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
+                    <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add Organizing Committee</h1>
                 </div>
-                <div classNameName="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
-                    <div classNameName="row g-0">
+                <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
+                    <div className="row g-0">
                         <form onSubmit={this.onSubmit}>
-                            <div classNameName="form-outline mb-4">
-                                Name: <input type="text" id="name" classNameName="form-control border border-dark mb-3" name="name" value={this.state.name} onChange={this.onChange} required />
+                            <div className="form-outline mb-4">
+                                Name: <input type="text" id="name" className="form-control border border-dark mb-3" name="name" value={this.state.name} onChange={this.onChange} required />
                             </div>
-                            <div classNameName="form-outline mb-4">
-                                <label classNameName="form-label" for="customFile">Add Image</label>
-                                <input type="file" classNameName="form-control" id="image" name="image" value={this.state.image} onChange={this.onChange} required />
+                            <div className="form-outline mb-4">
+                                <label className="form-label" for="customFile">Add Image</label>
+                                <input type="file" className="form-control" id="image" name="image" value={this.state.image} onChange={this.onChange} required />
 
                             </div>
                             <div className="form-outline mb-4">
-                                Department: <input type="text" id="department" classNameName="form-control border border-dark mb-3" name="department" value={this.state.department} onChange={this.onChange} required />
+                                Department: <input type="text" id="department" className="form-control border border-dark mb-3" name="department" value={this.state.department} onChange={this.onChange} required />
 
                             </div>
                             <div className="form-outline mb-4">
-                                Description: <textarea classNameName="form-control border border-dark mb-3" id="description" rows="4" name="description" value={this.state.description} onChange={this.onChange} required />
+                                Description: <textarea className="form-control border border-dark mb-3" id="description" rows="4" name="description" value={this.state.description} onChange={this.onChange} required />
 
                             </div>
-                            <div classNameName="form-outline mb-4">
+                            <div className="form-outline mb-4">
                                 Status:
-                                <select classNameName="form-select" aria-label="Default select example" id="status" name="status" value={this.state.status} onChange={this.onChange}>
+                                <select className="form-select" aria-label="Default select example" id="status" name="status" value={this.state.status} onChange={this.onChange}>
                                     <option selected>Pending</option>
                                     <option>Post</option>
                                     <option>Rejected</option>
                                 </select>
                             </div>
-                            <button type="submit" classNameName="btn btn-primary btn-block mb-4">Save</button>
+                            <button type="submit" className="btn btn-primary btn-block mb-4">Save</button>
                         </form>
                     </div>
                 </div>
