@@ -6,8 +6,8 @@ class EditorDashboard extends Component {
         return (
             <div>
                 <div>
-                    <div classNameName="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
-                        <h1 tag='div' classNameName='display-1 pb-3 mb-3 border-bottom'>Welcome Editor</h1>
+                    <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
+                        <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Welcome Editor</h1>
                     </div>
                 </div>
                 

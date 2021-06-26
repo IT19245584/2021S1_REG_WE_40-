@@ -9,7 +9,7 @@ class AboutUsDetails extends Component {
         return (
             <div>
                 <br></br>
-                <center><hr classNameName="w-75" /></center>
+                <center><hr className="w-75" /></center>
                 <div className="row row-cols-1 row-cols-md-2 g-4"style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
                     <div className="col">
                         <div className="card card border border-light shadow-0 mb-3" style={{textAlign:"center"}}  >

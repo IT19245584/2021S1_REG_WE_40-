@@ -45,7 +45,7 @@ class AddTechnicalCommittee extends Component {
                     <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add Technical Committee</h1>
                 </div>
                 <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
-                    <div class="row g-0">
+                    <div className="row g-0">
                         <form onSubmit={this.onSubmit}>
                             <div className="form-outline mb-4">
                                 Name: <input type="text" id="name" className="form-control border border-dark mb-3" vlaue={this.state.name} name="name" onChange={this.onChange} required />

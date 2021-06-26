@@ -8,7 +8,7 @@ class UpdateTechnicalCommittee extends Component {
     render() {
         return (
             <div>
-                <div classNameName="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
+                <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
                     <div className="row g-0">
 
                         <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: "60px" }}>Add Organizing Committee</h3>
@@ -31,7 +31,7 @@ class UpdateTechnicalCommittee extends Component {
                             </div>
                             <div className="form-outline mb-4">
                                 Status:
-                                    <select classNameName="form-select" aria-label="Default select example">
+                                    <select className="form-select" aria-label="Default select example">
                                     <option selected>Pending</option>
                                     <option>Post</option>
                                     <option>Rejected</option>
