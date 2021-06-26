@@ -11,10 +11,14 @@ const systemRegSchema = new Schema({
     type: String,
     required: true
     },
-    password: {
+    email: {
     type: String,
     required: true
     },
+    nic: {
+        type: String,
+        required: true
+        },
     type: {
     type: String,
     required: true
