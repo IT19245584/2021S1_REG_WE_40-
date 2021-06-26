@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './components/assert/css/Editor/editor.css';
 import Index from './components/LandingPage/index';
 import OrganizingCommittee from './components/LandingPage/Committee/OrganizingCommittee';
 import TechnicalCommittee from './components/LandingPage/Committee/TechnicalCommittee';

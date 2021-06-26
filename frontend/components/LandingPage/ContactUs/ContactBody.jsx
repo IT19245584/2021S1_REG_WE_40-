@@ -6,6 +6,7 @@ class ContactBody extends Component {
         super(props);
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.resetForm = this.resetForm.bind(this);
         this.state = {
             name: "",
             email: "",
@@ -33,7 +34,6 @@ class ContactBody extends Component {
                 this.setState({
                     sent: true,
                 }, this.resetForm())
-                console.log("Email Sent");
             }).catch(() => {
                 console.log('Message not sent');
             })
@@ -45,12 +45,8 @@ class ContactBody extends Component {
             email: "",
             subject: "",
             message: "",
+            sent:false
         })
-        setTimeout(() => {
-            this.setState({
-                sent: false
-            })
-        }, 3000)
     };
 
     render() {
@@ -100,6 +96,7 @@ class ContactBody extends Component {
                             <div className="form-outline mb-4">
                                 Message: <textarea className="form-control border border-dark mb-3" id="message" rows="4" name="message" value={this.state.message} onChange={this.onChange} required />
                             </div>
+                            <div className={this.state.sent ?'msg msgAppear':'msg'}>Message has been sent</div>
                             <center><button type="submit" className="btn btn-primary btn-block mb-4">Send</button></center>
                         </form>
                     </div>
