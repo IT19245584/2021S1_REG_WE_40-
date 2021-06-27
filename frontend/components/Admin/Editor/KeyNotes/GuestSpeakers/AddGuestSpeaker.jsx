@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class AddImportantDates extends Component {
+class AddGuestSpeaker extends Component {
     constructor(props) {
         super(props);
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.state = {
             name: '',
-            submitDate: '',
-            dueDate: '',
+            image: '',
+            profession: '',
             description: '',
             status: 'Pending'
         }
@@ -21,15 +21,15 @@ class AddImportantDates extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        let ImportantDates = {
+        let KeyNotes = {
             name: this.state.name,
-            submitDate: this.state.submitDate,
-            dueDate: this.state.dueDate,
+            image: this.state.image,
+            profession: this.state.profession,
             description: this.state.description,
             status: this.state.status
         }
-        console.log('Data', ImportantDates);
-        axios.post('http://localhost:6060/orgCommittee/addOrgCommittee', ImportantDates)
+        console.log('Data', KeyNotes);
+        axios.post('http://localhost:6060/orgCommittee/addOrgCommittee', KeyNotes)
             .then(response => {
                 alert("Data successfully inserted")
             }).catch(error => {
@@ -42,7 +42,7 @@ class AddImportantDates extends Component {
         return (
             <div>
                 <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
-                    <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add Important Dates</h1>
+                    <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add Guest Speakers</h1>
                 </div>
                 <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
                     <div className="row g-0">
@@ -51,13 +51,17 @@ class AddImportantDates extends Component {
                                 Name: <input type="text" id="name" className="form-control border border-dark mb-3" name="name" value={this.state.name} onChange={this.onChange} required />
                             </div>
                             <div className="form-outline mb-4">
-                                Submission starting date: <input type="text" id="submitDate" className="form-control border border-dark mb-3" name="submitDate" value={this.state.submitDate} onChange={this.onChange} required />
+                                <label className="form-label" for="customFile">Add Image</label>
+                                <input type="file" className="form-control" id="image" name="image" value={this.state.image} onChange={this.onChange} required />
+
                             </div>
                             <div className="form-outline mb-4">
-                                Due Date: <input type="text" className="form-control border border-dark mb-3" id="dueDate" rows="4" name="dueDate" value={this.state.dueDate} onChange={this.onChange} required />
+                                Profession: <input type="text" id="profession" className="form-control border border-dark mb-3" name="profession" value={this.state.profession} onChange={this.onChange} required />
+
                             </div>
                             <div className="form-outline mb-4">
                                 Description: <textarea className="form-control border border-dark mb-3" id="description" rows="4" name="description" value={this.state.description} onChange={this.onChange} required />
+
                             </div>
                             <div className="form-outline mb-4">
                                 Status:
@@ -76,4 +80,4 @@ class AddImportantDates extends Component {
     }
 }
 
-export default AddImportantDates;
+export default AddGuestSpeaker;
