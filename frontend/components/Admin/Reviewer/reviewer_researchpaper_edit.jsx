@@ -7,8 +7,8 @@ class Reviewer_ResearchPaper_Edit extends Component{
     render(){
         return(
             <div class="container">
-                <h3>0ne Edit Research Paper Details...</h3>
-              
+                <h3>My Edit</h3>
+
                 {/* <center> */}
                 <div class="card mb-1" style={{maxWidth: "fixed"}}>
                     <div class="row g-0">
