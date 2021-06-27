@@ -23,11 +23,11 @@ class KeynoteSpeaker extends Component {
 
     render() {
         return (
-            <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '120rem', margin: 'auto', padding: '10px' }}>
+            <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '100rem', margin: 'auto', padding: '10px' }}>
                 <div className="card-body" >
                     <div className="row">
                         {this.state?.keyNote?.length > 0 && this.state.keyNote.map((item, index) =>
-                            <div className="col-sm-6 mb-5" key={index}>
+                            <div className="col-sm-6 mb-5" key={index} style={{ boxShadow: '5px 5px 10px #b2aeb1, -5px -5px 10px #ffffff' }}>
                                 <h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '45px' }}>{item.name}</h5>
                                 <br></br>
                                 <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '20rem', margin: '0 auto', padding: '10px', position: 'relative' }}>
