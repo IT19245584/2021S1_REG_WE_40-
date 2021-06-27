@@ -16,6 +16,9 @@ import AddAboutUs from './components/Admin/Editor/AboutUs/AddAboutUs';
 import AddImportantDates from './components/Admin/Editor/ImportantDates/AddImportantDates';
 import AddKeyNotes from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/AddKeyNotes';
 import AddGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/AddGuestSpeaker';
+import ViewImportantDates from './components/Admin/Editor/ImportantDates/ViewImportantDates';
+import ViewGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/ViewGuestSpeaker';
+import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes';
 
 function App() {
     return (
@@ -40,6 +43,9 @@ function App() {
                     <Route exact path='/adddate'><AddImportantDates/></Route>
                     <Route exact path='/addkeynote'><AddKeyNotes/></Route>
                     <Route exact path='/addguest'><AddGuestSpeaker/></Route>
+                    <Route exact path='/viewimpdate'><ViewImportantDates/></Route>
+                    <Route exact path='/viewguest'><ViewGuestSpeaker/></Route>
+                    <Route exact path='/viewkeynote'><ViewKeynoteSpeaker/></Route>
 
                 </Switch>
             </Router>
