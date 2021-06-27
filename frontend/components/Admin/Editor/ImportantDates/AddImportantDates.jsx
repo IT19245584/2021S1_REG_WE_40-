@@ -29,7 +29,7 @@ class AddImportantDates extends Component {
             status: this.state.status
         }
         console.log('Data', ImportantDates);
-        axios.post('http://localhost:6060/orgCommittee/addOrgCommittee', ImportantDates)
+        axios.post('http://localhost:6060/importantDates/add', ImportantDates)
             .then(response => {
                 alert("Data successfully inserted")
             }).catch(error => {
