@@ -2,16 +2,20 @@ const router = require('express').Router();
 let ImportantDates = require('../models/ImportantDates');
 
 router.route('/add').post((req,res) => {
-    const heading = req.body.heading;
-    const startDate = req.body.startDate;
+    const name = req.body.name;
+    const submitDate = req.body.submitDate;
     const dueDate = req.body.dueDate;
-    const details = req.body.details;
+    const description = req.body.description;
+    const status = req.body.status;
+    const date = new Date().toISOString().slice(0,10);
 
     const newImportantDates = new ImportantDates({
-        heading,
-        startDate,
+        name,
+        submitDate,
         dueDate,
-        details
+        description,
+        status,
+        date
     });
 
     newImportantDates.save()
@@ -37,15 +41,17 @@ router.route('/delete/:id').delete(async (req,res) => {
 
 router.route('/update/:id').post(async (req,res) => {
     let id = req.params.id;
-    const heading = req.body.heading;
-    const startDate = req.body.startDate;
+    const name = req.body.name;
+    const submitDate = req.body.submitDate;
     const dueDate = req.body.dueDate;
-    const details = req.body.details;
+    const description = req.body.description;
+    const status = req.body.status;
     const updateImportantDates={
-        heading,
-        startDate,
+        name,
+        submitDate,
         dueDate,
-        details
+        description,
+        status
     }
     const update = await ImportantDates.findOneAndUpdate({_id:id},updateImportantDates).then(() => {
         res.status(200).send({status: "Successfully updated Important Dates"});

@@ -4,7 +4,7 @@ let GuestSpeaker = require('../models/GuestSpeaker');
 router.route('/add').post((req,res) => {
     const name = req.body.name;
     const image = req.body.image;
-    const department = req.body.department;
+    const profession = req.body.profession;
     const description = req.body.description;
     const status = req.body.status;
     const date = new Date().toISOString().slice(0,10);
@@ -12,7 +12,7 @@ router.route('/add').post((req,res) => {
     const newGuestSpeaker = new GuestSpeaker({
         name,
         image,
-        department,
+        profession,
         description,
         status,
         date
@@ -42,12 +42,12 @@ router.route('/delete/:id').delete(async (req,res) => {
 router.route('/update/:id').post(async (req,res) => {
     let id = req.params.id;
     const name = req.body.name;
-    const department = req.body.department;
+    const profession = req.body.profession;
     const description = req.body.description;
     const status = req.body.status;
     const updateGuestSpeaker={
         name,
-        department,
+        profession,
         description,
         status
     }
