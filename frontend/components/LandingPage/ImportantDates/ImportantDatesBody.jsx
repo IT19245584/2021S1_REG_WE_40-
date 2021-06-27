@@ -29,7 +29,7 @@ class ImportantDatedsBody extends Component {
                         <div className="row">
                             {this.state?.dates?.length > 0 && this.state.dates.map((item, index) =>
                                 <div className="col-sm-6 mb-5" key={index}>
-                                    <div className="card " style={{ maxWidth: '50rem', margin: 'auto', padding: '10px' }}>
+                                    <div className="card " style={{ maxWidth: '50rem', margin: 'auto', padding: '10px' ,borderRadius:'23px', background:'#ffffff',boxShadow:'5px 5px 34px #737373,-5px -5px 34px #ffffff'}}>
                                         <div className="text-center">
                                             <h1>{item.name}</h1>
                                         </div>
