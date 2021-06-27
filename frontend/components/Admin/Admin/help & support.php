@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+    <link rel="stylesheet" href="css/rental.css">
+    <link rel="stylesheet" href="css/help.css">
+</head>
+
+
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <input type="checkbox" id="res-menu">
+        <label for="res-menu">
+            <i class="fas fa-bars" id="s1"></i>
+            <i class="fas fa-times" id="s2"></i>
+        </label>
+        <img src="img/logo1.png" alt="Drive Pro">
+
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Car List</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Sign Up</a></li>
+            <li><a href="">Help & Support</a></li>
+            <li>
+
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+
+
+            </li>
+        </ul>
+    </nav>
+
+<!-- Header End -->
+
+<div class="issues-form">
+	<h1>Help & Support</h1>
+	<form method ="post" action="issuesDB.php" >
+	<h2>Write Us</h2>
+	<label>Full Name</label><br>
+	<input type="text" name="customer-name" required placeholder="Full Name"><br><br>
+	<label>Email</label><br>
+	<input type="text" name="customer-email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" required placeholder="abcd@gmail.com"><br><br>
+	<label>Write Your Concern</label><br>
+	<textarea id="comment" name="customer-comment" placeholder="Write Something....."></textarea><br><br>
+
+	<input class="submitbtn" type="submit" name ="sbmtbtn" value="Submit"><br><br>
+</form><br>
+</div>
+
+
+ <!-- Footer -->
+    <div class="footer">
+
+        <div class="footer_item_1">
+            <h3>89,Main Street,Malabe</h3>
+            <h3>011 1234567</h3>
+            <h3>supportdrivepro@gmail.com</h3>
+        </div>
+
+        <img class="footer_item_2" src="img/logo1.png" alt="Drive Pro">
+
+
+        <div class="footer_item_3">
+            <h4>Social Media</h4>
+            <div class="footer_item_3_icon">
+                <img src="img/whatsapp.jpg">
+
+                <img src="img/facebook.png">
+
+                <img src="img/instegram.jpg">
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

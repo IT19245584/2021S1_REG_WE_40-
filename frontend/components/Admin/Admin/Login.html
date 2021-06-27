@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+
+    <link rel="stylesheet" href="css/rental.css">
+	
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <input type="checkbox" id="res-menu">
+        <label for="res-menu">
+            <i class="fas fa-bars" id="s1"></i>
+            <i class="fas fa-times" id="s2"></i>
+        </label>
+        <img src="img/logo1.png" alt="Drive Pro">
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="drive proCar List.html">Car List</a></li>
+            <li><a class="active" href="contact.html">Contact Us</a></li>
+            <li><a href="signup.html">Sign In / Sign Up</a></li>
+            <li><a href="help & support.html">Help & Support</a></li>
+            <li>
+
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+
+
+            </li>
+        </ul>
+    </nav>
+
+<!-- Content -->
+
+<br><br>
+
+
+
+<form action="/action_page.php" method="post">
+ 
+	<br><br>
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+        
+    <button type="submit" href="index.html">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    
+    <span class="Reg">If you don't have an Account  <a href="signup.html">Sign up</a></span>
+  </div>
+</form>
+
+    <!-- Footer -->
+
+    <div class="footer">
+
+        <div class="footer_item_1">
+            <h3>89,Main Street,Malabe</h3>
+            <h3>011 1234567</h3>
+            <h3>supportdrivepro@gmail.com</h3>
+        </div>
+
+        <img class="footer_item_2" src="img/logo1.png" alt="Drive Pro">
+
+
+        <div class="footer_item_3">
+            <h4>Social Media</h4>
+            <div class="footer_item_3_icon">
+                <img src="img/whatsapp.jpg">
+
+                <img src="img/facebook.png">
+
+                <img src="img/instegram.jpg">
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
