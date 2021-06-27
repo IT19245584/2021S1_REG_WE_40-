@@ -12,6 +12,10 @@ import ImportantDate from './components/LandingPage/ImportantDates/ImportantDate
 import PastProceeding from './components/LandingPage/PastProceeding/PastProceeding';
 import AddOrg from './components/Admin/Editor/Committee/OrganizingCommittee/AddOrganizingCommittee';
 import AddTec from './components/Admin/Editor/Committee/TechnicalCommittee/AddTechnicalCommittee';
+import AddAboutUs from './components/Admin/Editor/AboutUs/AddAboutUs';
+import AddImportantDates from './components/Admin/Editor/ImportantDates/AddImportantDates';
+import AddKeyNotes from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/AddKeyNotes';
+import AddGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/AddGuestSpeaker';
 
 function App() {
     return (
@@ -32,6 +36,10 @@ function App() {
                     <Route exact path='/edhome'><EditorDashboard /></Route>
                     <Route exact path='/addorg'><AddOrg /></Route>
                     <Route exact path='/addtec'><AddTec /></Route>
+                    <Route exact path='/addabout'><AddAboutUs/></Route>
+                    <Route exact path='/adddate'><AddImportantDates/></Route>
+                    <Route exact path='/addkeynote'><AddKeyNotes/></Route>
+                    <Route exact path='/addguest'><AddGuestSpeaker/></Route>
 
                 </Switch>
             </Router>
