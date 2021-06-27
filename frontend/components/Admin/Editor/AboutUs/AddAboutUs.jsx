@@ -8,7 +8,7 @@ class AddAboutUs extends Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.state = {
             description: '',
-            date: '',
+            dateRange: '',
             conferenceStart: '',
             conferenceEnd: '',
             conferenceWebsite:'',
@@ -27,7 +27,7 @@ class AddAboutUs extends Component {
         e.preventDefault();
         let AddAboutUs = {
             description: this.state.description,
-            date: this.state.date,
+            dateRange: this.state.dateRange,
             conferenceStart: this.state.conferenceStart,
             conferenceEnd: this.state.conferenceEnd,
             conferenceWebsite:this.state.conferenceWebsite,
@@ -37,7 +37,7 @@ class AddAboutUs extends Component {
             status: this.state.status
         }
         console.log('Data', AddAboutUs);
-        axios.post('http://localhost:6060/orgCommittee/addOrgCommittee', AddAboutUs)
+        axios.post('http://localhost:6060/aboutus/add', AddAboutUs)
             .then(response => {
                 alert("Data successfully inserted")
             }).catch(error => {
@@ -59,13 +59,13 @@ class AddAboutUs extends Component {
                                 Description: <textarea id="description" className="form-control border border-dark mb-3" rows="4" name="description" value={this.state.description} onChange={this.onChange} required />
                             </div>
                             <div className="form-outline mb-4">
-                                Date of conference: <input type="text" id="date" className="form-control border border-dark mb-3" name="date" value={this.state.date} onChange={this.onChange} required />
+                                dateRange of conference: <input type="text" id="dateRange" className="form-control border border-dark mb-3" name="dateRange" value={this.state.dateRange} onChange={this.onChange} required />
                             </div>
                             <div className="form-outline mb-4">
-                                Conference Starting Date: <input type="text" id="conferenceStart" className="form-control border border-dark mb-3" name="conferenceStart" value={this.state.conferenceStart} onChange={this.onChange} required />
+                                Conference Starting dateRange: <input type="text" id="conferenceStart" className="form-control border border-dark mb-3" name="conferenceStart" value={this.state.conferenceStart} onChange={this.onChange} required />
                             </div>
                             <div className="form-outline mb-4">
-                                Conference End Date: <input type="text" id="conferenceEnd" className="form-control border border-dark mb-3" name="conferenceEnd" value={this.state.conferenceEnd} onChange={this.onChange} required />
+                                Conference End dateRange: <input type="text" id="conferenceEnd" className="form-control border border-dark mb-3" name="conferenceEnd" value={this.state.conferenceEnd} onChange={this.onChange} required />
                             </div>
                             <div className="form-outline mb-4">
                                 Website of Conference: <input type="text" id="conferenceWebsite" className="form-control border border-dark mb-3" name="conferenceWebsite" value={this.state.conferenceWebsite} onChange={this.onChange} required />

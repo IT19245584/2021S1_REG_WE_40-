@@ -21,15 +21,15 @@ class AddGuestSpeaker extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        let KeyNotes = {
+        let GuestSpeaker = {
             name: this.state.name,
             image: this.state.image,
             profession: this.state.profession,
             description: this.state.description,
             status: this.state.status
         }
-        console.log('Data', KeyNotes);
-        axios.post('http://localhost:6060/orgCommittee/addOrgCommittee', KeyNotes)
+        console.log('Data', GuestSpeaker);
+        axios.post('http://localhost:6060/guestSpeaker/add', GuestSpeaker)
             .then(response => {
                 alert("Data successfully inserted")
             }).catch(error => {

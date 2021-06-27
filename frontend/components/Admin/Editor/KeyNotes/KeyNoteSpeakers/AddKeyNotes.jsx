@@ -29,7 +29,7 @@ class AddKeyNotes extends Component {
             status: this.state.status
         }
         console.log('Data', KeyNotes);
-        axios.post('http://localhost:6060/orgCommittee/addOrgCommittee', KeyNotes)
+        axios.post('http://localhost:6060/keynoteSpeaker/add', KeyNotes)
             .then(response => {
                 alert("Data successfully inserted")
             }).catch(error => {

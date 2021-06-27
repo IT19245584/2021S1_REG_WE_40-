@@ -1,50 +1,53 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema
 
-const AboutUsSchema = new Schema({
-    aboutus:{
-        type:String,
-        required:true
+const AboutUsSchema = new Schema(
+  {
+    description: {
+      type: String,
+      required: true,
     },
-    date:{
-        type:String,
-        required:true
+    dateRange: {
+      type: String,
+      required: true,
     },
-    confDetail:{
-        type:String,
-        required:true
+    conferenceStart: {
+      type: String,
+      required: true,
     },
-    start:{
-        type:String,
-        required:true
+    conferenceEnd: {
+      type: String,
+      required: true,
     },
-    end:{
-        type:String,
-        required:true
+    conferenceWebsite: {
+      type: String,
+      required: true,
     },
-    website:{
-        type:String,
-        required:true
+    organizerPhone: {
+      type: String,
+      required: true,
     },
-    orgDetail:{
-        type:String,
-        required:true
+    organizerEmail: {
+      type: String,
+      required: true,
     },
-    phone:{
-        type:Number,
-        required:true
+    organizerWebsite: {
+      type: Number,
+      required: true,
     },
-    email:{
-        type:String,
-        required:true
+    status: {
+      type: String,
+      required: true,
     },
-    orgWebsite:{
-        type:String,
-        required:true
+    date: {
+      type: String,
+      required: true,
     },
-},{
-    timestamps:true
-});
+  },
+  {
+    timestamps: true,
+  }
+)
 
-const About_Us_Schema = mongoose.model('About_Us_Schema',AboutUsSchema);
-module.exports = About_Us_Schema;
+const About_Us_Schema = mongoose.model("About_Us_Schema", AboutUsSchema)
+module.exports = About_Us_Schema
