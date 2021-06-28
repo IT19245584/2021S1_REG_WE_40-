@@ -12,13 +12,7 @@ function HomeNavBar() {
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link " aria-current="page" href="#">Privacy Policy</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Contact Us</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Help</a>
+                                <a className="nav-link" href="/contact">Contact Us</a>
                             </li>
                         </ul>
                     </div>
