@@ -8,26 +8,10 @@ import Reviewer_WorkShop_ViewOne from './components/Admin/Reviewer/reviewer_work
 import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/reviewer_researchpaper_view_table';
 import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/reviewer_researchpaper_view_one';
 import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/reviewer_researchpaper_edit';
+import Reviewer_Workshop_Edit from './components/Admin/Reviewer/reviewer_workshop_edit';
+import ReviewerDashboard from './components/Admin/Reviewer/reviewer_dashboard';
 
 
-function App() {
-  return (
-  <div>
-       <Router>
-            <Switch>
-                <Route exact path="/">
-                    <Index/>
-                </Route>
-                <Route path="/view-all-ws" component={Reviewer_WorkShop_ViewTable} />
-                <Route path="/view-all-rp" component={Reviewer_ResearchPaper_ViewTable} />
-                <Route path="/edit-researchpaper" component={Reviewer_ResearchPaper_Edit} />
-
-                <Route path="/view-ws" component={Reviewer_WorkShop_ViewOne} />
-                
-                <Route path="/view-researchpaper" component={Reviewer_ResearchPaper_ViewOne} />
-                
-            </Switch>
-      </Router>
 
 import OrganizingCommittee from './components/LandingPage/Committee/OrganizingCommittee';
 import TechnicalCommittee from './components/LandingPage/Committee/TechnicalCommittee';
@@ -45,7 +29,7 @@ import AddKeyNotes from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/AddK
 import AddGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/AddGuestSpeaker';
 import ViewImportantDates from './components/Admin/Editor/ImportantDates/ViewImportantDates';
 import ViewGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/ViewGuestSpeaker';
-import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes';
+import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes'; 
 
 function App() {
     return (
@@ -74,7 +58,15 @@ function App() {
                     <Route exact path='/viewguest'><ViewGuestSpeaker/></Route>
                     <Route exact path='/viewkeynote'><ViewKeynoteSpeaker/></Route>
 
+                    <Route path="/dashboard" exact component={ReviewerDashboard} />
+                    <Route path="/view-all-ws" exact component={Reviewer_WorkShop_ViewTable} />
+                    <Route path="/view-all-rp" exact component={Reviewer_ResearchPaper_ViewTable} />
+                    <Route path="/edit-researchpaper" exact component={Reviewer_ResearchPaper_Edit} />
+                    <Route path="/edit-workshop" exact component={Reviewer_Workshop_Edit} />
 
+                    <Route path="/view-ws" exact component={Reviewer_WorkShop_ViewOne} />
+                
+                    <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} />
                 </Switch>
             </Router>
         </div>

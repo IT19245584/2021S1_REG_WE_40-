@@ -2,10 +2,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-class Reviewer_WorkShop_ViewTable extends Component{
-    
+export default function  Reviewer_WorkShop_ViewTable(){
 
-    render(){
         return(
             <div class="container">
                 <h3>View Workshop Details</h3>
@@ -69,6 +67,5 @@ class Reviewer_WorkShop_ViewTable extends Component{
 
             </div>
         )
-    }
+    
 }
-export default Reviewer_WorkShop_ViewTable;

@@ -3,7 +3,7 @@ import React ,{useState , useEffect} from "react";
 function ReviewerDashboard() {
   return (
         <div>
-       {/* <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand text-muted" href="#">AFGlobal-2021</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,16 +15,21 @@ function ReviewerDashboard() {
                     <a class="nav-link " aria-current="page" href="#">Privacy Policy</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
+                    <a class="nav-link" href="#">RPaper View Table </a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Help</a>
+                    <a class="nav-link" href="#">RPaper edit</a>
                     </li>
-                  
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Workshop View Table</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Workshop edit</a>
+                    </li>
                 </ul>
                 </div>
             </div>
-            </nav> */}
+            </nav>
         </div>
     );
 }

@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-class Revie_Workshop_Edit extends Component{
-    
+export default function  Revie_Workshop_Edit(){
 
-    render(){
         return(
             <div className="container">
                 <h3>Edit Workshop Details.</h3>
@@ -144,6 +142,6 @@ class Revie_Workshop_Edit extends Component{
             </div>      
             
         )
-    }
+    
 }
-export default Revie_Workshop_Edit;
+
