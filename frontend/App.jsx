@@ -28,6 +28,10 @@ import AddGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/Ad
 import ViewImportantDates from './components/Admin/Editor/ImportantDates/ViewImportantDates';
 import ViewGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/ViewGuestSpeaker';
 import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes';
+import ViewOrgCommittee from './components/Admin/Editor/Committee/OrganizingCommittee/ViewOrganizingCommittee';
+import ViewTechCommittee from './components/Admin/Editor/Committee/TechnicalCommittee/ViewTechnicalCommittee';
+import UpdateOrgCommittee from './components/Admin/Editor/Committee/OrganizingCommittee/UpdateOrganizingCommittee';
+import UpdateTechCommittee from './components/Admin/Editor/Committee/TechnicalCommittee/UpdateTechnicalCommittee';
 
 
 function App() {
@@ -62,6 +66,10 @@ function App() {
                     <Route exact path='/viewimpdate'><ViewImportantDates /></Route>
                     <Route exact path='/viewguest'><ViewGuestSpeaker /></Route>
                     <Route exact path='/viewkeynote'><ViewKeynoteSpeaker /></Route>
+                    <Route exact path='/vieworg'><ViewOrgCommittee /></Route>
+                    <Route exact path='/viewtech'><ViewTechCommittee/></Route>
+                    <Route exact path='/updateorg'><UpdateOrgCommittee/></Route>
+                    <Route exact path='/updatetech'><UpdateTechCommittee/></Route>
 
                     <Route path="/dashboard" exact component={ReviewerDashboard} />
                     <Route path="/view-all-ws" exact component={Reviewer_WorkShop_ViewTable} />
@@ -69,7 +77,7 @@ function App() {
                     <Route path="/edit-researchpaper" exact component={Reviewer_ResearchPaper_Edit} />
                     <Route path="/edit-workshop" exact component={Reviewer_Workshop_Edit} />
 
-                    <Route path="/view-ws" exact component={Reviewer_WorkShop_ViewOne} />              
+                    <Route path="/view-ws" exact component={Reviewer_WorkShop_ViewOne} />
                     <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} />
                 </Switch>
             </Router>
