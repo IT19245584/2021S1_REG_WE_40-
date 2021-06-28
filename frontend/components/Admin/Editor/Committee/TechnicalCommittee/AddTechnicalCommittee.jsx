@@ -33,7 +33,7 @@ export default function AddTechnicalCommittee() {
                         type: "success"
                     }).then(okay => {
                         if (okay) {
-                            window.location.href = "/viewguest";
+                            window.location.href = "/viewtech";
                         }
                     });
                 }).catch((err) => {
@@ -51,7 +51,7 @@ export default function AddTechnicalCommittee() {
     return (
         <div>
             <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
-                <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add Organizing Committee</h1>
+                <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add Technical Committee</h1>
             </div>
             <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
                 <div className="row g-0">
@@ -74,7 +74,7 @@ export default function AddTechnicalCommittee() {
                     <div className="form-outline mb-4">
                         Status:
                         <select className="form-select" aria-label="Default select example" id="status" name="status" onChange={(e) => { setstatus(e.target.value) }}>
-                            <option selected value="Pending">Pending</option>
+                            <option defaultValue value="Pending">Pending</option>
                             <option value="Post">Post</option>
                             <option value="Rejected">Rejected</option>
                         </select>
@@ -85,6 +85,3 @@ export default function AddTechnicalCommittee() {
         </div>
     );
 }
-
-
-export default AddOrganizingCommittee;
