@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-class Reviewer_ResearchPaper_ViewTable extends Component{
+export default function  Reviewer_ResearchPaper_ViewTable(){
     
 
-    render(){
+
         return(
             <div class="container">
                 <h3>View Research Paper Details</h3>
@@ -57,6 +57,5 @@ class Reviewer_ResearchPaper_ViewTable extends Component{
 
             </div>
         )
-    }
+ 
 }
-export default Reviewer_ResearchPaper_ViewTable;
