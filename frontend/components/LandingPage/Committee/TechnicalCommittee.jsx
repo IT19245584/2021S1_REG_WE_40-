@@ -42,7 +42,7 @@ class TechnicalCommittee extends Component {
                                         <br></br>
                                         <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '20rem', margin: '0 auto', padding: '10px', position: 'relative' }}>
                                             <div className="card-body  hover-zoom" style={{ maxWidth: '20rem', margin: '0 auto', padding: '10px', position: 'relative' }}>
-                                                <img src="https://mdbootstrap.com/img/logo/mdb192x192.jpg" className="img-fluid rounded-circle hover-shadow" />
+                                                <img src={'https://res.cloudinary.com/applicationframework2021/image/upload/v1624901540/'+item.image} className="img-fluid rounded-circle hover-shadow" />
                                             </div>
                                         </div>
                                         <br></br>
