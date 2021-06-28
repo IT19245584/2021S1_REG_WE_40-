@@ -85,6 +85,11 @@ export default function Login() {
                         <span className="text-muted">Reset Password &nbsp;&nbsp;</span>
                   </a>
                 </div>
+                <div className="text-end pr-4">
+              <center><button  onClick={sendDate} type="submit" className="btn btn-primary btn-block mb-2" >
+                Submit <i className="fas fa-angle-double-right"></i>
+              </button></center>
+            </div>
         <Footer/>
      </div>
   );
