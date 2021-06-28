@@ -23,7 +23,7 @@ class ViewImportantDates extends Component {
     }
 
     deleteData(id) {
-        axios.delete('http://localhost:4000/importantDates/delete/' + id)
+        axios.delete('http://localhost:6000/importantDates/delete/' + id)
             .then((res) => {
                 console.log('Data successfully deleted!')
             }).catch((error) => {
