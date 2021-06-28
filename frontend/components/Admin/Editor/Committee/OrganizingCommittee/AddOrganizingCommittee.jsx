@@ -74,7 +74,7 @@ export default function AddOrganizingCommittee() {
                     <div className="form-outline mb-4">
                         Status:
                         <select className="form-select" aria-label="Default select example" id="status" name="status" onChange={(e) => { setstatus(e.target.value) }}>
-                            <option selected value="Pending">Pending</option>
+                            <option defaultValue value="Pending">Pending</option>
                             <option value="Post">Post</option>
                             <option value="Rejected">Rejected</option>
                         </select>
@@ -85,6 +85,3 @@ export default function AddOrganizingCommittee() {
         </div>
     );
 }
-
-
-export default AddOrganizingCommittee;
