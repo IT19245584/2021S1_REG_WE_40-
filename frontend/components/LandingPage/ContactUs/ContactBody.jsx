@@ -45,7 +45,7 @@ class ContactBody extends Component {
             email: "",
             subject: "",
             message: "",
-            sent:false
+            sent: false
         })
     };
 
@@ -55,7 +55,7 @@ class ContactBody extends Component {
                 <div style={{ height: '300px' }}>
                     <div className="row row-cols-1 row-cols-md-3 g-4">
                         <div className="col">
-                            <div className="card h-100 border border-dark mb-3">
+                            <div className="card h-100 border border-dark mb-3" style={{ borderRadius: '33px', background: 'linear-gradient(225deg, #e4e4d4, #fffffd)', boxShadow: '18px 18px 100px #7c7c74,-18px -18px 100px #ffffff' }}>
                                 <div className="card-body">
                                     <h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Address</h5>
                                     <p className="card-text" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>SLIIT, New Kandy Road, Malabe, Sri Lanka</p>
@@ -63,7 +63,7 @@ class ContactBody extends Component {
                             </div>
                         </div>
                         <div className="col">
-                            <div className="card h-100 border border-dark mb-3">
+                            <div className="card h-100 border border-dark mb-3" style={{ borderRadius: '33px', background: 'linear-gradient(225deg, #e4e4d4, #fffffd)', boxShadow: '18px 18px 100px #7c7c74,-18px -18px 100px #ffffff' }}>
                                 <div className="card-body">
                                     <h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Phone Number</h5>
                                     <p className="card-text" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>+94 11 7544806</p>
@@ -71,7 +71,7 @@ class ContactBody extends Component {
                             </div>
                         </div>
                         <div className="col">
-                            <div className="card h-100 border border-dark mb-3">
+                            <div className="card h-100 border border-dark mb-3" style={{ borderRadius: '33px', background: 'linear-gradient(225deg, #e4e4d4, #fffffd)', boxShadow: '18px 18px 100px #7c7c74,-18px -18px 100px #ffffff' }}>
                                 <div className="card-body">
                                     <h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Email</h5>
                                     <p className="card-text" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>info@sliit.lk</p>
@@ -81,7 +81,7 @@ class ContactBody extends Component {
                     </div>
                 </div>
                 <div className="row row-cols-1 row-cols-md-2 g-4">
-                    <div className="col">
+                    <div className="col" style={{ borderRadius: '33px', background: 'linear-gradient(225deg, #e6d6c5, #ffffea)', boxShadow: '18px 18px 100px #7d756b,-18px -18px 100px #ffffff' }}>
                         <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: "60px" }}>Contact Us for More Details</h3>
                         <form onSubmit={this.onSubmit}>
                             <div className="form-outline mb-4">
@@ -91,13 +91,13 @@ class ContactBody extends Component {
                                 Email: <input type="email" id="email" className="form-control border border-dark mb-3" name="email" value={this.state.email} onChange={this.onChange} required />
                             </div>
                             <div className="form-outline mb-4">
-                                Subject: <input type="text" className="form-control border border-dark mb-3" id="subject" name="subject" value={this.state.subject} onChange={this.onChange}/>
+                                Subject: <input type="text" className="form-control border border-dark mb-3" id="subject" name="subject" value={this.state.subject} onChange={this.onChange} />
                             </div>
                             <div className="form-outline mb-4">
                                 Message: <textarea className="form-control border border-dark mb-3" id="message" rows="4" name="message" value={this.state.message} onChange={this.onChange} required />
                             </div>
-                            <div className={this.state.sent ?'msg msgAppear':'msg'}>Message has been sent</div>
-                            <center><button type="submit" className="btn btn-primary btn-block mb-4">Send</button></center>
+                            <div className={this.state.sent ? 'msg msgAppear' : 'msg'}>Message has been sent</div>
+                            <center><button type="submit" className="btn btn-outline-danger btn-block mb-4">Send</button></center>
                         </form>
                     </div>
                     <div className="col">
