@@ -39,7 +39,7 @@ function App() {
         <div>
             <Router>
                 <Switch>
-                    {/* Landing Pages */}
+                    {/* Landing Pages / User pages */}
                     <Route exact path="/"><Index /></Route>
                     <Route exact path='/org'><OrganizingCommittee /></Route>
                     <Route exact path='/tec'><TechnicalCommittee /></Route>
@@ -49,13 +49,8 @@ function App() {
                     <Route exact path='/date'><ImportantDate /></Route>
                     <Route exact path='/past'><PastProceeding /></Route>
 
-                    <Route path="/view-all-ws" component={Reviewer_WorkShop_ViewTable} />
-                    <Route path="/view-all-rp" component={Reviewer_ResearchPaper_ViewTable} />
-                    <Route path="/edit-researchpaper" component={Reviewer_ResearchPaper_Edit} />
-                    <Route path="/view-ws" component={Reviewer_WorkShop_ViewOne} />
-                    <Route path="/view-researchpaper" component={Reviewer_ResearchPaper_ViewOne} />
 
-                    {/* Editor Pages */}
+                    {/* Admin side Pages */}
                     <Route exact path='/edhome'><EditorDashboard /></Route>
                     <Route exact path='/addorg'><AddOrg /></Route>
                     <Route exact path='/addtec'><AddTec /></Route>

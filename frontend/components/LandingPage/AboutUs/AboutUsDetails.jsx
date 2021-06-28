@@ -30,6 +30,7 @@ class AboutUsDetails extends Component {
                         </div>
                     </div>
                 </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100px' }} />
             </div>
         );
     }
