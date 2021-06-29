@@ -50,7 +50,7 @@ router.route("/delete/:id").delete(async (req, res) => {
     })
 })
 
-router.route("/updateRange/:id").post(async (req, res) => {
+router.route("/update/:id").post(async (req, res) => {
   let id = req.params.id
   const description = req.body.description
   const dateRange = req.body.dateRange

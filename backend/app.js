@@ -43,19 +43,18 @@ app.use("/guestSpeaker", GuestSpeaker)
 const KeynoteSpeaker = require("./routers/KeynoteSpeaker")
 app.use("/keynoteSpeaker", KeynoteSpeaker)
 
+const workshops = require("./routers/WorkShop.js")
+app.use("/workshop", workshops)
 
-const workshops = require("./routers/WorkShop.js");
-app.use("/workshop", workshops);
+const ResearchPaper = require("./routers/ResearchPaper")
+app.use("/researchPaper", ResearchPaper)
 
-const ResearchPaper = require("./routers/ResearchPaper");
-app.use("/researchPaper", ResearchPaper);
+const PastProceeding = require("./routers/PastProceeding")
+app.use("/pastProceeding", PastProceeding)
 
-const PastProceeding = require('./routers/PastProceeding');
-app.use('/pastProceeding',PastProceeding);
-
-app.listen(port,() =>{
-    console.log(`Server is running on port: ${port}`);
-});
+app.listen(port, () => {
+  console.log(`Server is running on port: ${port}`)
+})
 
 //Contact Us Email sending configuration
 app.post("/contactdata", (req, res) => {
@@ -93,4 +92,3 @@ app.post("/contactdata", (req, res) => {
   })
   smtpTransoprt.close()
 })
-
