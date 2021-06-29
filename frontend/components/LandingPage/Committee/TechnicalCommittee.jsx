@@ -33,16 +33,16 @@ class TechnicalCommittee extends Component {
                     </div>
                 </div>
                 <div>
-                    <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '120rem', margin: 'auto', padding: '10px' }}>
+                    <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '100rem', margin: 'auto', padding: '10px' }}>
                         <div className="card-body" >
                             <div className="row">
                                 {this.state?.org?.length > 0 && this.state.org.map((item, index) =>
-                                    <div className="col-sm-6 mb-5" key={index}>
+                                    <div className="col-sm-6 mb-5" key={index} style={{ boxShadow: '5px 5px 10px #b2aeb1, -5px -5px 10px #ffffff' }}>
                                         <h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '45px' }}>{item.name}</h5>
                                         <br></br>
                                         <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '20rem', margin: '0 auto', padding: '10px', position: 'relative' }}>
                                             <div className="card-body  hover-zoom" style={{ maxWidth: '20rem', margin: '0 auto', padding: '10px', position: 'relative' }}>
-                                                <img src="https://mdbootstrap.com/img/logo/mdb192x192.jpg" class="img-fluid rounded-circle hover-shadow" />
+                                                <img src={'https://res.cloudinary.com/applicationframework2021/image/upload/v1624901540/'+item.image} className="img-fluid rounded-circle hover-shadow" />
                                             </div>
                                         </div>
                                         <br></br>

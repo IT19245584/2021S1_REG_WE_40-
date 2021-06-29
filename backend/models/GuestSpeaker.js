@@ -10,7 +10,7 @@ const GuestSpeakerSchema = new Schema({
         type:String,
         required:true
     },
-    department:{
+    profession:{
         type:String,
         required:true
     },

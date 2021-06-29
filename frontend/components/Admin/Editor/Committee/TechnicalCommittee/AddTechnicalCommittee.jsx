@@ -1,84 +1,87 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
-class AddTechnicalCommittee extends Component {
-    constructor(props) {
-        super(props);
-        this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-        this.state = {
-            name: '',
-            image: '',
-            department: '',
-            description: '',
-            status: 'Pending'
-        }
-    };
+export default function AddTechnicalCommittee() {
+    const [name, setName] = useState("");
+    const [department, setdepartment] = useState("");
+    const [description, setdescription] = useState("");
+    const [status, setstatus] = useState("");
+    const [imageSelected, setimageSelected] = useState("");
 
-    onChange(e) {
-        this.setState({ [e.target.name]: e.target.value })
-    };
+    const onSubmit = () => {
+        const formData = new FormData();
+        formData.append("file", imageSelected);
+        formData.append("upload_preset", "ml_default");
 
-    onSubmit(e) {
-        e.preventDefault();
-        let TechnicalCommittee = {
-            name: this.state.name,
-            image: this.state.image,
-            department: this.state.department,
-            description: this.state.description,
-            status: this.state.status
-        }
-        console.log('Data', TechnicalCommittee);
-        axios.post('http://localhost:6060/techCommittee/addTecCommittee', TechnicalCommittee)
-            .then(response => {
-                alert("Data successfully inserted")
-            }).catch(error => {
-                console.log(error.message);
-                alert(error.message)
-            })
-    };
+        axios.post("https://api.cloudinary.com/v1_1/applicationframework2021/image/upload", formData).then((response) => {
+            const image = imageSelected.name;
+            const AddTechnicalCommittee = {
+                name,
+                image,
+                department,
+                description,
+                status
+            }
+            axios.post("http://localhost:6060/techCommittee/addTecCommittee", AddTechnicalCommittee)
+                .then(() => {
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Guest Speaker Saved",
+                        icon: 'success',
+                        confirmButtonText: "OK",
+                        type: "success"
+                    }).then(okay => {
+                        if (okay) {
+                            window.location.href = "/viewtech";
+                        }
+                    });
+                }).catch((err) => {
+                    Swal.fire({
+                        title: "Error!",
+                        text: "Unable to save Guest Speker",
+                        icon: 'error',
+                        confirmButtonText: "OK",
+                        type: "success"
+                    })
+                })
+        })
+    }
 
-    render() {
-        return (
-            <div>
-                <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
-                    <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add Technical Committee</h1>
-                </div>
-                <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
-                    <div class="row g-0">
-                        <form onSubmit={this.onSubmit}>
-                            <div className="form-outline mb-4">
-                                Name: <input type="text" id="name" className="form-control border border-dark mb-3" vlaue={this.state.name} name="name" onChange={this.onChange} required />
-                            </div>
-                            <div className="form-outline mb-4">
-                                <label className="form-label" htmlfor="customFile">Add Image</label>
-                                <input type="file" className="form-control" id="image" value={this.state.image} name="image" onChange={this.onChange} required />
-
-                            </div>
-                            <div className="form-outline mb-4">
-                                Department: <input type="text" id="department" className="form-control border border-dark mb-3" value={this.state.department} name="department" onChange={this.onChange} required />
-
-                            </div>
-                            <div className="form-outline mb-4">
-                                Description: <textarea className="form-control border border-dark mb-3" id="description" rows="4" value={this.state.description} name="description" onChange={this.onChange} required />
-
-                            </div>
-                            <div className="form-outline mb-4">
-                                Status:
-                                <select className="form-select" aria-label="Default select example" id="status" value={this.state.status} name="status" onChange={this.onChange}>
-                                    <option selected>Pending</option>
-                                    <option>Post</option>
-                                    <option>Rejected</option>
-                                </select>
-                            </div>
-                            <button type="submit" className="btn btn-primary btn-block mb-4">Save</button>
-                        </form>
+    return (
+        <div>
+            <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
+                <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add Technical Committee</h1>
+            </div>
+            <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
+                <div className="row g-0">
+                    <div className="form-outline mb-4">
+                        Name: <input type="text" id="name" className="form-control border border-dark mb-3" name="name" onChange={(e) => { setName(e.target.value) }} required />
+                    </div>
+                    <div className="form-outline mb-4">
+                        <label className="form-label" for="customFile">Add Image</label>
+                        <input type="file" onChange={(e) => { setimageSelected(e.target.files[0]) }} className="form-control" id="customFile" required />
 
                     </div>
+                    <div className="form-outline mb-4">
+                        Department: <input type="text" id="department" className="form-control border border-dark mb-3" name="department" onChange={(e) => { setdepartment(e.target.value) }} required />
+
+                    </div>
+                    <div className="form-outline mb-4">
+                        Description: <textarea className="form-control border border-dark mb-3" id="description" rows="4" name="description" onChange={(e) => { setdescription(e.target.value) }} required />
+
+                    </div>
+                    <div className="form-outline mb-4">
+                        Status:
+                        <select className="form-select" aria-label="Default select example" id="status" name="status" onChange={(e) => { setstatus(e.target.value) }}>
+                            <option defaultValue value="Pending">Pending</option>
+                            <option value="Post">Post</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <button type="submit" onClick={onSubmit} className="btn btn-primary btn-block mb-4">Save</button>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
-
-export default AddTechnicalCommittee;

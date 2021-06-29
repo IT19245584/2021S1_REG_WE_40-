@@ -10,7 +10,7 @@ const KeynoteSpeakerSchema = new Schema({
         type:String,
         required:true
     },
-    department:{
+    profession:{
         type:String,
         required:true
     },
