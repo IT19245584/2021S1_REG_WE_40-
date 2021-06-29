@@ -4,6 +4,7 @@ import Footer from '../footer/footer';
 import '../assert/style.css';
 import ContactUs from '../LandingPage/ContactUs/ContactBody';
 import AboutUs from './AboutUs/AboutUsBody';
+import PastProceeding from "./PastProceeding/PastProceedingImages";
 
 function Index() {
     return (
@@ -120,37 +121,17 @@ function Index() {
                     </center>
                 </div>
             </div>
-            <div className="container" style={{ marginTop: '12%', marginBottom: '5%' }}>
+            <div className="container" style={{ marginTop: '5%', marginBottom: '0%' }}>
                 <div className="text-center container">
                     <div className="row ps-5">
                         <div className="col-sm-1 "></div>
                         <div className="col-sm-10 ">
-                            <span className=" h2 text-dark text-uppercase" style={{ textDecoration: 'none' }}>Past AFGlobal Conferences</span>
+                            <span className=" h2 text-dark text-uppercase" style={{ textDecoration: 'none' ,marginTop:'0%',marginBottom:"2%"}}>Past AFGlobal Conferences</span>
                         </div>
                         <div className="col-sm-1 "></div>
                     </div>
                     <br />
-                    <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-                        <div className="carousel-inner">
-                            <div className="carousel-item active">
-                                <img src="https://i.imgur.com/2Q14ACw.jpeg" className="d-block w-100" alt="..." />
-                            </div>
-                            <div className="carousel-item">
-                                <img src="https://i.imgur.com/6Wi7jHg.jpg" className="d-block w-100" alt="..." />
-                            </div>
-                            <div className="carousel-item">
-                                <img src="https://i.imgur.com/udR8OLd.jpeg" className="d-block w-100" alt="..." />
-                            </div>
-                        </div>
-                        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="visually-hidden">Previous</span>
-                        </button>
-                        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="visually-hidden">Next</span>
-                        </button>
-                    </div>
+                    <PastProceeding/>
                 </div>
             </div>
             <center>
