@@ -38,5 +38,5 @@ const researchPaperSchema = new Schema({
 }, {
 timestamps: true
 });
-const research_Paper_Schema = mongoose.model('research_Paper', researchPaperSchema);
-module.exports = research_Paper_Schema;
+const ResearchPaper = mongoose.model('ResearchPaper', researchPaperSchema);
+module.exports = ResearchPaper;

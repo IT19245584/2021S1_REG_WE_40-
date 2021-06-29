@@ -1,7 +1,7 @@
 const router = require('express').Router();
 let ResearchPaper = require('../models/ResearchPaper');
 
-router.route('/addResearchPaper').post((req,res) => {
+router.route('/add').post((req,res) => {
     const topic = req.body.topic;
     const university = req.body.university;
     const purpose = req.body.purpose;
@@ -21,11 +21,13 @@ router.route('/addResearchPaper').post((req,res) => {
         document,
         description
 
-    });
+    })
 
-    newResearchPaper.save()
-        .then(() => res.json("Research Paper added successfully"))
-        .catch(err => res.email(400).json('Error : ' +err));
-});
+    newResearchPaper.save().then(() => {
+        res.json("Research Paper Added");
+    }).catch((err) => {
+        console.log(err);
+    })
+})
 
 module.exports = router;
