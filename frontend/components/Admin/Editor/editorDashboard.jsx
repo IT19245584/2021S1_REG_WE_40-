@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Img from 'url:../../assert/Images/Editor/Editor1.png';
+import Navigation from './DashboardNavigation/Navigation';
 
 class EditorDashboard extends Component {
     render() {
@@ -10,10 +11,10 @@ class EditorDashboard extends Component {
                         <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Welcome Editor</h1>
                     </div>
                 </div>
-                
+                <Navigation />
                 <div>
                     <div className="row row-cols-1 row-cols-md-2 g-4">
-                        <div className="col">
+                        {/* <div className="col">
                             <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
                                 <div className="card-body d-grid gap-2 col-6 mx-auto">
                                     <div className="btn-group" role="group" style={{ marginBottom: "15%", marginTop: "10%" }}>
@@ -36,7 +37,7 @@ class EditorDashboard extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="col">
                             <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
                                 <img
@@ -49,9 +50,8 @@ class EditorDashboard extends Component {
                             </div>
                         </div>
                     </div>
-
-                </div>
-            </div>
+                </div >
+            </div >
         );
     }
 }

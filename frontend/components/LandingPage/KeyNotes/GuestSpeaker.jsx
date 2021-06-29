@@ -32,14 +32,13 @@ class GuestSpeaker extends Component {
                                 <br></br>
                                 <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '20rem', margin: '0 auto', padding: '10px', position: 'relative' }}>
                                     <div className="card-body  hover-zoom" style={{ maxWidth: '20rem', margin: '0 auto', padding: '10px', position: 'relative' }}>
-                                        <img src={item.image} class="img-fluid rounded-circle hover-shadow" />
+                                        <img src={'https://res.cloudinary.com/applicationframework2021/image/upload/v1624901540/'+item.image} class="img-fluid rounded-circle hover-shadow" />
                                     </div>
                                 </div>
                                 <br></br>
                                 <h3 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '25px' }}>{item.profession}</h3>
                                 <div className="card-text" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '23px' }}>
                                     <p>{item.description}</p>
-
                                 </div>
                             </div>
                         )}
