@@ -20,8 +20,6 @@ import AddKeyNotes from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/AddK
 import AddGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/AddGuestSpeaker';
 import ViewImportantDates from './components/Admin/Editor/ImportantDates/ViewImportantDates';
 import ViewGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/ViewGuestSpeaker';
-import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes'; 
-
 import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes';
 
 import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/Workshop/reviewer_workshop_view_table';
@@ -36,12 +34,19 @@ import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/Research
 import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_edit';
 import ReviewerDashboard from './components/Admin/Reviewer/reviewer_dashboard';
 
+import ViewOrgCommittee from './components/Admin/Editor/Committee/OrganizingCommittee/ViewOrganizingCommittee';
+import ViewTechCommittee from './components/Admin/Editor/Committee/TechnicalCommittee/ViewTechnicalCommittee';
+import UpdateOrgCommittee from './components/Admin/Editor/Committee/OrganizingCommittee/UpdateOrganizingCommittee';
+import UpdateTechCommittee from './components/Admin/Editor/Committee/TechnicalCommittee/UpdateTechnicalCommittee';
+
+
+
 function App() {
     return (
         <div>
             <Router>
                 <Switch>
-                    {/* Landing Pages */}
+                    {/* Landing Pages / User pages */}
                     <Route exact path="/"><Index /></Route>
                     <Route exact path='/org'><OrganizingCommittee /></Route>
                     <Route exact path='/tec'><TechnicalCommittee /></Route>
@@ -51,13 +56,8 @@ function App() {
                     <Route exact path='/date'><ImportantDate /></Route>
                     <Route exact path='/past'><PastProceeding /></Route>
 
-                    <Route path="/view-all-ws" component={Reviewer_WorkShop_ViewTable} />
-                    <Route path="/view-all-rp" component={Reviewer_ResearchPaper_ViewTable} />
-                    <Route path="/edit-researchpaper" component={Reviewer_ResearchPaper_Edit} />
-                    <Route path="/view-ws" component={Reviewer_WorkShop_ViewOne} />
-                    <Route path="/view-researchpaper" component={Reviewer_ResearchPaper_ViewOne} />
 
-                    {/* Editor Pages */}
+                    {/* Admin side Pages */}
                     <Route exact path='/edhome'><EditorDashboard /></Route>
                     <Route exact path='/addorg'><AddOrg /></Route>
                     <Route exact path='/addtec'><AddTec /></Route>
@@ -68,6 +68,10 @@ function App() {
                     <Route exact path='/viewimpdate'><ViewImportantDates /></Route>
                     <Route exact path='/viewguest'><ViewGuestSpeaker /></Route>
                     <Route exact path='/viewkeynote'><ViewKeynoteSpeaker /></Route>
+                    <Route exact path='/vieworg'><ViewOrgCommittee /></Route>
+                    <Route exact path='/viewtech'><ViewTechCommittee/></Route>
+                    <Route exact path='/updateorg'><UpdateOrgCommittee/></Route>
+                    <Route exact path='/updatetech'><UpdateTechCommittee/></Route>
 
                     {/* Reviewer's pages */}
                     <Route path="/dashboard" exact component={ReviewerDashboard} />

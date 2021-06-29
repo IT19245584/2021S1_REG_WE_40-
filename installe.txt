@@ -4,4 +4,7 @@ npm i react
 npm i react-dom
 npm i react-router-dom
 npm i google-maps-react
+npm i reactjs-localstorage
+
+//Backend
 npm i nodemailer
