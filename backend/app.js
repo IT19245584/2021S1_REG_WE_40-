@@ -44,10 +44,10 @@ const KeynoteSpeaker = require("./routers/KeynoteSpeaker")
 app.use("/keynoteSpeaker", KeynoteSpeaker)
 
 
-const workshops = require('./routers/WorkShop.js');
-app.use('/workshop', workshops);
+const workshops = require("./routers/WorkShop.js");
+app.use("/workshop", workshops);
 
-const ResearchPaper = require("./routers/ResearchPaper");
+const ResearchPaper = require("./routers/ResearchPaper.js");
 app.use("/ResearchPaper", ResearchPaper);
 
 app.listen(port,() =>{
@@ -90,6 +90,3 @@ app.post("/contactdata", (req, res) => {
   smtpTransoprt.close()
 })
 
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`)
-})

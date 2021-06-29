@@ -21,13 +21,13 @@ export default function  Reviewer_WorkShop_ViewTable(){
     const [description, setDescription] = useState("");
 
     useEffect(() => {
-        axios.get("http://localhost:8080/workshops/")
+        axios.get("http://localhost:6060/WorkShop/view-all")
         .then(res => setWorkshops(res.data))
         .catch(error => console.log(error));
     })
     
     function remove(id){
-        axios.delete("http://localhost:8080/workshops/delete/"+id).then(() =>{
+        axios.delete("http://localhost:6060/WorkShop/delete"+id).then(() =>{
         	Swal.fire({  
                 title: "Success!",
                 text: "Workshop Deleted",

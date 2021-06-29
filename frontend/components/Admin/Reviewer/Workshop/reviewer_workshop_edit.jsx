@@ -38,7 +38,7 @@ export default function  Reviewer_Workshop_Edit(){
             description,
         }
 
-        axios.put("http://localhost:8080/workshop/update/"+id,updateDetails).then(() => {
+        axios.put("http://localhost:6060/WorkShop/edit"+id,updateDetails).then(() => {
             const id = 0;
             Swal.fire({
                 title: "Success!",
