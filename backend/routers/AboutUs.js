@@ -72,9 +72,9 @@ router.route("/update/:id").post(async (req, res) => {
     organizerWebsite,
     status,
   }
-  const updateRange = await AboutUs.findOneAndUpdateRange({ _id: id }, updateRangeAboutUs)
+  const updateRange = await AboutUs.findOneAndUpdate({ _id: id }, updateRangeAboutUs)
     .then(() => {
-      res.status(200).send({ status: "Successfully updateRanged about us" })
+      res.status(200).send({ status: "Successfully updated about us" })
     })
     .catch((err) => {
       console.log(err)
