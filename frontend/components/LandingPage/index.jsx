@@ -5,6 +5,7 @@ import '../assert/style.css';
 import ContactUs from '../LandingPage/ContactUs/ContactBody';
 import AboutUs from './AboutUs/AboutUsBody';
 import PastProceeding from "./PastProceeding/PastProceedingImages";
+import ImportantDate from "./ImportantDates/ImportantDatesBody";
 
 function Index() {
     return (
@@ -46,42 +47,11 @@ function Index() {
             <center className="pt-5">
                 <hr className="w-75 " />
             </center>
-            <div className="text-center" style={{ marginTop: '7%' }}>
-                <span className=" h2 text-dark text-uppercase" style={{ textDecoration: 'none' }}>... YOU CAN DO ...</span>
+            <div className="text-center" style={{ marginTop: '5%',marginBottom:'5%' }}>
+                <span className=" h2 text-dark text-uppercase" style={{ textDecoration: 'none' }}>Important Dates to Remember</span>
             </div>
-            <div className="card-group container">
-                <div className="card">
-                    <img src="..." className="card-img-top" alt="..." />
-                    <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div className="card-footer">
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-                <div className="card">
-                    <img src="..." className="card-img-top" alt="..." />
-                    <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div className="card-footer">
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-                <div className="card">
-                    <img src="..." className="card-img-top" alt="..." />
-                    <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    </div>
-                    <div className="card-footer">
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div className="bg-orange pb-1" style={{ marginTop: '13%', marginBottom: '7%' }}>
+            <ImportantDate/>
+            <div className="bg-orange pb-1" style={{ marginTop: '7%', marginBottom: '7%' }}>
                 <div className="text-center container pt-5 pb-4">
                     <span className=" h2 text-white text-uppercase text-decoration-underline " style={{ textDecoration: 'none' }}><br />Keynote Speakers</span>
                 </div>
