@@ -28,6 +28,7 @@ import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/review
 import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/reviewer_researchpaper_view_one';
 import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/reviewer_researchpaper_edit';
 import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
+import Admin_BudjectView from './components/Admin/Admin/admin_BujectView.jsx';
 
 
 import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/Workshop/reviewer_workshop_view_table';
@@ -83,7 +84,7 @@ function App() {
 
                     {/* Admin Pages */}
                     <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>
-
+                    
                     {/* Reviewer's pages */}
                     <Route path="/dashboard" exact component={ReviewerDashboard} />
                     <Route path="/view-all-ws" exact component={Reviewer_WorkShop_ViewTable} />
@@ -93,6 +94,8 @@ function App() {
 
                     <Route path="/view-ws" exact component={Reviewer_WorkShop_ViewOne} />
                     <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} />
+
+                    <Route exact path="/Admin_BudjectView"><Admin_BudjectView /></Route>
 
                 </Switch>
             </Router>
