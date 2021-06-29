@@ -42,6 +42,7 @@ import ViewAboutUs from './components/Admin/Editor/AboutUs/ViewAboutUs';
 import UpdateKeyNoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/UpdateKeynotes';
 import UpdateGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/UpdateGuestSpeaker';
 import EditorHome from './components/Admin/Editor/EditorHome';
+import ImportantDatePdf from './components/LandingPage/ImportantDates/ImportantDatePdf';
 
 function App() {
     return (
@@ -77,15 +78,16 @@ function App() {
                     <Route exact path='/viewpast'><ViewPastProceeding /></Route>
                     <Route exact path='/addpast'><AddPastProceeding /></Route>
                     <Route exact path='/updateimpdate'><UpdateImportantDates /></Route>
-                    <Route exact path='/updateaboutus'><UpdateAboutUs/></Route>
-                    <Route exact path='/viewaboutus'><ViewAboutUs/></Route>
-                    <Route exact path='/update-keynote-speaker'><UpdateKeyNoteSpeaker/></Route>
-                    <Route exact path='/update-guest-speaker'><UpdateGuestSpeaker/></Route>
-                    <Route exact path='/editor-home'><EditorHome/></Route>
+                    <Route exact path='/updateaboutus'><UpdateAboutUs /></Route>
+                    <Route exact path='/viewaboutus'><ViewAboutUs /></Route>
+                    <Route exact path='/update-keynote-speaker'><UpdateKeyNoteSpeaker /></Route>
+                    <Route exact path='/update-guest-speaker'><UpdateGuestSpeaker /></Route>
+                    <Route exact path='/editor-home'><EditorHome /></Route>
+                    <Route exact path='/dates-pdf'><ImportantDatePdf /></Route>
 
                     {/* Admin Pages */}
                     <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>
-                    
+
                     {/* Reviewer's pages */}
                     <Route path="/dashboard" exact component={ReviewerDashboard} />
                     <Route path="/view-all-rp" exact component={Reviewer_ResearchPaper_ViewTable} />
