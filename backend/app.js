@@ -43,6 +43,16 @@ app.use("/guestSpeaker", GuestSpeaker)
 const KeynoteSpeaker = require("./routers/KeynoteSpeaker")
 app.use("/keynoteSpeaker", KeynoteSpeaker)
 
+
+const workshops = require('./routers/WorkShop.js');
+app.use('/workshop', workshops);
+
+const ResearchPaper = require("./routers/ResearchPaper");
+app.use("/ResearchPaper", ResearchPaper);
+
+app.listen(port,() =>{
+    console.log(`Server is running on port: ${port}`);
+});
 //Contact Us Email sending configuration
 app.post("/contactdata", (req, res) => {
   let data = req.body
