@@ -50,9 +50,13 @@ app.use("/workshop", workshops);
 const ResearchPaper = require("./routers/ResearchPaper.js");
 app.use("/ResearchPaper", ResearchPaper);
 
+const PastProceeding = require('./routers/PastProceeding');
+app.use('/pastProceeding',PastProceeding);
+
 app.listen(port,() =>{
     console.log(`Server is running on port: ${port}`);
 });
+
 //Contact Us Email sending configuration
 app.post("/contactdata", (req, res) => {
   let data = req.body
