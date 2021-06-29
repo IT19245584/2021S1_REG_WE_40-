@@ -24,6 +24,7 @@ import Reviewer_WorkShop_ViewOne from './components/Admin/Reviewer/reviewer_work
 import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/reviewer_researchpaper_view_table';
 import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/reviewer_researchpaper_view_one';
 import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/reviewer_researchpaper_edit';
+import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
 
 function App() {
     return (
@@ -58,7 +59,8 @@ function App() {
                     <Route exact path='/viewguest'><ViewGuestSpeaker /></Route>
                     <Route exact path='/viewkeynote'><ViewKeynoteSpeaker /></Route>
 
-
+                    {/* Admin Pages */}
+                    <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>
                 </Switch>
             </Router>
         </div>
