@@ -68,7 +68,14 @@ class ViewImportantDates extends Component {
                 <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
                     <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Important Dates</h1>
                 </div>
-                <Navigation/>
+                <Navigation />
+                <div className="container">
+                    <a href="/adddate">
+                        <div className="text-end mb-4">
+                            <button type="button" class="btn btn-secondary btn-sm">+ Add New Important Date</button>
+                        </div>
+                    </a>
+                </div>
                 <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '100rem', margin: 'auto', padding: '10px' }}>
                     <div className="card-body" >
                         <div className="row">

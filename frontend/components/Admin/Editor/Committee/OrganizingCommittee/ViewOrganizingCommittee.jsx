@@ -58,7 +58,7 @@ export default function ViewOrganizingCommittee() {
             <Navigation/>
             </div>
             <div className="container">
-                <a href="AddOrg">
+                <a href="/addorg">
                     <div className="text-end mb-4">
                         <button type="button" class="btn btn-secondary btn-sm">+ Add New Organizing Committee Member</button>
                     </div>
