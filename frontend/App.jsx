@@ -22,6 +22,7 @@ import ViewGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/V
 import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes';
 
 import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
+import Admin_BudjectView from './components/Admin/Admin/admin_BujectView.jsx';
 
 import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
 import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_one';
@@ -77,7 +78,7 @@ function App() {
 
                     {/* Admin Pages */}
                     <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>
-
+                    
                     {/* Reviewer's pages */}
                     <Route path="/dashboard" exact component={ReviewerDashboard} />
                     <Route path="/view-all-ws" exact component={Reviewer_WorkShop_ViewTable} />
@@ -87,6 +88,8 @@ function App() {
 
                     <Route path="/view-ws" exact component={Reviewer_WorkShop_ViewOne} />
                     <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} />
+
+                    <Route exact path="/Admin_BudjectView"><Admin_BudjectView /></Route>
 
                 </Switch>
             </Router>

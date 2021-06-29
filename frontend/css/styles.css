@@ -11246,3 +11246,20 @@ body {
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
 }
+.bg-main-card {
+  background-color: white;
+  color:#3d3d3d;
+  border:2px solid #3d3d3d;
+}
+.bg-main-card:hover{
+  background-color:#3d3d3d;
+  color:white;
+}
+
+.text-gold{
+  color:#cd5700;
+}
+
+.d-letter-spacing{
+  letter-spacing:1px;
+}
