@@ -54,5 +54,5 @@ const workShopSchema = new Schema({
 }, {
 timestamps: true
 });
-const workShop_Schema = mongoose.model('workShop', workShopSchema);
-module.exports = workShop_Schema;
+const WorkShop = mongoose.model('WorkShop', workShopSchema);
+module.exports = WorkShop;
