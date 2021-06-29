@@ -42,6 +42,9 @@ app.use('/guestSpeaker',GuestSpeaker);
 const KeynoteSpeaker = require('./routers/KeynoteSpeaker');
 app.use('/keynoteSpeaker',KeynoteSpeaker);
 
+const workshops = require('./routers/WorkShop.js');
+app.use('/workshop', workshops);
+
 app.listen(port,() =>{
     console.log(`Server is running on port: ${port}`);
 });
