@@ -22,6 +22,14 @@ import ViewImportantDates from './components/Admin/Editor/ImportantDates/ViewImp
 import ViewGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/ViewGuestSpeaker';
 import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes';
 
+import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/reviewer_workshop_view_table';
+import Reviewer_WorkShop_ViewOne from './components/Admin/Reviewer/reviewer_workshop_view_one';
+import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/reviewer_researchpaper_view_table';
+import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/reviewer_researchpaper_view_one';
+import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/reviewer_researchpaper_edit';
+import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
+
+
 import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/Workshop/reviewer_workshop_view_table';
 import Reviewer_WorkShop_ViewOne from './components/Admin/Reviewer/Workshop/reviewer_workshop_view_one';
 import Reviewer_Workshop_Edit from './components/Admin/Reviewer/Workshop/reviewer_workshop_edit';
@@ -38,7 +46,6 @@ import ViewOrgCommittee from './components/Admin/Editor/Committee/OrganizingComm
 import ViewTechCommittee from './components/Admin/Editor/Committee/TechnicalCommittee/ViewTechnicalCommittee';
 import UpdateOrgCommittee from './components/Admin/Editor/Committee/OrganizingCommittee/UpdateOrganizingCommittee';
 import UpdateTechCommittee from './components/Admin/Editor/Committee/TechnicalCommittee/UpdateTechnicalCommittee';
-
 
 
 function App() {
@@ -73,6 +80,10 @@ function App() {
                     <Route exact path='/updateorg'><UpdateOrgCommittee/></Route>
                     <Route exact path='/updatetech'><UpdateTechCommittee/></Route>
 
+
+                    {/* Admin Pages */}
+                    <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>
+
                     {/* Reviewer's pages */}
                     <Route path="/dashboard" exact component={ReviewerDashboard} />
                     <Route path="/view-all-ws" exact component={Reviewer_WorkShop_ViewTable} />
@@ -82,6 +93,7 @@ function App() {
 
                     <Route path="/view-ws" exact component={Reviewer_WorkShop_ViewOne} />
                     <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} />
+
                 </Switch>
             </Router>
         </div>

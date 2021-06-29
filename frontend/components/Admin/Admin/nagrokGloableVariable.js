@@ -1,1 +1,0 @@
-global.nagrok = 'http://cf39dc484699.ngrok.io';
