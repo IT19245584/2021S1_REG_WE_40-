@@ -43,6 +43,9 @@ import UpdateKeyNoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpea
 import UpdateGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/UpdateGuestSpeaker';
 import EditorHome from './components/Admin/Editor/EditorHome';
 
+import Registration from './components/LandingPage/Signin/Registration';
+import Login from './components/LandingPage/Signin/Login';
+
 function App() {
     return (
         <div>
@@ -57,6 +60,9 @@ function App() {
                     <Route exact path='/about'><AboutUs /></Route>
                     <Route exact path='/date'><ImportantDate /></Route>
                     <Route exact path='/past'><PastProceeding /></Route>
+                    
+                    <Route exact path='/Registration'><Registration /></Route>
+                    <Route exact path='/Login'><Login /></Route>
 
 
                     {/* Editor Pages  */}
