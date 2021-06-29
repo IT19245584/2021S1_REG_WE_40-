@@ -24,7 +24,7 @@ export default function AddKeyNoteSpeaker() {
                 description,
                 status
             }
-            axios.post("ihttp://localhost:6060/keynoteSpeaker/add", AddKeyNoteSpeaker)
+            axios.post("http://localhost:6060/keynoteSpeaker/add", AddKeyNoteSpeaker)
                 .then(() => {
                     Swal.fire({
                         title: "Success!",
