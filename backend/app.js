@@ -22,8 +22,8 @@ connection.once("open", () => {
   console.log("MongoDB connection successfully")
 })
 
-// const systemReg = require('./routes/systemReg');
-// app.use('/systemReg', systemReg);
+const admin_accept_budject = require('./routers/admin_accept_budject.js');
+app.use('/admin_accept_budject', admin_accept_budject);
 
 const OrganizingCommittee = require("./routers/OrganizingCommittee")
 app.use("/orgCommittee", OrganizingCommittee)

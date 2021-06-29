@@ -85,7 +85,7 @@ function App() {
 
                     {/* Admin Pages */}
                     <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>
-
+                    
                     {/* Reviewer's pages */}
                     <Route path="/dashboard" exact component={ReviewerDashboard} />
                     <Route path="/view-all-ws" exact component={Reviewer_WorkShop_ViewTable} />
@@ -95,6 +95,8 @@ function App() {
 
                     <Route path="/view-ws" exact component={Reviewer_WorkShop_ViewOne} />
                     <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} />
+
+                    <Route exact path="/Admin_BudjectView"><Admin_BudjectView /></Route>
 
                 </Switch>
             </Router>
