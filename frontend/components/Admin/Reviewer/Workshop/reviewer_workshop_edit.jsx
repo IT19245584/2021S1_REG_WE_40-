@@ -1,7 +1,9 @@
-import React, {Component} from 'react';
+import React, {useState, useEffect} from "react";
 import axios from 'axios';
+import Swal from 'sweetalert2';
+import {reactLocalStorage} from 'reactjs-localstorage';
 
-export default function  Revie_Workshop_Edit(){
+export default function  Reviewer_Workshop_Edit(){
 
     var workshopUpdate = reactLocalStorage.getObject('Revie_Workshop_Edit');
 
