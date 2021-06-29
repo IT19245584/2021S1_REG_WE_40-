@@ -1,7 +1,5 @@
-
-import React, {Component} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import axios from 'axios';
-
 import Swal from 'sweetalert2';
 import {reactLocalStorage} from 'reactjs-localstorage';
 
@@ -37,7 +35,7 @@ export default function  Reviewer_WorkShop_ViewTable(){
                 confirmButtonText: "OK",
                 type: "success"}).then(okay => {
                     if (okay) {
-                        window.location.href = "/";
+                        window.location.href = "/view-all-ws";
                     }
                 });
         }).catch((err)=>{
@@ -51,7 +49,7 @@ export default function  Reviewer_WorkShop_ViewTable(){
     }
 
     function update(id, topic, organization, purpose, team_leader, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description ){
-        reactLocalStorage.setObject("Reviewer_WorkShop_ViewTable", [id, topic, organization, purpose, team_leader, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description]);
+        reactLocalStorage.setObject("Reviewer_Workshop_Edit", [id, topic, organization, purpose, team_leader, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description]);
         window.location.href = "/update"
     }
         return(
@@ -104,19 +102,17 @@ export default function  Reviewer_WorkShop_ViewTable(){
                                     </div> 
                                 <div class="col-6">
                                     <a onClick={() => update(
-                                        workshop._id, workshop.topic, workshop.university, workshop.purpose, workshop.team_leader, workshop.email, workshop.phone, workshop.document, workshop.description
+                                        workshop._id, workshop.topic, workshop.organization, workshop.purpose, workshop.team_leader, workshop.presenter, workshop.phone, workshop.email, workshop.qualification, workshop.platform, workshop.date, workshop.from_time, workshop.to_time, workshop.document, workshop.description
                                         )} class="m-1">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
                                 </div>   
                             </div>
                         </td>
-                        </tr>   
+                    </tr>   
                 })} 
-                    </tbody>  
-                </table>   
-
-            </div>
+                </tbody>  
+            </table>   
+        </div>
         )
-    
 }
