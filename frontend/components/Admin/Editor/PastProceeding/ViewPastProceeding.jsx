@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { reactLocalStorage } from 'reactjs-localstorage';
+import Navigation from '../DashboardNavigation/Navigation';
 
 export default function ViewPastProceeding() {
 
@@ -54,6 +55,7 @@ export default function ViewPastProceeding() {
             <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
                 <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>View Past Proceeding</h1>
             </div>
+            <Navigation/>
             </div>
             <div className="container">
                 <a href="/addpast">

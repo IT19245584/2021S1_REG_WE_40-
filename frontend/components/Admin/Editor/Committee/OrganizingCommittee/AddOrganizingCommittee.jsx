@@ -33,7 +33,7 @@ export default function AddOrganizingCommittee() {
                         type: "success"
                     }).then(okay => {
                         if (okay) {
-                            window.location.href = "/viewguest";
+                            window.location.href = "/vieworg";
                         }
                     });
                 }).catch((err) => {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { reactLocalStorage } from 'reactjs-localstorage';
+import Navigation from '../../DashboardNavigation/Navigation';
 
 export default function ViewOrganizingCommittee() {
 
@@ -54,6 +55,7 @@ export default function ViewOrganizingCommittee() {
             <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
                 <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>View Organizing Committee</h1>
             </div>
+            <Navigation/>
             </div>
             <div className="container">
                 <a href="AddOrg">
@@ -63,7 +65,7 @@ export default function ViewOrganizingCommittee() {
                 </a>
                 <div className="row">
                     {OrganizingCommittee.map((OrganizingCommitteeMember, key) => (
-                        <div className="col-sm-3 mt-3">
+                        <div className="col-sm-3 mt-3" key={key}>
                             <div className="card">
                                 <div className="text-center">
                                     <img className="card-img-top " style={{ width: '100%' }} src={'https://res.cloudinary.com/applicationframework2021/image/upload/v1624901540/' + OrganizingCommitteeMember.image} alt="Card image cap" />

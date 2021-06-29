@@ -24,12 +24,10 @@ import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeake
 import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
 import Admin_BudjectView from './components/Admin/Admin/admin_BujectView.jsx';
 
-import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
 import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_one';
 import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_edit';
 import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
 import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_one';
-import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_edit';
 import ReviewerDashboard from './components/Admin/Reviewer/reviewer_dashboard';
 
 import ViewOrgCommittee from './components/Admin/Editor/Committee/OrganizingCommittee/ViewOrganizingCommittee';
@@ -39,6 +37,11 @@ import UpdateTechCommittee from './components/Admin/Editor/Committee/TechnicalCo
 import AddPastProceeding from './components/Admin/Editor/PastProceeding/AddPastProceeding';
 import ViewPastProceeding from './components/Admin/Editor/PastProceeding/ViewPastProceeding';
 import UpdatePastProceeding from './components/Admin/Editor/PastProceeding/UpdatePastProceeding';
+import UpdateImportantDates from './components/Admin/Editor/ImportantDates/UpdateImportantDates';
+import UpdateAboutUs from './components/Admin/Editor/AboutUs/UpdateAboutUs';
+import ViewAboutUs from './components/Admin/Editor/AboutUs/ViewAboutUs';
+import UpdateKeyNoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/UpdateKeynotes';
+import UpdateGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/UpdateGuestSpeaker';
 
 function App() {
     return (
@@ -56,7 +59,7 @@ function App() {
                     <Route exact path='/past'><PastProceeding /></Route>
 
 
-                    {/* Editor Pages */}
+                    {/* Editor Pages  */}
                     <Route exact path='/edhome'><EditorDashboard /></Route>
                     <Route exact path='/addorg'><AddOrg /></Route>
                     <Route exact path='/addtec'><AddTec /></Route>
@@ -74,7 +77,11 @@ function App() {
                     <Route exact path='/updatepast'><UpdatePastProceeding /></Route>
                     <Route exact path='/viewpast'><ViewPastProceeding /></Route>
                     <Route exact path='/addpast'><AddPastProceeding /></Route>
-
+                    <Route exact path='/updateimpdate'><UpdateImportantDates /></Route>
+                    <Route exact path='/updateaboutus'><UpdateAboutUs/></Route>
+                    <Route exact path='/viewaboutus'><ViewAboutUs/></Route>
+                    <Route exact path='/update-keynote-speaker'><UpdateKeyNoteSpeaker/></Route>
+                    <Route exact path='update-guest-speaker'><UpdateGuestSpeaker/></Route>
 
                     {/* Admin Pages */}
                     <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>

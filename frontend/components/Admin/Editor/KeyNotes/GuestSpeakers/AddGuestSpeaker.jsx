@@ -61,7 +61,7 @@ export default function AddGuestSpeaker() {
                     </div>
                     <div className="form-outline mb-4">
                         <label className="form-label" for="customFile">Add Image</label>
-                        <input type="file" onChange={(e) => { setimageSelected(e.target.files[0]) }} className="form-control" id="customFile" required/>
+                        <input type="file" onChange={(e) => { setimageSelected(e.target.files[0]) }} className="form-control" id="customFile" required />
                     </div>
                     <div className="form-outline mb-4">
                         Profession: <input type="text" id="profession" className="form-control border border-dark mb-3" name="profession" onChange={(e) => { setprofession(e.target.value) }} required />
