@@ -11,8 +11,6 @@ import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/reviewer_re
 import Reviewer_Workshop_Edit from './components/Admin/Reviewer/reviewer_workshop_edit';
 import ReviewerDashboard from './components/Admin/Reviewer/reviewer_dashboard';
 
-
-
 import OrganizingCommittee from './components/LandingPage/Committee/OrganizingCommittee';
 import TechnicalCommittee from './components/LandingPage/Committee/TechnicalCommittee';
 import ContactUs from './components/LandingPage/ContactUs/ContactUs';
@@ -31,6 +29,13 @@ import ViewImportantDates from './components/Admin/Editor/ImportantDates/ViewImp
 import ViewGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/ViewGuestSpeaker';
 import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes'; 
 
+import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes';
+import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/reviewer_workshop_view_table';
+import Reviewer_WorkShop_ViewOne from './components/Admin/Reviewer/reviewer_workshop_view_one';
+import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/reviewer_researchpaper_view_table';
+import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/reviewer_researchpaper_view_one';
+import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/reviewer_researchpaper_edit';
+
 function App() {
     return (
         <div>
@@ -46,17 +51,23 @@ function App() {
                     <Route exact path='/date'><ImportantDate /></Route>
                     <Route exact path='/past'><PastProceeding /></Route>
 
+                    <Route path="/view-all-ws" component={Reviewer_WorkShop_ViewTable} />
+                    <Route path="/view-all-rp" component={Reviewer_ResearchPaper_ViewTable} />
+                    <Route path="/edit-researchpaper" component={Reviewer_ResearchPaper_Edit} />
+                    <Route path="/view-ws" component={Reviewer_WorkShop_ViewOne} />
+                    <Route path="/view-researchpaper" component={Reviewer_ResearchPaper_ViewOne} />
+
                     {/* Editor Pages */}
                     <Route exact path='/edhome'><EditorDashboard /></Route>
                     <Route exact path='/addorg'><AddOrg /></Route>
                     <Route exact path='/addtec'><AddTec /></Route>
-                    <Route exact path='/addabout'><AddAboutUs/></Route>
-                    <Route exact path='/adddate'><AddImportantDates/></Route>
-                    <Route exact path='/addkeynote'><AddKeyNotes/></Route>
-                    <Route exact path='/addguest'><AddGuestSpeaker/></Route>
-                    <Route exact path='/viewimpdate'><ViewImportantDates/></Route>
-                    <Route exact path='/viewguest'><ViewGuestSpeaker/></Route>
-                    <Route exact path='/viewkeynote'><ViewKeynoteSpeaker/></Route>
+                    <Route exact path='/addabout'><AddAboutUs /></Route>
+                    <Route exact path='/adddate'><AddImportantDates /></Route>
+                    <Route exact path='/addkeynote'><AddKeyNotes /></Route>
+                    <Route exact path='/addguest'><AddGuestSpeaker /></Route>
+                    <Route exact path='/viewimpdate'><ViewImportantDates /></Route>
+                    <Route exact path='/viewguest'><ViewGuestSpeaker /></Route>
+                    <Route exact path='/viewkeynote'><ViewKeynoteSpeaker /></Route>
 
                     <Route path="/dashboard" exact component={ReviewerDashboard} />
                     <Route path="/view-all-ws" exact component={Reviewer_WorkShop_ViewTable} />

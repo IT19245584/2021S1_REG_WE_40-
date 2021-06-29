@@ -4,6 +4,7 @@ import axios from 'axios';
 class ViewImportantDates extends Component {
     constructor(props) {
         super(props);
+        this.deleteData = this.deleteData.bind(this);
         this.state = {
             dates: []
         }
@@ -18,6 +19,15 @@ class ViewImportantDates extends Component {
             }).catch(error => {
                 alert(error.message);
                 console.log("Error", error);
+            });
+    }
+
+    deleteData(id) {
+        axios.delete('http://localhost:4000/importantDates/delete/' + id)
+            .then((res) => {
+                console.log('Data successfully deleted!')
+            }).catch((error) => {
+                console.log("Error from front end", error)
             });
     }
 
@@ -53,10 +63,11 @@ class ViewImportantDates extends Component {
                                             <td>{item.status}</td>
                                             <td>{item.date}</td>
                                             <td>
-                                                <button type="button" class="btn btn-warning">Edit</button>
+                                                <button type="button" className="btn btn-warning">Edit</button>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-danger">Delete</button>
+                                                <button type="button" className="btn btn-danger"
+                                                    onClick={() => this.deleteData(item._id)}>Delete</button>
                                             </td>
                                         </tr>
                                     </tbody>
