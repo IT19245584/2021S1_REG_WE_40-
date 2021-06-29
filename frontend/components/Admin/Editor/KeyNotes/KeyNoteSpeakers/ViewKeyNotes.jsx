@@ -57,8 +57,8 @@ class ViewKeynoteSpeaker extends Component {
             });
     }
 
-    updateKeyNoteSpeaker(id,name,profession,description,status,image){
-        reactLocalStorage.setObject("KeynoteSpeaker", [id,name,profession,description,status,image]);
+    updateKeyNoteSpeaker(id, name, profession, description, status, image) {
+        reactLocalStorage.setObject("KeynoteSpeaker", [id, name, profession, description, status, image]);
         window.location.href = "/update-keynote-speaker";
     }
 
@@ -68,7 +68,14 @@ class ViewKeynoteSpeaker extends Component {
                 <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100px' }}>
                     <h1 tag='div' className='display-3 pb-3 mb-3 border-bottom'>Keynote Speakers</h1>
                 </div>
-                <Navigation/>
+                <Navigation />
+                <div className="container">
+                    <a href="/addkeynote">
+                        <div className="text-end mb-4">
+                            <button type="button" class="btn btn-secondary btn-sm">+ Add New KeyNote Speaker</button>
+                        </div>
+                    </a>
+                </div>
                 <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '120rem', margin: 'auto', padding: '10px' }}>
                     <div className="card-body" >
                         <div className="row">
@@ -96,11 +103,11 @@ class ViewKeynoteSpeaker extends Component {
                                             <td>{item.date}</td>
                                             <td>
                                                 <button type="button" class="btn btn-warning"
-                                                onClick={() => this.updateKeyNoteSpeaker(item._id, item.name, item.image, item.profession, item.description, item.status)}>Edit</button>
+                                                    onClick={() => this.updateKeyNoteSpeaker(item._id, item.name, item.image, item.profession, item.description, item.status)}>Edit</button>
                                             </td>
                                             <td>
                                                 <button type="button" class="btn btn-danger"
-                                                onClick={() => this.deleteData(item._id)}>Delete</button>
+                                                    onClick={() => this.deleteData(item._id)}>Delete</button>
                                             </td>
                                         </tr>
                                     </tbody>

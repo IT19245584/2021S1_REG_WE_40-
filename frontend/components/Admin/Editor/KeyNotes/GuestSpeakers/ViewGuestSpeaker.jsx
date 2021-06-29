@@ -57,8 +57,8 @@ class ViewGuestSpeaker extends Component {
             });
     }
 
-    updateGuestSpeaker(id,name,profession,description,status,image){
-        reactLocalStorage.setObject("GuestSpeaker", [id,name,profession,description,status,image]);
+    updateGuestSpeaker(id, name, profession, description, status, image) {
+        reactLocalStorage.setObject("GuestSpeaker", [id, name, profession, description, status, image]);
         window.location.href = "/update-guest-speaker";
     }
 
@@ -68,7 +68,14 @@ class ViewGuestSpeaker extends Component {
                 <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100px' }}>
                     <h1 tag='div' className='display-3 pb-3 mb-3 border-bottom'>Guest Speakers</h1>
                 </div>
-                <Navigation/>
+                <Navigation />
+                <div className="container">
+                    <a href="/addguest">
+                        <div className="text-end mb-4">
+                            <button type="button" class="btn btn-secondary btn-sm">+ Add New Guest Speaker</button>
+                        </div>
+                    </a>
+                </div>
                 <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '120rem', margin: 'auto', padding: '10px' }}>
                     <div className="card-body" >
                         <div className="row">
@@ -96,11 +103,11 @@ class ViewGuestSpeaker extends Component {
                                             <td>{item.date}</td>
                                             <td>
                                                 <button type="button" class="btn btn-warning"
-                                                onClick={() => this.updateGuestSpeaker(item._id, item.name, item.image, item.profession, item.description, item.status)}>Edit</button>
+                                                    onClick={() => this.updateGuestSpeaker(item._id, item.name, item.image, item.profession, item.description, item.status)}>Edit</button>
                                             </td>
                                             <td>
                                                 <button type="button" class="btn btn-danger"
-                                                onClick={() => this.deleteData(item._id)}>Delete</button>
+                                                    onClick={() => this.deleteData(item._id)}>Delete</button>
                                             </td>
                                         </tr>
                                     </tbody>

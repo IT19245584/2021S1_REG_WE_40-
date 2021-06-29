@@ -8,7 +8,6 @@ import TechnicalCommittee from './components/LandingPage/Committee/TechnicalComm
 import ContactUs from './components/LandingPage/ContactUs/ContactUs';
 import KeyNotes from './components/LandingPage/KeyNotes/Keynotes';
 import AboutUs from './components/LandingPage/AboutUs/AboutUs';
-import EditorDashboard from './components/Admin/Editor/EditorDashboard';
 import ImportantDate from './components/LandingPage/ImportantDates/ImportantDates';
 import PastProceeding from './components/LandingPage/PastProceeding/PastProceeding';
 import AddOrg from './components/Admin/Editor/Committee/OrganizingCommittee/AddOrganizingCommittee';
@@ -42,6 +41,7 @@ import UpdateAboutUs from './components/Admin/Editor/AboutUs/UpdateAboutUs';
 import ViewAboutUs from './components/Admin/Editor/AboutUs/ViewAboutUs';
 import UpdateKeyNoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/UpdateKeynotes';
 import UpdateGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/UpdateGuestSpeaker';
+import EditorHome from './components/Admin/Editor/EditorHome';
 
 function App() {
     return (
@@ -60,7 +60,6 @@ function App() {
 
 
                     {/* Editor Pages  */}
-                    <Route exact path='/edhome'><EditorDashboard /></Route>
                     <Route exact path='/addorg'><AddOrg /></Route>
                     <Route exact path='/addtec'><AddTec /></Route>
                     <Route exact path='/addabout'><AddAboutUs /></Route>
@@ -81,19 +80,16 @@ function App() {
                     <Route exact path='/updateaboutus'><UpdateAboutUs/></Route>
                     <Route exact path='/viewaboutus'><ViewAboutUs/></Route>
                     <Route exact path='/update-keynote-speaker'><UpdateKeyNoteSpeaker/></Route>
-                    <Route exact path='update-guest-speaker'><UpdateGuestSpeaker/></Route>
+                    <Route exact path='/update-guest-speaker'><UpdateGuestSpeaker/></Route>
+                    <Route exact path='/editor-home'><EditorHome/></Route>
 
                     {/* Admin Pages */}
                     <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>
                     
                     {/* Reviewer's pages */}
                     <Route path="/dashboard" exact component={ReviewerDashboard} />
-                    <Route path="/view-all-ws" exact component={Reviewer_WorkShop_ViewTable} />
                     <Route path="/view-all-rp" exact component={Reviewer_ResearchPaper_ViewTable} />
                     <Route path="/edit-researchpaper" exact component={Reviewer_ResearchPaper_Edit} />
-                    <Route path="/edit-workshop" exact component={Reviewer_Workshop_Edit} />
-
-                    <Route path="/view-ws" exact component={Reviewer_WorkShop_ViewOne} />
                     <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} />
 
                     <Route exact path="/Admin_BudjectView"><Admin_BudjectView /></Route>
