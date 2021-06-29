@@ -32,7 +32,6 @@ router.route('/add').post((req,res) => {
         document,
         description,
         status
-
     })
 
     newWorkShop.save().then(() =>{
@@ -42,7 +41,7 @@ router.route('/add').post((req,res) => {
     })
 })
 
-//view all through table
+//view all (through table)
 router.route("/view-all").get((req, res) => {
     WorkShop.find().then((WorkShop) => {
         res.json(WorkShop)
@@ -54,7 +53,8 @@ router.route("/view-all").get((req, res) => {
 //update
 router.route("/update/:id").put(async (req, res) => {
     let workshopId = req.params.id;
-    const { topic, organization, presenter, qualification, email, phone, platform, date, from_time, to_time, document, description,} = req.body;
+    const { topic, organization, presenter, qualification, email, phone, platform, date, from_time, to_time, document, description
+    } = req.body;
     const status ="Pending";
 
     const updateWorkShop = {
