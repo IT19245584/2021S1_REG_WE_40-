@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import HomePageNav from '../../navbars/homePageNav';
-import Footer from '../../footer/footer';
+import HomePageNav from '../../../navbars/homePageNav';
+
 
 export default function WorkshopDetails() {
     const [topic, settopic] = useState("");
@@ -58,17 +58,17 @@ export default function WorkshopDetails() {
         description
      }
 	
-		axios.post(global.url+"/add",addUser).then(() =>{
+		axios.post("http://localhost:6060/workshop/add",addUser).then(() =>{
 
 			Swal.fire({  
 			title: "Success!",
-			text: "Ragistration Success!",
+			text: "Successfully Added!",
 			icon: 'success',
 			confirmButtonText: "OK",
             confirmButtonColor: "#00B74A",
 			type: "success"}).then(okay => {
 				if (okay) {
-					window.location.href = "/";
+					window.location.href = "/workshop";
 				}
 				});
 
@@ -77,7 +77,7 @@ export default function WorkshopDetails() {
 
 			Swal.fire({  
 			title: "Error!",
-			text: "Ragistration Unsuccess! Try Again.",
+			text: "Workshop Details Unsuccess! Try Again.",
 			icon: 'error',
 			confirmButtonText: "OK",
             confirmButtonColor: "#F93154",
@@ -93,7 +93,7 @@ export default function WorkshopDetails() {
                 <div style={{marginLeft:'30%',marginRight:'30%',marginTop:'5%'}}>
                   <div class="mb-3">
                     <label class="form-label">Topic <sup className="text-danger" style={{fontSize:'10px'}}>*Required</sup></label>
-                    <input type="email" class="form-control"  placeholder="Enter Topic" onChange={(e) =>{
+                    <input type="topic" class="form-control"  placeholder="Enter Topic" onChange={(e) =>{
                               settopic(e.target.value);
                             }}/>
                   </div>
@@ -105,71 +105,70 @@ export default function WorkshopDetails() {
                   </div>
                   <div class="mb-3">
                     <label class="form-label">Presenter <sup className="text-danger" style={{fontSize:'10px'}}>*Required</sup></label>
-                    <input type="email" class="form-control"  placeholder="Enter Presenter" onChange={(e) =>{
+                    <input type="presente" class="form-control"  placeholder="Enter Presenter" onChange={(e) =>{
                               setpresenter(e.target.value);
                             }}/>
                   </div>
                   <div class="mb-3">
                     <label class="form-label">Qualification </label>
-                    <input type="organization" class="form-control"  placeholder="Enter Qualifications" onChange={(e) =>{
+                    <input type="text" class="form-control"  placeholder="Enter Qualifications" onChange={(e) =>{
                               setqualification(e.target.value);
                             }}/>
                   </div>
                   <div class="mb-3">
                     <label class="form-label">Email <sup className="text-danger" style={{fontSize:'10px'}}>*Required</sup></label>
-                    <input type="email" class="form-control"  placeholder="Enter Email" onChange={(e) =>{
+                    <input type="text" class="form-control"  placeholder="Enter Email" onChange={(e) =>{
                               setEmail(e.target.value);
                             }}/>
                   </div>
                   <div class="mb-3">
                     <label class="form-label">Phone Number <sup className="text-danger" style={{fontSize:'10px'}}>*Required</sup></label>
-                    <input type="organization" class="form-control"  placeholder="Enter Phone Number" onChange={(e) =>{
+                    <input type="number" class="form-control"  placeholder="Enter Phone Number" onChange={(e) =>{
                               setphone(e.target.value);
                             }}/>
                   </div>
                   <div class="mb-3">
                     <label class="form-label">Platform <sup className="text-danger" style={{fontSize:'10px'}}>*Required</sup></label>
-                    <input type="organization" class="form-control"  placeholder="Enter Platform" onChange={(e) =>{
+                    <input type="platform" class="form-control"  placeholder="Enter Platform" onChange={(e) =>{
                               setplatform(e.target.value);
                             }}/>
                   </div>
                   <div class="mb-3">
                     <label class="form-label">Date <sup className="text-danger" style={{fontSize:'10px'}}>*Required</sup></label>
-                    <input type="email" class="form-control"  placeholder="Enter Date" onChange={(e) =>{
+                    <input type="date" class="form-control"  placeholder="Enter Date" onChange={(e) =>{
                               setdate(e.target.value);
                             }}/>
                   </div>
                   <div class="mb-3">
                     <label class="form-label">From Date <sup className="text-danger" style={{fontSize:'10px'}}>*Required</sup></label>
-                    <input type="organization" class="form-control"  placeholder="Enter From date" onChange={(e) =>{
+                    <input type="date" class="form-control"  placeholder="Enter From date" onChange={(e) =>{
                               setfrom_time(e.target.value);
                             }}/>
                   </div>
                   <div class="mb-3">
                     <label class="form-label">To Date <sup className="text-danger" style={{fontSize:'10px'}}>*Required</sup></label>
-                    <input type="organization" class="form-control"  placeholder="Enter To Date" onChange={(e) =>{
+                    <input type="date" class="form-control"  placeholder="Enter To Date" onChange={(e) =>{
                               setto_time(e.target.value);
                             }}/>
                   </div>
                   <div class="mb-3">
                     <label class="form-label">Document <sup className="text-danger" style={{fontSize:'10px'}}>*Required</sup></label>
-                    <input type="email" class="form-control"  placeholder="Enter Documents" onChange={(e) =>{
+                    <input type="document" class="form-control"  placeholder="Enter Documents" onChange={(e) =>{
                               setdocument(e.target.value);
                             }}/>
                   </div>
                   <div class="mb-3">
                     <label class="form-label">Description </label>
-                    <input type="organization" class="form-control"  placeholder="Enter Description" onChange={(e) =>{
+                    <input type="description" class="form-control"  placeholder="Enter Description" onChange={(e) =>{
                               setdescription(e.target.value);
                             }}/>
                   </div>
                   <div className="text-end pr-4">
-                    <center><button  onClick={sendDate} type="submit" className="btn btn-primary btn-block mb-2" >
+                    <center><button  onClick={sendDate} type="submit" className="btn btn-dark btn-block mb-2" >
                     Submit <i className="fas fa-angle-double-right"></i>
                     </button></center>
                 </div>
                 </div>
-        <Footer/>
      </div>
   );
 }

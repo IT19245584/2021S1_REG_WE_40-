@@ -33,6 +33,34 @@ router.route('/register').post((req, res, next)=>{
     })
 });
 
+router.route('/updatePassword/:email').put((req, res)=>{
+    let email = req.params.email;
+       
+       bcrypt.hash(req.body.password, 10,function(err,hashedPass){
+        if(err){
+            res.json({
+                error:err
+            })
+          }
+           const password = hashedPass;
+           const updatePass={
+               password
+           }
+       const update1 =  user.findOneAndUpdate({email:email},updatePass).then(() => {
+                const update2 =  SystemUser.findOneAndUpdate({email:email},updatePass).then(() => {
+                    res.status(200).send({status :"Update  password"});
+                }).catch((err) => {
+                    console.log(err);
+                    res.status(500).send({status: "Error with Updating Data",error: err.message});
+                });
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).send({status: "Error with Updating Data",error: err.message});
+        });
+          
+    })
+});  
+
 router.route('/login').post((req, res, next) => {
     var email = req.body.email;
     var password = req.body.password;

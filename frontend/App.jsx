@@ -45,6 +45,11 @@ import EditorHome from './components/Admin/Editor/EditorHome';
 
 import Registration from './components/LandingPage/Signin/Registration';
 import Login from './components/LandingPage/Signin/Login';
+import AddResearch from './components/Admin/User/Research/AddReseacrhPaper';
+import AddWorkshop from './components/Admin/User/workshop/AddWorkshopDetails';
+import Research from './components/Admin/User/Research/HomePage';
+import Workshop from './components/Admin/User/workshop/HomePage';
+import Reset from './components/LandingPage/Signin/UpdatePassword';
 
 function App() {
     return (
@@ -63,6 +68,11 @@ function App() {
                     
                     <Route exact path='/Registration'><Registration /></Route>
                     <Route exact path='/Login'><Login /></Route>
+                    <Route exact path='/reset'><Reset /></Route>
+                    <Route exact path='/research'><Research /></Route>
+                    <Route exact path='/addResearch'><AddResearch /></Route>
+                    <Route exact path='/workshop'><Workshop /></Route>
+                    <Route exact path='/addWorkshop'><AddWorkshop /></Route>
 
 
                     {/* Editor Pages  */}

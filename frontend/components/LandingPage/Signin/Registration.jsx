@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import HomePageNav from '../../navbars/homePageNav';
-import Footer from '../../footer/footer';
-import ContactUs from '../ContactUs/ContactBody';
 
 export default function Registration() {
    const [username, setUserName] = useState("");

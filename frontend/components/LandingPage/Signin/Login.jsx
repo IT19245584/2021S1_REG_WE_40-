@@ -35,7 +35,7 @@ export default function Login() {
             confirmButtonText: "OK",
             }).then(okay => {
                 if (okay) {
-                  window.location.href = "/Profile";
+                  window.location.href = "/workshop";
                 }
               });
   }else if(type === '"Attendees"'){
@@ -46,7 +46,7 @@ export default function Login() {
             confirmButtonText: "OK",
             }).then(okay => {
                 if (okay) {
-                  window.location.href = "/phioffficerPanel";
+                  window.location.href = "/attendee";
                 }
               });
   }else{
@@ -57,7 +57,7 @@ export default function Login() {
       confirmButtonText: "OK",
       }).then(okay => {
           if (okay) {
-            window.location.href = "/phioffficerPanel";
+            window.location.href = "/research";
           }
         });
   }
@@ -95,7 +95,7 @@ export default function Login() {
                   </div>
                 </div>
                 <div className="text-end pr-4">
-                  <a href="carpenterReset" className="pb-1">
+                  <a href="/reset" className="pb-1">
                         <span className="text-muted">Reset Password &nbsp;&nbsp;</span>
                   </a>
                 </div>

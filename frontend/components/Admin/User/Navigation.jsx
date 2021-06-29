@@ -15,13 +15,13 @@ function HomeNavBar() {
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/research">Research</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/workshop">Workshop</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/keynote">KeyNotes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Authors</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/workshop">Workshops</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/date">Important Dates</a>
@@ -35,20 +35,7 @@ function HomeNavBar() {
                   <li><a class="dropdown-item" href="/tec">Technical Committee</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/about">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/contact">Contact Us</a>
-              </li>
             </ul>
-            <form className="d-flex">
-                <button className="btn btn-warning " type="submit"><a className="text-decoration-none text-dark" href="/Login">Login</a> <i className="bi bi-box-arrow-in-right"></i></button>&nbsp;&nbsp;
-                <button className="btn btn-outline-warning " type="submit"><a className="text-decoration-none text-white" href="/registration">Registration </a><i className="bi bi-save2"></i></button>&nbsp;&nbsp;
-
-             
-
-            </form>
           </div>
         </div>
       </nav>
