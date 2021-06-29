@@ -47,8 +47,8 @@ app.use("/keynoteSpeaker", KeynoteSpeaker)
 const workshops = require("./routers/WorkShop.js");
 app.use("/workshop", workshops);
 
-const ResearchPaper = require("./routers/ResearchPaper.js");
-app.use("/ResearchPaper", ResearchPaper);
+const ResearchPaper = require("./routers/ResearchPaper");
+app.use("/researchPaper", ResearchPaper);
 
 const PastProceeding = require('./routers/PastProceeding');
 app.use('/pastProceeding',PastProceeding);
