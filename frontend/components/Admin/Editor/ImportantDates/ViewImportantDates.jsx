@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { reactLocalStorage } from 'reactjs-localstorage';
+import Navigation from '../DashboardNavigation/Navigation';
 
 class ViewImportantDates extends Component {
     constructor(props) {
@@ -26,7 +27,7 @@ class ViewImportantDates extends Component {
     }
 
     deleteData(id) {
-        axios.delete('http://localhost:6000/importantDates/delete/' + id)
+        axios.delete('http://localhost:6060/importantDates/delete/' + id)
             .then(() => {
                 Swal.fire({
                     title: "Success!",
@@ -36,7 +37,7 @@ class ViewImportantDates extends Component {
                     type: "success"
                 }).then(okay => {
                     if (okay) {
-                        window.location.href = "/viewpast";
+                        window.location.href = "/viewimpdate";
                     }
                 });
             }).catch((err) => {
@@ -67,6 +68,7 @@ class ViewImportantDates extends Component {
                 <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
                     <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Important Dates</h1>
                 </div>
+                <Navigation/>
                 <div className="card card border border-light shadow-0 mb-3" style={{ maxWidth: '100rem', margin: 'auto', padding: '10px' }}>
                     <div className="card-body" >
                         <div className="row">

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 class AddImportantDates extends Component {
     constructor(props) {
@@ -30,13 +31,35 @@ class AddImportantDates extends Component {
         }
         console.log('Data', ImportantDates);
         axios.post('http://localhost:6060/importantDates/add', ImportantDates)
-            .then(response => {
-                alert("Data successfully inserted")
-            }).catch(error => {
-                console.log(error.message);
-                alert(error.message)
+            .then(() => {
+                Swal.fire({
+                    title: "Success!",
+                    text: "Add Successed!",
+                    icon: 'success',
+                    confirmButtonText: "OK",
+                    type: "success"
+                }).then(okay => {
+                    if (okay) {
+                        window.location.href = "/viewimpdate";
+                    }
+                });
+
+            }).catch((err) => {
+                Swal.fire({
+                    title: "error!",
+                    text: "Not Success",
+                    icon: 'error',
+                    position: 'center',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                });
             })
-    };
+    }
 
     render() {
         return (
@@ -44,7 +67,7 @@ class AddImportantDates extends Component {
                 <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
                     <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add Important Dates</h1>
                 </div>
-                <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px', background:'#fdf4c9', borderRadius:'8px',boxShadow:'inset 6px 6px 13px #f7ebde, inset -6px -6px 13px #fff9ec' }}>
+                <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px', background: '#fdf4c9', borderRadius: '8px', boxShadow: 'inset 6px 6px 13px #f7ebde, inset -6px -6px 13px #fff9ec' }}>
                     <div className="row g-0">
                         <form onSubmit={this.onSubmit}>
                             <div className="form-outline mb-4">

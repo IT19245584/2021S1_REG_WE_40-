@@ -32,7 +32,7 @@ export default function UpdateImportantDates() {
                 type: "success"
             }).then(okay => {
                 if (okay) {
-                    window.location.href = "/viewpast";
+                    window.location.href = "/viewimpdate";
                 }
             });
 
