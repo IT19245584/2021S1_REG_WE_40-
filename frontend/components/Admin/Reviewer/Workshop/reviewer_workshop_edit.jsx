@@ -95,7 +95,6 @@ export default function  Reviewer_Workshop_Edit(){
                         </div>
                         <div className="col-md-7" style={{backgroundColor:"#2C3E50" , width:"", height:""}}>
                             <div className="card-body">
-                                {/* <h5 className="card-title">Edit</h5> */}
                                 <div className="col-md-12 text-light">
                                     <div className="row mb-1">
                                         <div className="col-4 mb-1">
