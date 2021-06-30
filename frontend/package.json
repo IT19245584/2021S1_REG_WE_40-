@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "test": "react-scripts test"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "axios": "^0.21.1",
     "google-maps-react": "^2.0.6",
     "html2canvas": "^1.0.0-rc.7",
+    "jest": "^27.0.6",
     "jspdf": "^2.3.1",
     "parcel": "^2.0.0-nightly.686",
     "react": "^17.0.2",
@@ -21,6 +23,9 @@
     "sweetalert2": "^11.0.16"
   },
   "devDependencies": {
-    "@parcel/transformer-image": "^2.0.0-nightly.2310"
+    "@parcel/transformer-image": "^2.0.0-nightly.2310",
+    "@testing-library/react": "^12.0.0",
+    "jest-dom": "^4.0.0",
+    "react-test-render": "^1.1.2"
   }
 }
