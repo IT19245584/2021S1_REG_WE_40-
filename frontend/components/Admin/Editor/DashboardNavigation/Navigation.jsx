@@ -1,28 +1,7 @@
 import React, { Component } from 'react';
 
 class Navigation extends Component {
-    constructor(props) {
-        super(props);
-        this.LOGOUT = this.LOGOUT.bind(this);
-        this.state = {}
-    }
 
-    LOGOUT() {
-        Cookies.remove('email');
-        reactLocalStorage.clear();
-        Swal.fire({
-            title: "Success!",
-            text: "Logout Success",
-            icon: 'success',
-            timer: 2000,
-            showConfirmButton: false,
-            type: "success"
-        }).then(okay => {
-            if (okay) {
-                window.location.href = "/";
-            }
-        });
-    }
     render() {
         return (
             <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '200px' }}>
@@ -38,7 +17,7 @@ class Navigation extends Component {
                                 <button type="button" class="btn btn-light" ><a href='/viewguest' style={{ fontSize: "20px", color: 'black' }} >Guest Speakers</a></button>
                                 <button type="button" class="btn btn-light"><a href='/viewpast' style={{ fontSize: "20px", color: 'black' }}>Past Proceeding</a></button>
                                 <button type="button" class="btn btn-light"><a href='/viewaboutus' style={{ fontSize: "20px", color: 'black' }}>About Us</a></button>
-                                <button type="button" class="btn btn-light" onClick={LOGOUT}><a href='/Admin_dashbord' style={{ fontSize: "20px", color: 'black' }}>LogOut</a></button>
+                                <button type="button" class="btn btn-light" ><a href='/Admin_dashbord' style={{ fontSize: "20px", color: 'black' }}>LogOut</a></button>
                             </div>
                         </div>
                     </div>
