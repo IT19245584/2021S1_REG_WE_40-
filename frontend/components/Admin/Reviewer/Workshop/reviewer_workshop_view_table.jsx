@@ -30,7 +30,7 @@ export default function  Reviewer_WorkShop_ViewTable(){
 
     function remove(id){
         axios.delete("http://localhost:6060/workshop/delete/"+id).then(() =>{
-        	Swal.fire({  
+            Swal.fire({  
                 title: "Success!",
                 text: "Workshop Deleted",
                 icon: 'success',
@@ -62,7 +62,7 @@ export default function  Reviewer_WorkShop_ViewTable(){
 
     return(
         <div className="container-responsive">
-            <h3>View All Workshop Details</h3>
+            <h3>View Workshop Details</h3>
                 
                 <table className="table table-responsive-sm table-bordered table-hover">
                     <thead className="bg-warning">
@@ -86,7 +86,7 @@ export default function  Reviewer_WorkShop_ViewTable(){
                     </thead>  
                     <tbody>
                         {Workshops.map((workshop, key) => {
-			            return (
+                        return (
                             <tr style={{backgroundColor: '#FEF9E7'}}>
                                 <td className="" scope="row">{key+1}</td>
                                 <td>{workshop.topic}</td>
@@ -133,3 +133,4 @@ export default function  Reviewer_WorkShop_ViewTable(){
         </div>
     )
 }
+
