@@ -75,6 +75,12 @@ function HomePage() {
                                     
                                 </div>
                             </div>
+                            <div >
+                                <div className="card-body">
+                                <a href='/viewResearch'><button type="button" class="btn btn-dark btn-lg"><h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>View Research Detail</h5></button></a>
+                                    
+                                </div>
+                            </div>
                         </div>                      
                     </div>
                     <br/>
