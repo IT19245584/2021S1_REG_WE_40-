@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 class AddAboutUs extends Component {
     constructor(props) {
@@ -11,10 +12,10 @@ class AddAboutUs extends Component {
             dateRange: '',
             conferenceStart: '',
             conferenceEnd: '',
-            conferenceWebsite:'',
-            organizerPhone:'',
-            organizerEmail:'',
-            organizerWebsite:'',
+            conferenceWebsite: '',
+            organizerPhone: '',
+            organizerEmail: '',
+            organizerWebsite: '',
             status: 'Pending'
         }
     };
@@ -30,21 +31,43 @@ class AddAboutUs extends Component {
             dateRange: this.state.dateRange,
             conferenceStart: this.state.conferenceStart,
             conferenceEnd: this.state.conferenceEnd,
-            conferenceWebsite:this.state.conferenceWebsite,
-            organizerPhone:this.state.organizerPhone,
-            organizerEmail:this.state.organizerEmail,
-            organizerWebsite:this.state.organizerWebsite,
+            conferenceWebsite: this.state.conferenceWebsite,
+            organizerPhone: this.state.organizerPhone,
+            organizerEmail: this.state.organizerEmail,
+            organizerWebsite: this.state.organizerWebsite,
             status: this.state.status
         }
         console.log('Data', AddAboutUs);
         axios.post('http://localhost:6060/aboutus/add', AddAboutUs)
-            .then(response => {
-                alert("Data successfully inserted")
-            }).catch(error => {
-                console.log(error.message);
-                alert(error.message)
+            .then(() => {
+                Swal.fire({
+                    title: "Success!",
+                    text: "Added Successed!",
+                    icon: 'success',
+                    confirmButtonText: "OK",
+                    type: "success"
+                }).then(okay => {
+                    if (okay) {
+                        window.location.href = "/viewaboutus";
+                    }
+                });
+
+            }).catch((err) => {
+                Swal.fire({
+                    title: "error!",
+                    text: "Not Success",
+                    icon: 'error',
+                    position: 'center',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                });
             })
-    };
+    }
 
     render() {
         return (
@@ -62,10 +85,10 @@ class AddAboutUs extends Component {
                                 dateRange of conference: <input type="text" id="dateRange" className="form-control border border-dark mb-3" name="dateRange" value={this.state.dateRange} onChange={this.onChange} required />
                             </div>
                             <div className="form-outline mb-4">
-                                Conference Starting dateRange: <input type="text" id="conferenceStart" className="form-control border border-dark mb-3" name="conferenceStart" value={this.state.conferenceStart} onChange={this.onChange} required />
+                                Conference Starting date: <input type="text" id="conferenceStart" className="form-control border border-dark mb-3" name="conferenceStart" value={this.state.conferenceStart} onChange={this.onChange} required />
                             </div>
                             <div className="form-outline mb-4">
-                                Conference End dateRange: <input type="text" id="conferenceEnd" className="form-control border border-dark mb-3" name="conferenceEnd" value={this.state.conferenceEnd} onChange={this.onChange} required />
+                                Conference End date: <input type="text" id="conferenceEnd" className="form-control border border-dark mb-3" name="conferenceEnd" value={this.state.conferenceEnd} onChange={this.onChange} required />
                             </div>
                             <div className="form-outline mb-4">
                                 Website of Conference: <input type="text" id="conferenceWebsite" className="form-control border border-dark mb-3" name="conferenceWebsite" value={this.state.conferenceWebsite} onChange={this.onChange} required />

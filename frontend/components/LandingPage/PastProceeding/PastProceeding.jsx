@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from '../../navbars/homePageNav';
 import Footer from '../../footer/footer';
 import PastHeading from './PastProceedingHeading';
-import PastBody from './PastProceedingDetails';
 import PastImage from './PastProceedingImages';
 
 class PastProceeding extends Component {
@@ -15,11 +14,8 @@ class PastProceeding extends Component {
                     <PastHeading/>
                 </div>
                 <div>
-                    <PastBody/>
-                </div>
-                {/* <div>
                     <PastImage/>
-                </div> */}
+                </div>
                 <Footer/>
             </div>
          );

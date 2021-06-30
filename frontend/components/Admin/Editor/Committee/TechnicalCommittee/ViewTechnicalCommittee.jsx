@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { reactLocalStorage } from 'reactjs-localstorage';
+import Navigation from '../../DashboardNavigation/Navigation';
 
 export default function ViewTechnicalCommittee() {
 
@@ -24,7 +25,7 @@ export default function ViewTechnicalCommittee() {
                     type: "success"
                 }).then(okay => {
                     if (okay) {
-                        window.location.href = "/viewtec";
+                        window.location.href = "/viewtech";
                     }
                 });
             }).catch((err) => {
@@ -55,6 +56,7 @@ export default function ViewTechnicalCommittee() {
                     <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>View technical Committee</h1>
                 </div>
             </div>
+            <Navigation/>
             <div className="container">
                 <a href="/addtec">
                     <div className="text-end mb-4">

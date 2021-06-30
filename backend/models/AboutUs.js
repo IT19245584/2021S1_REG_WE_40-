@@ -32,7 +32,7 @@ const AboutUsSchema = new Schema(
       required: true,
     },
     organizerWebsite: {
-      type: Number,
+      type: String,
       required: true,
     },
     status: {

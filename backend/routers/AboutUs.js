@@ -50,7 +50,7 @@ router.route("/delete/:id").delete(async (req, res) => {
     })
 })
 
-router.route("/updateRange/:id").post(async (req, res) => {
+router.route("/update/:id").post(async (req, res) => {
   let id = req.params.id
   const description = req.body.description
   const dateRange = req.body.dateRange
@@ -72,9 +72,9 @@ router.route("/updateRange/:id").post(async (req, res) => {
     organizerWebsite,
     status,
   }
-  const updateRange = await AboutUs.findOneAndUpdateRange({ _id: id }, updateRangeAboutUs)
+  const updateRange = await AboutUs.findOneAndUpdate({ _id: id }, updateRangeAboutUs)
     .then(() => {
-      res.status(200).send({ status: "Successfully updateRanged about us" })
+      res.status(200).send({ status: "Successfully updated about us" })
     })
     .catch((err) => {
       console.log(err)
