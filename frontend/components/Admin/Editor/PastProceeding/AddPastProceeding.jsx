@@ -45,7 +45,7 @@ export default function AddPastProceeding() {
     }
 
     return (
-        <div>
+        <div data-testid="past-1">
             <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
                 <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add Past Proceeding</h1>
             </div>
@@ -53,7 +53,7 @@ export default function AddPastProceeding() {
                 <div className="row g-0">
                     <div className="form-outline mb-4">
                         <label className="form-label" for="customFile">Add Image</label>
-                        <input type="file" onChange={(e) => { setimageSelected(e.target.files[0]) }} className="form-control" id="customFile" required />
+                        <input data-testid="image-input" type="file" onChange={(e) => { setimageSelected(e.target.files[0]) }} className="form-control" id="customFile" required />
 
                     </div>
                     <div className="form-outline mb-4">
