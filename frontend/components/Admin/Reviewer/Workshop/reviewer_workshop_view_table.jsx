@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {reactLocalStorage} from 'reactjs-localstorage';
+import NAV from '../reviewer_dashboard.jsx';
 
 export default function  Reviewer_WorkShop_ViewTable(){
 
@@ -48,21 +49,23 @@ export default function  Reviewer_WorkShop_ViewTable(){
         });
     }
 
-    function update(id, topic, organization, purpose, team_leader, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description ){
-        reactLocalStorage.setObject("Reviewer_Workshop_Edit", [id, topic, organization, purpose, team_leader, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description]);
+    function update(id, topic, organization, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description){
+        reactLocalStorage.setObject("Reviewer_Workshop_Edit", [id, topic, organization, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description]);
         window.location.href = "/update"
     }
 
-    function show(id, topic, organization, purpose, team_leader, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description ){
-        reactLocalStorage.setObject("Reviewer_Workshop_Show", [id, topic, organization, purpose, team_leader, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description]);
-        window.location.href = "/show"
-    }
+    // function show(id, topic, organization, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description){
+    //     reactLocalStorage.setObject("Reviewer_Workshop_Show", [id, topic, organization, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description]);
+    //     window.location.href = "/show"
+    // }
 
     return(
-            <div className="container">
+        
+            <div className="container-responsive">
+                <NAV/>
                 <h3>View Workshop Details</h3>
                 
-                <table className="table table-responsive table-hover">
+                <table className="table table-responsive table-hover table-bordered ">
                     <thead className="bg-warning">
                         <tr>
                             <th scope = "col"  >No</th>
@@ -79,13 +82,13 @@ export default function  Reviewer_WorkShop_ViewTable(){
                             <th scope = "col" >Upload</th>
                             <th scope = "col" >Description</th>
                             <th scope = "col" >Status</th>
-                            <th scope = "col" >Action</th>
+                            <th scope = "col" style={{width:"50px"}}>Action</th>
                         </tr>  
                     </thead>  
                     <tbody>
                             {Workshops.map((workshop, key) => {
 			                return (
-                        <tr>
+                        <tr style={{backgroundColor: '#FEF9E7'}}>
                             <td className="" scope="row">{key+1}</td>
                             <td>{workshop.topic}</td>
                             <td>{workshop.organization}</td>
@@ -99,34 +102,30 @@ export default function  Reviewer_WorkShop_ViewTable(){
                             <td>{workshop.to_time}</td>
                             <td>{workshop.document}</td>
                             <td>{workshop.description}</td>
-                            <td class="text-secondary"> {workshop.status} 
-                                {/* <a  onClick={change(workshop.status="approved")}> 
-                                    <i class="text-secondary bi bi-mask"></i>
-                                </a>     */}
-                            </td>
-                            <td>
+                            <td className="text-light badge bg-dark">{workshop.status}</td>
+                                <td>
                                 <div className="row">
-                                    <div className="col-4">
+                                    <div className="col-1">
                                         <a onClick={() => remove(workshop._id)} className="m-1 text-danger">
                                             <i className="bi bi-trash-fill"></i>
                                         </a>
                                     </div> 
-                                <div className="col-4">
-                                    <a onClick={() => update(
-                                        workshop._id, workshop.topic, workshop.organization, workshop.purpose, workshop.team_leader, workshop.presenter, workshop.phone, workshop.email, workshop.qualification, workshop.platform, workshop.date, workshop.from_time, workshop.to_time, workshop.document, workshop.description
-                                        )} className="m-1">
-                                        <i className="bi bi-pencil-square"></i>
-                                    </a>
+                                    <div className="col-1">
+                                        <a onClick={() => update(
+                                            workshop._id, workshop.topic, workshop.organization, workshop.presenter, workshop.phone, workshop.email, workshop.qualification, workshop.platform, workshop.date, workshop.from_time, workshop.to_time, workshop.document, workshop.description, workshop.status
+                                            )} className="m-1">
+                                            <i className="bi bi-pencil-square"></i>
+                                        </a>
+                                    </div>
+                                    {/* <div className="col-1">
+                                        <a onClick={() => show(
+                                            workshop._id, workshop.topic, workshop.organization, workshop.presenter, workshop.phone, workshop.email, workshop.qualification, workshop.platform, workshop.date, workshop.from_time, workshop.to_time, workshop.document, workshop.description, workshop.status
+                                            )} className="m-1">
+                                            <i className="bi bi-filter-square text-info"></i>
+                                        </a>
+                                    </div>    */}
                                 </div>
-                                <div className="col-4">
-                                    <a onClick={() => show(
-                                        workshop._id, workshop.topic, workshop.organization, workshop.purpose, workshop.team_leader, workshop.presenter, workshop.phone, workshop.email, workshop.qualification, workshop.platform, workshop.date, workshop.from_time, workshop.to_time, workshop.document, workshop.description
-                                        )} className="m-1">
-                                        <i class="bi bi-filter-square"></i>
-                                    </a>
-                                </div>   
-                            </div>
-                        </td>
+                                </td>
                     </tr>   
                 );
             })}

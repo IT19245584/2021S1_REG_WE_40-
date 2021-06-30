@@ -1,6 +1,6 @@
 import React ,{useState , useEffect} from "react";
 
-function ReviewerDashboard() {
+function NAV() {
   return (
         <div>
        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -12,19 +12,10 @@ function ReviewerDashboard() {
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="#">Privacy Policy</a>
+                    <a class="nav-link text-warning" href="/view-all-rp">Research Paper </a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">RPaper View Table </a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">RPaper edit</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Workshop View Table</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Workshop edit</a>
+                    <a class="nav-link text-warning" href="/view-all-ws">Workshop</a>
                     </li>
                 </ul>
                 </div>
@@ -34,4 +25,4 @@ function ReviewerDashboard() {
     );
 }
 
-export default ReviewerDashboard;
+export default NAV;

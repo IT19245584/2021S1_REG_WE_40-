@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {reactLocalStorage} from 'reactjs-localstorage';
+import NAV from '../reviewer_dashboard.jsx'; 
 
 export default function  Reviewer_Workshop_Edit(){
 
@@ -61,7 +62,8 @@ export default function  Reviewer_Workshop_Edit(){
     }
 
     return(
-        <div className="container">
+        <div className="container-responsive">
+            <NAV/>
             <h3>Edit Workshop Details.</h3>
             <form onSubmit={sendData}>
                 <div className="card mb-1" style={{maxWidth: "fixed"}}>
