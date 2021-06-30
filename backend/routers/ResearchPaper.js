@@ -43,9 +43,9 @@ router.route("/view-all").get((req, res) => {
 //update
 router.route("/update/:id").put(async (req, res) => {
     let researchpaperId = req.params.id;
-    const {  topic, university, purpose, team_leader, email, phone, document, description
+    const {  topic, university, purpose, team_leader, email, phone, document, description, status
     } = req.body;
-    const status ="Pending";
+    // const status ="Pending";
 
     const updateResearchpaper = {
         topic,
