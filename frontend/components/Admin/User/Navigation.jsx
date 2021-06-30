@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function HomeNavBar() {
   return (
     <div>
@@ -36,6 +37,9 @@ function HomeNavBar() {
                 </ul>
               </li>
             </ul>
+            <form className="d-flex">
+            <button className="btn btn-warning " type="submit"><a className="text-decoration-none text-dark" href="/profile">Profile</a> <i className="bi bi-box-arrow-in-right"></i></button>&nbsp;&nbsp;
+            </form>
           </div>
         </div>
       </nav>

@@ -46,7 +46,7 @@ export default function Login() {
             confirmButtonText: "OK",
             }).then(okay => {
                 if (okay) {
-                  window.location.href = "/attendee";
+                  window.location.href = "/";
                 }
               });
   }else{

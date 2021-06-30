@@ -69,6 +69,12 @@ function HomePage() {
                                     
                                 </div>
                             </div>
+                            <div >
+                                <div className="card-body">
+                                <a href='/viewWorkshop'><button type="button" class="btn btn-dark btn-lg"><h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>View status of Workshop Details</h5></button></a>
+                                    
+                                </div>
+                            </div>
                         </div>                      
                     </div>
                     <br/>
