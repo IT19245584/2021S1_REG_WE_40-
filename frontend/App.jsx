@@ -26,6 +26,21 @@ import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/ResearchPap
 import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
 import NAV from './components/Admin/Reviewer/reviewer_dashboard';
 
+
+
+import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
+import Admin_BudjectView from './components/Admin/Admin/admin_BujectView.jsx';
+import Admin_side_login from './components/Admin/login';
+import Admin_side_registration from './components/Admin/registration';
+import Admin_side_Wait from './components/Admin/waitPage';
+import Admin_side_pass_rest from './components/Admin/resetPassword';
+import Admin_dashboard_user from './components/Admin/Admin/admin_dashboard_user';
+import Admin_dashboard_Add_user from './components/Admin/Admin/admin_Add_new_user';
+import Admin_Reset_password from './components/Admin/Admin/admin_Reset_password';
+import Admin_keynote from './components/Admin/Admin/admin_keynote_person';
+import Admin_Supplier from './components/Admin/Admin/admin_supplier';
+import Admin_add_Supplier from './components/Admin/Admin/admin_add_Supplier';
+
 import ViewOrgCommittee from './components/Admin/Editor/Committee/OrganizingCommittee/ViewOrganizingCommittee';
 import ViewTechCommittee from './components/Admin/Editor/Committee/TechnicalCommittee/ViewTechnicalCommittee';
 import UpdateOrgCommittee from './components/Admin/Editor/Committee/OrganizingCommittee/UpdateOrganizingCommittee';
@@ -102,6 +117,20 @@ function App() {
 
                     {/* Admin Pages */}
                     <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>
+
+
+                    <Route exact path="/Admin_side_login"><Admin_side_login /></Route>
+                    <Route exact path="/Admin_side_registration"><Admin_side_registration /></Route>
+                    <Route exact path="/Admin_side_Wait"><Admin_side_Wait /></Route>
+                    <Route exact path="/Admin_side_pass_rest"><Admin_side_pass_rest /></Route>
+                    <Route exact path="/Admin_dashboard_user"><Admin_dashboard_user /></Route>
+                    <Route exact path="/Admin_dashboard_Add_user"><Admin_dashboard_Add_user /></Route>
+                    <Route exact path="/Admin_Reset_password"><Admin_Reset_password /></Route>
+                    <Route exact path="/Admin_keynote"><Admin_keynote /></Route>
+                    <Route exact path="/Admin_Supplier"><Admin_Supplier /></Route>
+                    <Route exact path="/Admin_add_Supplier"><Admin_add_Supplier /></Route>
+                    
+
                     <Route exact path="/Admin_BudjectView"><Admin_BudjectView /></Route>
 
                     {/* Reviewer's pages */}
