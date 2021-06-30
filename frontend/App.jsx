@@ -20,15 +20,11 @@ import ViewImportantDates from './components/Admin/Editor/ImportantDates/ViewImp
 import ViewGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/ViewGuestSpeaker';
 import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes';
 
-
-import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
-import Admin_BudjectView from './components/Admin/Admin/admin_BujectView.jsx';
-
-import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_one';
+import Reviewer_Workshop_Edit from './components/Admin/Reviewer/Workshop/reviewer_workshop_edit';
+import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/Workshop/reviewer_workshop_view_table';
 import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_edit';
 import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
-import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_one';
-import ReviewerDashboard from './components/Admin/Reviewer/reviewer_dashboard';
+import NAV from './components/Admin/Reviewer/reviewer_dashboard';
 
 import ViewOrgCommittee from './components/Admin/Editor/Committee/OrganizingCommittee/ViewOrganizingCommittee';
 import ViewTechCommittee from './components/Admin/Editor/Committee/TechnicalCommittee/ViewTechnicalCommittee';
@@ -45,6 +41,8 @@ import UpdateGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers
 import EditorHome from './components/Admin/Editor/EditorHome';
 import ImportantDatePdf from './components/LandingPage/ImportantDates/ImportantDatePdf';
 
+import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
+import Admin_BudjectView from './components/Admin/Admin/admin_BujectView.jsx';
 import Registration from './components/LandingPage/Signin/Registration';
 import Login from './components/LandingPage/Signin/Login';
 import AddResearch from './components/Admin/User/Research/AddReseacrhPaper';
@@ -67,7 +65,7 @@ function App() {
                     <Route exact path='/about'><AboutUs /></Route>
                     <Route exact path='/date'><ImportantDate /></Route>
                     <Route exact path='/past'><PastProceeding /></Route>
-                    
+
                     <Route exact path='/Registration'><Registration /></Route>
                     <Route exact path='/Login'><Login /></Route>
                     <Route exact path='/reset'><Reset /></Route>
@@ -107,11 +105,11 @@ function App() {
                     <Route exact path="/Admin_BudjectView"><Admin_BudjectView /></Route>
 
                     {/* Reviewer's pages */}
-                    <Route path="/dashboard" exact component={ReviewerDashboard} />
+                    <Route path="/dashboard" exact component={NAV} />
                     <Route path="/view-all-rp" exact component={Reviewer_ResearchPaper_ViewTable} />
+                    <Route path="/view-all-ws" exact component={Reviewer_WorkShop_ViewTable} />
                     <Route path="/update" exact component={Reviewer_ResearchPaper_Edit} />
-                    <Route path="/edit-researchpaper" exact component={Reviewer_ResearchPaper_Edit} />
-                    <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} />
+                    <Route path="/update" exact component={Reviewer_Workshop_Edit} />
 
                 </Switch>
             </Router>
@@ -120,5 +118,8 @@ function App() {
 }
 
 export default App;
+
+
+
 
 
