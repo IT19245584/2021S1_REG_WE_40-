@@ -4,29 +4,24 @@ import Swal from 'sweetalert2';
 import {reactLocalStorage} from 'reactjs-localstorage';
 import HomePageNav from '../../../navbars/homePageNav';
 
-export default function ShowStudent(){
+export default function researchpaper(){
 
-    var ShowStudent = reactLocalStorage.getObject('ShowStudent');
+    var researchpaper = reactLocalStorage.getObject('researchpaper');
 
-    const [papers, setPapers] = useState([]);
-
-    const id = ShowStudent[0];
-
-   
-    const [topic, setTopic] = useState("");
-    const [university, setUniversity] = useState("");
-    const [purpose, setPurpose] = useState("");
-    const [team_leader, setTeam_leader] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [document, setDocument] = useState("");
-    const [description, setDescription] = useState("");
-    const [isDisabled, setDisabled] = useState(true);
+    const id = researchpaper[0];
+    const [topic, setTopic] = useState(researchpaper[1]);
+    const [university, setUniversity] = useState(researchpaper[2]);
+    const [purpose, setPurpose] = useState(researchpaper[3]);
+    const [team_leader, setTeam_leader] = useState(researchpaper[4]);
+    const [email, setEmail] = useState(researchpaper[5]);
+    const [phone, setPhone] = useState(researchpaper[6]);
+    const [document, setDocument] = useState(researchpaper[7]); 
+    const [description, setDescription] = useState(researchpaper[8]);
 
     function sendData(e){
         e.preventDefault();
         
-        const showStudent = {
+        const researchpaper = {
             topic, 
             university,
             purpose,
@@ -40,12 +35,12 @@ export default function ShowStudent(){
         }
 
         
-        axios.get("http://localhost:6060/researchPaper/get/:id"._id, showStudent).then(()=>{
+        axios.get("http://localhost:6060/researchPaper/get/"+_id, researchpaper).then(()=>{
             const id = 0;
 		// 	
 // Swal.fire({  
 		// 	title: "Success!",
-		// 	text: "Details Updating Success!",
+		// 	text: "Payment Success!",
 		// 	icon: 'success',
 		// 	confirmButtonText: "OK",
 		// 	type: "success"}).then(okay => {
@@ -130,8 +125,16 @@ export default function ShowStudent(){
                         setDescription(e.target.value);
                     }} disabled/>
             </div>
+            
+            
         </form>
+        <br/><br/>
+        <div className="text-end pr-4">
+                    <button type="text" className="btn btn-dark btn-block mb-2" >
+                    Pay <i className="fas fa-angle-double-right"></i>
+                    </button>
+                </div>
         </div>
         </div>
     )
-                }
+}
