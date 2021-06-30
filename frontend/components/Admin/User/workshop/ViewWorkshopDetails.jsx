@@ -1,36 +1,30 @@
 import React, {useState} from "react";
 import axios from 'axios';
-import Swal from 'sweetalert2';
-import {reactLocalStorage} from 'reactjs-localstorage';
 import HomePageNav from '../../../navbars/homePageNav';
+import {reactLocalStorage} from 'reactjs-localstorage';
 
-export default function ShowStudent(){
+export default function Workshop(){
 
-    var ShowStudent = reactLocalStorage.getObject('ShowStudent');
+    var Workshop = reactLocalStorage.getObject('Workshop');
 
-    const [Workshops, setWorkshops] = useState([]);
-
-    const id = ShowStudent[0];
-
-    const [topic, setTopic] = useState(ShowStudent[1]);
-    const [organization, setOrganization] = useState(ShowStudent[2]);
-    const [presenter, setPresenter] = useState(ShowStudent[3]);
-    const [phone, setPhone] = useState(ShowStudent[4]);
-    const [email, setEmail] = useState(ShowStudent[5]);
-    const [qualification, setQualification] = useState(ShowStudent[6]);
-    const [platform, setPlatform] = useState(ShowStudent[7]);
-    const [date, setDate] = useState(ShowStudent[8]);
-    const [from_time, setFrom_time] = useState(ShowStudent[9]);
-    const [to_time, setTo_time] = useState(ShowStudent[10]);
-    const [document, setDocument] = useState(ShowStudent[11]);
-    const [description, setDescription] = useState(ShowStudent[12]);
-    const [isDisabled, setDisabled] = useState(true);
+    const id = Workshop[0];
+    const [topic, setTopic] = useState(Workshop[1]);
+    const [organization, setOrganization] = useState(Workshop[2]);
+    const [presenter, setPresenter] = useState(Workshop[3]);
+    const [phone, setPhone] = useState(Workshop[4]);
+    const [email, setEmail] = useState(Workshop[5]);
+    const [qualification, setQualification] = useState(Workshop[6]);
+    const [platform, setPlatform] = useState(Workshop[7]); 
+    const [date, setDate] = useState(Workshop[8]);
+    const [from_time, setFrom_time] = useState(Workshop[9]);
+    const [to_time, setTo_time] = useState(Workshop[10]);
+    const [document, setDocument] = useState(Workshop[11]);
+    const [description, setDescription] = useState(Workshop[12]);
 
     function sendData(e){
         e.preventDefault();
-        
-        const showStudent = {
-            topic, 
+        const Workshop = {
+            topic,
             organization,
             presenter,
             phone,
@@ -42,12 +36,10 @@ export default function ShowStudent(){
             to_time,
             document,
             description
-
-
         }
 
         
-        axios.get("http://localhost:6060/workshop/get/:id"._id, showStudent).then(()=>{
+        axios.get("http://localhost:6060/workshop/get/"+_id, Workshop).then(()=>{
             const id = 0;
 		// 	
 // Swal.fire({  
