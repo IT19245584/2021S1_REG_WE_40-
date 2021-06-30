@@ -50,9 +50,14 @@ const workShopSchema = new Schema({
     description: {
         type: String,
         required: true
-        },
+    },
+    status: {
+        type: String,
+        required: true
+    }
+        
 }, {
 timestamps: true
 });
-const workShop_Schema = mongoose.model('workShop', workShopSchema);
-module.exports = workShop_Schema;
+const WorkShop = mongoose.model('WorkShop', workShopSchema);
+module.exports = WorkShop;

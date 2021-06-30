@@ -1,11 +1,11 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {reactLocalStorage} from 'reactjs-localstorage';
 
 export default function  Reviewer_WorkShop_ViewTable(){
 
-    const [workshops, setWorkshops] = useState([]);
+    const [Workshops, setWorkshops] = useState([]);
 
     const [topic, setTopic] = useState("");
     const [organization, setOrganization] = useState("");
@@ -21,13 +21,13 @@ export default function  Reviewer_WorkShop_ViewTable(){
     const [description, setDescription] = useState("");
 
     useEffect(() => {
-        axios.get("http://localhost:8080/workshops/")
+        axios.get("http://localhost:6060/workshop/view-all")
         .then(res => setWorkshops(res.data))
         .catch(error => console.log(error));
-    })
-    
+    });
+
     function remove(id){
-        axios.delete("http://localhost:8080/workshops/delete/"+id).then(() =>{
+        axios.delete("http://localhost:6060/workshop/delete/"+id).then(() =>{
         	Swal.fire({  
                 title: "Success!",
                 text: "Workshop Deleted",
@@ -52,9 +52,16 @@ export default function  Reviewer_WorkShop_ViewTable(){
         reactLocalStorage.setObject("Reviewer_Workshop_Edit", [id, topic, organization, purpose, team_leader, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description]);
         window.location.href = "/update"
     }
-        return(
-            <div class="container">
+
+    function show(id, topic, organization, purpose, team_leader, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description ){
+        reactLocalStorage.setObject("Reviewer_Workshop_Show", [id, topic, organization, purpose, team_leader, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description]);
+        window.location.href = "/show"
+    }
+
+    return(
+            <div className="container">
                 <h3>View Workshop Details</h3>
+                
                 <table className="table table-responsive table-hover">
                     <thead className="bg-warning">
                         <tr>
@@ -76,9 +83,10 @@ export default function  Reviewer_WorkShop_ViewTable(){
                         </tr>  
                     </thead>  
                     <tbody>
-                    {workshops.map((workshop, key) => {
+                            {Workshops.map((workshop, key) => {
+			                return (
                         <tr>
-                            <td scope="row">1</td>
+                            <td className="" scope="row">{key+1}</td>
                             <td>{workshop.topic}</td>
                             <td>{workshop.organization}</td>
                             <td>{workshop.presenter}</td>
@@ -86,31 +94,42 @@ export default function  Reviewer_WorkShop_ViewTable(){
                             <td>{workshop.email}</td>
                             <td>{workshop.qualification} </td>
                             <td>{workshop.platform}</td>
+                            <td>{workshop.date}</td>
                             <td>{workshop.from_time}</td>
                             <td>{workshop.to_time}</td>
                             <td>{workshop.document}</td>
                             <td>{workshop.description}</td>
-                            <td>
-                            <i class="bi bi-trash-fill"></i>
+                            <td class="text-secondary"> {workshop.status} 
+                                {/* <a  onClick={change(workshop.status="approved")}> 
+                                    <i class="text-secondary bi bi-mask"></i>
+                                </a>     */}
                             </td>
                             <td>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <a onClick={() => remove(workshop._id)} class="m-1 text-danger">
-                                            <i class="bi bi-trash-fill"></i>
+                                <div className="row">
+                                    <div className="col-4">
+                                        <a onClick={() => remove(workshop._id)} className="m-1 text-danger">
+                                            <i className="bi bi-trash-fill"></i>
                                         </a>
                                     </div> 
-                                <div class="col-6">
+                                <div className="col-4">
                                     <a onClick={() => update(
                                         workshop._id, workshop.topic, workshop.organization, workshop.purpose, workshop.team_leader, workshop.presenter, workshop.phone, workshop.email, workshop.qualification, workshop.platform, workshop.date, workshop.from_time, workshop.to_time, workshop.document, workshop.description
-                                        )} class="m-1">
-                                        <i class="bi bi-pencil-square"></i>
+                                        )} className="m-1">
+                                        <i className="bi bi-pencil-square"></i>
+                                    </a>
+                                </div>
+                                <div className="col-4">
+                                    <a onClick={() => show(
+                                        workshop._id, workshop.topic, workshop.organization, workshop.purpose, workshop.team_leader, workshop.presenter, workshop.phone, workshop.email, workshop.qualification, workshop.platform, workshop.date, workshop.from_time, workshop.to_time, workshop.document, workshop.description
+                                        )} className="m-1">
+                                        <i class="bi bi-filter-square"></i>
                                     </a>
                                 </div>   
                             </div>
                         </td>
                     </tr>   
-                })} 
+                );
+            })}
                 </tbody>  
             </table>   
         </div>

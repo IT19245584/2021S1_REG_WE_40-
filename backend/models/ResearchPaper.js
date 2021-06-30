@@ -35,8 +35,12 @@ const researchPaperSchema = new Schema({
         type: String,
         required: true
         },
+    status: {
+        type: String,
+        required: true
+    }    
 }, {
 timestamps: true
 });
-const research_Paper_Schema = mongoose.model('research_Paper', researchPaperSchema);
-module.exports = research_Paper_Schema;
+const ResearchPaper = mongoose.model('ResearchPaper', researchPaperSchema);
+module.exports = ResearchPaper;

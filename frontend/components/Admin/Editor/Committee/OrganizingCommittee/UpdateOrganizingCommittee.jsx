@@ -22,7 +22,7 @@ export default function UpdateOrganizingCommittee() {
             status
         }
 
-        axios.post("http://localhost:6060/techCommittee/updateOrganizingCommittee/" + id, newUpdateCommittee).then(() => {
+        axios.post("http://localhost:6060/orgCommittee/updateOrganizingCommittee/" + id, newUpdateCommittee).then(() => {
 
             Swal.fire({
                 title: "Success!",

@@ -24,7 +24,7 @@ export default function AddKeyNoteSpeaker() {
                 description,
                 status
             }
-            axios.post("ihttp://localhost:6060/keynoteSpeaker/add", AddKeyNoteSpeaker)
+            axios.post("http://localhost:6060/keynoteSpeaker/add", AddKeyNoteSpeaker)
                 .then(() => {
                     Swal.fire({
                         title: "Success!",
@@ -52,9 +52,9 @@ export default function AddKeyNoteSpeaker() {
     return (
         <div>
             <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
-                <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add Guest Speakers</h1>
+                <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add KeyNote Speakers</h1>
             </div>
-            <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px', background: '#fdf4c9', borderRadius: '8px', boxShadow: 'inset 6px 6px 13px #f7ebde, inset -6px -6px 13px #fff9ec' }}>
+            <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
                 <div className="row g-0">
                     <div className="form-outline mb-4">
                         Name: <input type="text" id="name" className="form-control border border-dark mb-3" name="name" onChange={(e) => { setName(e.target.value) }} required />
