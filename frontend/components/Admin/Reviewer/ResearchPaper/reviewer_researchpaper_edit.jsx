@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {reactLocalStorage} from 'reactjs-localstorage';
+import { send } from 'emailjs-com';
 
 export default function Reviewer_ResearchPaper_Edit(){
     
@@ -16,11 +17,14 @@ export default function Reviewer_ResearchPaper_Edit(){
     const [phone, setPhone] = useState(researchpaperUpdate[6]);
     const [document, setDocument] = useState(researchpaperUpdate[7]); 
     const [description, setDescription] = useState(researchpaperUpdate[8]);
-
+    const [status, setStatus] = useState(researchpaperUpdate[9]);
+    const [toSend, setToSend] = useState({
+        from_name: topic,
+      });
     
     function sendData(e){
         e.preventDefault();
-        const updateDetails = {
+        const researchpaperUpdate = {
             topic,
             university,
             purpose,
@@ -28,11 +32,21 @@ export default function Reviewer_ResearchPaper_Edit(){
             email,
             phone,
             document,
-            description
+            description,
+            status
         }
 
-        axios.put("http://localhost:6060/researchPaper/update/"+id,updateDetails).then(() => {
+        axios.put("http://localhost:6060/researchPaper/update/"+id, researchpaperUpdate).then(() => {
             const id = 0;
+            send(
+                'service_zj3eu8g',
+                'template_7z0ihh9',
+                toSend,
+                'user_iaQm5Tj9yssvCrb7KNE72'
+            )
+                .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                               
             Swal.fire({
                 title: "Success!",
                 text: "Successfully Updated!",
@@ -43,6 +57,10 @@ export default function Reviewer_ResearchPaper_Edit(){
                         window.location.href="/view-all-rp";
                     }
                 });
+            })
+            .catch((err) => {
+                console.log('Failed...', err);
+            });
             }).catch((err) => {
                 Swal.fire({
                     title: "Error!",
@@ -51,7 +69,7 @@ export default function Reviewer_ResearchPaper_Edit(){
                     confirmButtonText: "Ok",
                     type: "success"})
                 })
-         
+
     }
         return(
             <div className="container">
@@ -72,7 +90,7 @@ export default function Reviewer_ResearchPaper_Edit(){
                                 <div className="col-md-12">
 
                                     <div className="row mb-1">
-                                    <div className="col-6 mb-1">
+                                    <div className="col-4 mb-1">
                                         <label for="" className="form-label text-left">Topic: </label>
                                         <div className="input-group">
                                             <span className="input-group-text bg-dark"><i className="bi bi-card-heading text-warning"></i></span>
@@ -82,12 +100,22 @@ export default function Reviewer_ResearchPaper_Edit(){
                                         </div> 
                                     </div>
 
-                                    <div className="mb-1 col-6">
+                                    <div className="mb-1 col-4">
                                         <label for="" className="form-label">University: </label>
                                         <div className="input-group">
                                             <span className="input-group-text bg-dark"><i className="bi bi-building text-warning"></i></span>
                                             <input type="text" className="input-group form-control" id="university" name="university" value={university} onChange={(e) => {
                                                 setUniversity(e.target.value);
+                                            }}/>
+                                        </div> 
+                                    </div>
+
+                                    <div className="mb-1 col-4">
+                                        <label for="" className="form-label">Status: </label>
+                                        <div className="input-group">
+                                            <span className="input-group-text bg-dark"><i className="bi bi-building text-warning"></i></span>
+                                            <input type="text" className="input-group form-control" id="status" name="status" value={status} onChange={(e) => {
+                                                setStatus(e.target.value);
                                             }}/>
                                         </div> 
                                     </div>
@@ -160,7 +188,7 @@ export default function Reviewer_ResearchPaper_Edit(){
 
                                     <div className="mt-2">
                                         <center>
-                                        <button type="submit" className="btn btn-success mx-5">Edit </button>   
+                                        <button type="submit" className="btn btn-primary mx-5">Edit Details</button>   
                                         </center> 
                                     </div>
                                    
