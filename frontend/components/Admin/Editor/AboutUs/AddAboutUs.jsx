@@ -21,19 +21,6 @@ class AddAboutUs extends Component {
         }
     };
 
-    componentDidMount() {
-        axios.get('http://localhost:6060/admin_side_user/searchUser')
-            .then(response => {
-                const admin = response.data;
-                this.setState({ admin });
-                console.log("response", response);
-            }).catch(error => {
-                alert(error.message);
-                console.log("Error", error);
-            });
-    }
-
-
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value })
     };
@@ -120,18 +107,11 @@ class AddAboutUs extends Component {
                             </div>
                             <div className="form-outline mb-4">
                                 Status:
-                                {admin.type === "Admin" ?
-                                    <select className="form-select" aria-label="Default select example" disabled={false} id="status" name="status" value={this.state.status} onChange={this.onChange}>
-                                        <option selected>Pending</option>
-                                        <option>Post</option>
-                                        <option>Rejected</option>
-                                    </select> :
-                                    <select className="form-select" aria-label="Default select example" disabled={true} id="status" name="status" value={this.state.status} onChange={this.onChange}>
-                                        <option selected>Pending</option>
-                                        <option>Post</option>
-                                        <option>Rejected</option>
-                                    </select>
-                                }
+                                <select className="form-select" aria-label="Default select example" disabled={false} id="status" name="status" value={this.state.status} onChange={this.onChange}>
+                                    <option selected>Pending</option>
+                                    <option>Post</option>
+                                    <option>Rejected</option>
+                                </select>
                             </div>
                             <button type="submit" className="btn btn-primary btn-block mb-4">Save</button>
                         </form>
