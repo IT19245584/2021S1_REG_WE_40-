@@ -60,7 +60,7 @@ export default function Admin_BujectView(){
             from,
             type
         }
-         axios.post("http://localhost:6060/admin_accept_budject/addMoney",newIncome).then(() =>{
+     axios.post("http://localhost:6060/admin_accept_budject/addMoney",newIncome).then(() =>{
      e.preventDefault();
      Swal.fire({  
        title: "Success!",
@@ -82,6 +82,22 @@ export default function Admin_BujectView(){
        type: "success"})
    });
    }
+
+   const [TotalIncome,setTotalIcome] = useState([]);
+     useEffect(() => {
+    axios.get('http://localhost:6060/admin_accept_budject/searchIncome')
+    .then(res => setTotalIcome(res.data))
+    .catch(error => console.log(error));
+  });
+
+   const [Expences,set_Expences] = useState([]);
+   useEffect(() => {
+    axios.get('http://localhost:6060/admin_accept_budject/searchExpences')
+    .then(res => set_Expences(res.data))
+    .catch(error => console.log(error));
+  });
+
+   
 
    function saveExpences(e){
          e.preventDefault();
@@ -132,8 +148,10 @@ return (
                                             <label className="h5 fw-normal">Accepted Income</label>
                                         </div>
                                         <div class="col-sm pt-4">
-                                            <h3 className="text-dark" style={{lineHeight:'14px'}}>RS.1000.00</h3>
-                                            <label className="h5 fw-normal text-dark">Current Income</label>
+                                            
+                                                <h3 className="text-dark" style={{lineHeight:'14px'}}>RS.1000.00</h3>
+                                                <label className="h5 fw-normal text-dark">Current Income</label>
+                                             
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +169,7 @@ return (
                                 </div>
                              </div>
                           ))}
-
+                             
                              <div className="text-end">
                                 <button type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" className="btn btn-outline-dark fw-bold btn-sm">Add / Update Budject <i class="bi bi-plus-circle-fill"></i></button>{' '}
                                 <button type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdropIncome" className="btn btn-outline-success fw-bold btn-sm">Add Income <i class="bi bi-caret-down-fill"></i></button>{' '}
@@ -189,6 +207,47 @@ return (
                                         </div>
                                         </div>
                                       </div>
+                                </div>
+                                <hr/>
+                                <div class="container text-center  bg-light pb-3" >
+                                    <div class="row">
+                                       <div class="col-sm" id="Income">
+                                             <h5 className=" mt-3 text-uppercase">Income</h5>
+                                            <table class="table table-striped table-hover mt-2" style={{width:'100%'}}>
+                                                    <tr className="bg-secondary">
+                                                        <td class="table-primary text-white pt-2 pb-2">Amount</td>
+                                                        <td class="table-secondary text-white pt-2 pb-2">Source</td>
+                                                    </tr>   
+                                                      {TotalIncome.map((totalIncome,index) => (
+                                                        <tr className="bg-light">
+                                                            <td class="table-primary  text-start  text-dark pt-2 pb-2"><span className="bg-light ps-4">RS.{totalIncome.income}.00</span></td>
+                                                            <td class="table-secondary text-dark pt-2 pb-2">{totalIncome.from}</td>
+                                                        </tr>   
+                                                    ))}  
+                                            </table>
+                                            <div className="text-end mt-4">
+                                              <button className="btn btn-outline-white btn-sm fw-bold" id="downloadIncome">Print &nbsp;<i class="bi bi-printer-fill"></i></button>
+                                            </div>
+                                       </div>
+                                       <div class="col-sm" id="Expenses">
+                                             <h5 className=" mt-3 text-uppercase">Expenses</h5>
+                                             <table class="table table-striped table-hover mt-2" style={{width:'100%'}}>
+                                                    <tr className="bg-secondary">
+                                                        <td class="table-primary text-white pt-2 pb-2">Amount</td>
+                                                        <td class="table-secondary text-white pt-2 pb-2">Source</td>
+                                                    </tr>  
+                                                   {Expences.map((expences,index) => (
+                                                        <tr className="bg-light">
+                                                            <td class="table-primary   text-start text-dark pt-2 pb-2"><span className="bg-light ps-4">RS.{expences.income}.00</span></td>
+                                                            <td class="table-secondary text-dark pt-2 pb-2">{expences.from}</td>
+                                                        </tr>   
+                                                    ))}     
+                                            </table>
+                                            <div className="text-end mt-4">
+                                            <button className="btn btn-outline-white btn-sm fw-bold" id="downloadExpenses">Print &nbsp;<i class="bi bi-printer-fill"></i></button>
+                                            </div>
+                                       </div>
+                                    </div>
                                 </div>
                                 <div class="modal fade" id="staticBackdropIncome" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelIncome" aria-hidden="true">
                                     <div class="modal-dialog">

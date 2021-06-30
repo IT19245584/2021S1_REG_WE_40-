@@ -76,13 +76,4 @@ router.route('/searchExpences').get((req,res) => {
         .catch(err => res.status(400).json('Error: '));
 });
 
-router.route('/totalInocme').get((req,res) => {
-
-        system_income_expense.find({type :'Income'})
-        .then(income => res.json(income))
-        .catch(err => res.status(400).json('Error: '));
-});
-
-
-
 module.exports = router;

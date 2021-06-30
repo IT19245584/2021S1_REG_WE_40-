@@ -28,6 +28,13 @@ app.use('/admin_accept_budject', admin_accept_budject);
 const admin_side_user = require('./routers/admin_side_user');
 app.use('/admin_side_user', admin_side_user);
 
+
+const admin_keynote = require("./routers/admin_keynote")
+app.use("/admin_keynote", admin_keynote)
+
+const admin_supplier = require('./routers/admin_supplier');
+app.use('/admin_supplier', admin_supplier);
+
 const OrganizingCommittee = require("./routers/OrganizingCommittee")
 app.use("/orgCommittee", OrganizingCommittee)
 
