@@ -62,7 +62,7 @@ export default function  Reviewer_WorkShop_ViewTable(){
 
     return(
         <div className="container-responsive">
-            <h3>View Workshop Details</h3>
+            <h3>View All Workshop Details</h3>
                 
                 <table className="table table-responsive-sm table-bordered table-hover">
                     <thead className="bg-warning">

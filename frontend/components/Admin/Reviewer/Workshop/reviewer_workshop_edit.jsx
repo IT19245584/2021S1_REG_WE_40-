@@ -91,7 +91,6 @@ export default function  Reviewer_Workshop_Edit(){
                         <div className="col-md-5" style={{width:"", height:""}}>
                             <div className="mt-5">
                                 <img src="https://image.freepik.com/free-vector/search-social-personal-profile-vector-illustration_81522-1253.jpg" className="mt-5 img-fluid rounded-start" alt="update-image"/>
-                                {/* <img src="https://image.freepik.com/free-vector/flat-design-content-management-system-illustrated_23-2148816268.jpg" className="mt-5 img-fluid rounded-start" alt="update-image"/> */}
                             </div>
                         </div>
                         <div className="col-md-7" style={{backgroundColor:"#2C3E50" , width:"", height:""}}>
@@ -239,13 +238,7 @@ export default function  Reviewer_Workshop_Edit(){
                                             }}></textarea>
                                         </div> 
                                     </div>
-                                    {/* <div className="mb-1 text-left">
-                                        <label for="" className="form-label text-left">Status: </label>
-                                    <input type="text" className="input-group form-control" id="Status" name="Status" value={status}
-                                                     onChange={(e)=>{
-                                                        setStatus(e.target.value);
-                                                    }}/>
-                                                    </div> */}
+
                                     <div className="mb-1 text-left">
                                         <label for="" className="form-label text-left">Description: </label>
                                         <div className="input-group">
