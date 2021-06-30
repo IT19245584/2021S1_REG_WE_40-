@@ -66,7 +66,7 @@ class ContactBody extends Component {
 
     render() {
         return (
-            <div className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
+            <div data-testid="contact-1" className="col-md-14 col-sm-12" style={{ maxWidth: '70rem', margin: 'auto', padding: '10px' }}>
                 <div style={{ height: '300px' }}>
                     <div className="row row-cols-1 row-cols-md-3 g-4">
                         <div className="col">
@@ -103,7 +103,8 @@ class ContactBody extends Component {
                                 Name: <input type="text" id="name" className="form-control border border-dark mb-3" name="name" value={this.state.name} onChange={this.onChange} required />
                             </div>
                             <div className="form-outline mb-4">
-                                Email: <input type="email" id="email" className="form-control border border-dark mb-3" name="email" value={this.state.email} onChange={this.onChange} required />
+                                Email: <input data-testid="email-input" type="email" id="email" className="form-control border border-dark mb-3" name="email" value={this.state.email} onChange={this.onChange} required />
+                                {this.state.email && !(/\S+@\S+\.\S+/).test(this.state.email) && <span className="error" data-testid="error-msg">Please enter a valid email.</span>}
                             </div>
                             <div className="form-outline mb-4">
                                 Subject: <input type="text" className="form-control border border-dark mb-3" id="subject" name="subject" value={this.state.subject} onChange={this.onChange} />

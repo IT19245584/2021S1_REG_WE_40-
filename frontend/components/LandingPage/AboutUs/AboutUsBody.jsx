@@ -25,14 +25,18 @@ class AboutUsBody extends Component {
         return (
             <div>
                 {this.state?.dates?.length > 0 && this.state.dates.map((item, index) =>
-                <div>
-                    <div className="text-center container" style={{ fontSize: "110%", fontStyle: "italic" }}>
-                        <p className="pt-2 ps-2 pe2">{item.description}</p>
+                    <div>
+                        {item.status && item.status === 'Post' &&
+                            <div>
+                                <div className="text-center container" style={{ fontSize: "110%", fontStyle: "italic" }}>
+                                    <p className="pt-2 ps-2 pe2">{item.description}</p>
+                                </div>
+                                <div className="text-center container" style={{ fontSize: "200%" }}>
+                                    <p>{item.dateRange}</p>
+                                </div>
+                            </div>
+                        }
                     </div>
-                    <div className="text-center container" style={{ fontSize: "200%" }}>
-                        <p>{item.dateRange}</p>
-                    </div>
-                </div>
                 )}
             </div>
 
