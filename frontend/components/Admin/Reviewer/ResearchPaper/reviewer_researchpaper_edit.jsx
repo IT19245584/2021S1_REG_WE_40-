@@ -58,7 +58,7 @@ export default function Reviewer_ResearchPaper_Edit(){
                 <h3>Edit Research Paper Details.</h3>
               
                 <form class="" onSubmit={sendData}>
-                {/* <center> */}
+               
                 <div className="card mb-1" style={{maxWidth: "fixed"}}>
                     <div className="row g-0">
                         <div className="col-md-5 bg-dark" style={{width:"500px", height:""}}>
@@ -169,7 +169,7 @@ export default function Reviewer_ResearchPaper_Edit(){
                         </div>
                     </div>
                 </div>
-                {/* </center> */}
+              
                 </form>
             </div>      
             
