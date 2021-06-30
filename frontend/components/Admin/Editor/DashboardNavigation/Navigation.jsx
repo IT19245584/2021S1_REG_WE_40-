@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 class Navigation extends Component {
+    constructor(props) {
+        super(props);
+        this.LOGOUT = this.LOGOUT.bind(this);
+        this.state = {}
+    }
+
     LOGOUT() {
         Cookies.remove('email');
         reactLocalStorage.clear();
@@ -24,7 +30,7 @@ class Navigation extends Component {
                     <div class="col-sm-12">
                         <div class="card" style={{ background: '#f5f5f5', borderRadius: '10px', boxShadow: '19px 19px 38px #939393, -19px -19px 38px #ffffff' }}>
                             <div class="card-body">
-                            <button type="button" class="btn btn-light"><a href='/editor-home' style={{ fontSize: "20px", color: 'black' }}>Editor Home</a></button>
+                                <button type="button" class="btn btn-light"><a href='/editor-home' style={{ fontSize: "20px", color: 'black' }}>Editor Home</a></button>
                                 <button type="button" class="btn btn-light"><a href='/vieworg' style={{ fontSize: "20px", color: 'black' }}>Organizing Committee</a></button>
                                 <button type="button" class="btn btn-light"><a href='/viewtech' style={{ fontSize: "20px", color: 'black' }}>Technical Committee</a></button>
                                 <button type="button" class="btn btn-light"><a href='/viewimpdate' style={{ fontSize: "20px", color: 'black' }}>Important Dates</a></button>
