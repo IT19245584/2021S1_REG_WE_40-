@@ -52,6 +52,8 @@ import AddWorkshop from './components/Admin/User/workshop/AddWorkshopDetails';
 import Research from './components/Admin/User/Research/HomePage';
 import Workshop from './components/Admin/User/workshop/HomePage';
 import Reset from './components/LandingPage/Signin/UpdatePassword';
+import ViewWorkshop from './components/Admin/User/workshop/ViewWorkshopDetails';
+import ViewResearch from './components/Admin/User/Research/ViewResearchDetail';
 
 function App() {
     return (
@@ -75,6 +77,8 @@ function App() {
                     <Route exact path='/addResearch'><AddResearch /></Route>
                     <Route exact path='/workshop'><Workshop /></Route>
                     <Route exact path='/addWorkshop'><AddWorkshop /></Route>
+                    <Route exact path='/viewWorkshop'><ViewWorkshop /></Route>
+                    <Route exact path='/viewResearch'><ViewResearch /></Route>
 
 
                     {/* Editor Pages  */}

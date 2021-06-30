@@ -21,6 +21,9 @@ function HomeNavBar() {
                 <a class="nav-link active" aria-current="page" href="#">Authors</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/research">Research</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/workshop">Workshops</a>
               </li>
               <li class="nav-item">

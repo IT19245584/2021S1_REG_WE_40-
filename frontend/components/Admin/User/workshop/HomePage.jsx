@@ -1,8 +1,7 @@
 import React from "react";
 import HomePageNav from '../Navigation';
-import img1 from "url:./Images/img1.jpg";
-//import img2 from "url:./Images/img2";
-import img3 from "url:./Images/img3.png";
+import img5 from "url:./Images/img5.jpg";
+
 
 function HomePage() {
   return (
@@ -28,19 +27,19 @@ function HomePage() {
                                 </ol>
                                 <div class="carousel-inner ">
                                 <div class="carousel-item active">
-                                <img class="d-block w-100" style={{height:'50%'}} src={img3} alt="First slide" />
+                                <img class="d-block w-100" style={{height:'50%'}} src={img5} alt="First slide" />
                                 </div>
                                 <div class="carousel-item">
                                 <img class="d-block w-100" style={{height:'20%'}} src="https://i.imgur.com/wwjSkZY.jpeg" alt="Second slide" />
                                 </div>
                                 <div class="carousel-item">
-                                <img class="d-block w-100" style={{height:'20%'}} src={img1} alt="Third slide" />
+                                <img class="d-block w-100" style={{height:'20%'}} src={img5} alt="Third slide" />
                                 </div>
                                 <div class="carousel-item">
-                                <img class="d-block w-100" style={{height:'20%'}} src={img1} alt="fourth slide" />
+                                <img class="d-block w-100" style={{height:'20%'}} src={img5} alt="fourth slide" />
                                 </div>
                                 <div class="carousel-item">
-                                <img class="d-block w-100" style={{height:'20%'}} src={img1}alt="fourth slide" />
+                                <img class="d-block w-100" style={{height:'20%'}} src={img5}alt="fourth slide" />
                             </div>
                 </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -71,7 +70,7 @@ function HomePage() {
                             </div>
                             <div >
                                 <div className="card-body">
-                                <a href='/viewWorkshop'><button type="button" class="btn btn-dark btn-lg"><h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>View status of Workshop Details</h5></button></a>
+                                <a href='/viewWorkshop'><button type="button" class="btn btn-dark btn-lg"><h5 className="card-title" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>View Workshop Details</h5></button></a>
                                     
                                 </div>
                             </div>
