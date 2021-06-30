@@ -25,10 +25,14 @@ import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeake
 import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/reviewer_workshop_view_table';
 import Reviewer_WorkShop_ViewOne from './components/Admin/Reviewer/reviewer_workshop_view_one';
 import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/reviewer_researchpaper_view_table';
-import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/reviewer_researchpaper_view_one';
 import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/reviewer_researchpaper_edit';
+
 import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
 import Admin_BudjectView from './components/Admin/Admin/admin_BujectView.jsx';
+import Admin_side_login from './components/Admin/login';
+import Admin_side_registration from './components/Admin/registration';
+import Admin_side_Wait from './components/Admin/waitPage';
+import Admin_side_pass_rest from './components/Admin/resetPassword';
 
 
 import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/Workshop/reviewer_workshop_view_table';
@@ -36,10 +40,8 @@ import Reviewer_WorkShop_ViewOne from './components/Admin/Reviewer/Workshop/revi
 import Reviewer_Workshop_Edit from './components/Admin/Reviewer/Workshop/reviewer_workshop_edit';
 
 import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
-import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_one';
 import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_edit';
 import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
-import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_one';
 import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_edit';
 import ReviewerDashboard from './components/Admin/Reviewer/reviewer_dashboard';
 
@@ -84,6 +86,10 @@ function App() {
 
                     {/* Admin Pages */}
                     <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>
+                    <Route exact path="/Admin_side_login"><Admin_side_login /></Route>
+                    <Route exact path="/Admin_side_registration"><Admin_side_registration /></Route>
+                    <Route exact path="/Admin_side_Wait"><Admin_side_Wait /></Route>
+                    <Route exact path="/Admin_side_pass_rest"><Admin_side_pass_rest /></Route>
                     
                     {/* Reviewer's pages */}
                     <Route path="/dashboard" exact component={ReviewerDashboard} />
@@ -93,7 +99,7 @@ function App() {
                     <Route path="/edit-workshop" exact component={Reviewer_Workshop_Edit} />
 
                     <Route path="/view-ws" exact component={Reviewer_WorkShop_ViewOne} />
-                    <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} />
+                    {/* <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} /> */}
 
                     <Route exact path="/Admin_BudjectView"><Admin_BudjectView /></Route>
 

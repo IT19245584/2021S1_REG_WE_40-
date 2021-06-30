@@ -25,6 +25,9 @@ connection.once("open", () => {
 const admin_accept_budject = require('./routers/admin_accept_budject.js');
 app.use('/admin_accept_budject', admin_accept_budject);
 
+const admin_side_user = require('./routers/admin_side_user');
+app.use('/admin_side_user', admin_side_user);
+
 const OrganizingCommittee = require("./routers/OrganizingCommittee")
 app.use("/orgCommittee", OrganizingCommittee)
 
