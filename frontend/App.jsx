@@ -22,8 +22,8 @@ import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeake
 
 import Reviewer_Workshop_Edit from './components/Admin/Reviewer/Workshop/reviewer_workshop_edit';
 import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/Workshop/reviewer_workshop_view_table';
-import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_edit';
-import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
+// import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_edit';
+// import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
 import NAV from './components/Admin/Reviewer/reviewer_dashboard';
 
 
@@ -128,15 +128,15 @@ function App() {
                     <Route exact path="/Admin_keynote"><Admin_keynote /></Route>
                     <Route exact path="/Admin_Supplier"><Admin_Supplier /></Route>
                     <Route exact path="/Admin_add_Supplier"><Admin_add_Supplier /></Route>
-                    
+
 
                     <Route exact path="/Admin_BudjectView"><Admin_BudjectView /></Route>
 
                     {/* Reviewer's pages */}
                     <Route path="/dashboard" exact component={NAV} />
-                    <Route path="/view-all-rp" exact component={Reviewer_ResearchPaper_ViewTable} />
+                    {/* <Route path="/view-all-rp" exact component={Reviewer_ResearchPaper_ViewTable} /> */}
                     <Route path="/view-all-ws" exact component={Reviewer_WorkShop_ViewTable} />
-                    <Route path="/update" exact component={Reviewer_ResearchPaper_Edit} />
+                    {/* <Route path="/update" exact component={Reviewer_ResearchPaper_Edit} /> */}
                     <Route path="/update" exact component={Reviewer_Workshop_Edit} />
 
 
