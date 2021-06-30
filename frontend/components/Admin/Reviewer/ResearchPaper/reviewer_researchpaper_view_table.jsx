@@ -54,10 +54,10 @@ export default function  Reviewer_ResearchPaper_ViewTable(){
         window.location.href = "/show"
     }
     return(
-        <div class="container">
+        <div className="container-responsive">
             <h3>View Research Paper Details</h3>
-            <table className="table table-responsive table-hover">
-                <thead className="bg-warning">
+            <table classNameName="table table-responsive table-bordered table-hover">
+                <thead classNameName="bg-primary">
                     <tr>
                         <th scope = "col"  >No</th>
                         <th scope = "col"  >Topic</th>
@@ -69,7 +69,7 @@ export default function  Reviewer_ResearchPaper_ViewTable(){
                         <th scope = "col" >Document</th>
                         <th scope = "col" >Description</th>
                         <th scope = "col" >Status</th>
-                        <th scope = "col" >Action</th>
+                        <th scope = "col" style={{width:"80px"}}>Action</th>
                     </tr>  
                 </thead>  
                 <tbody>
@@ -85,30 +85,26 @@ export default function  Reviewer_ResearchPaper_ViewTable(){
                         <td>{paper.phone}</td>
                         <td>{paper.document}</td>
                         <td>{paper.description}</td>
-                        <td class="text-secondary"> {paper.status} 
-                                <a> 
-                                    <i class="text-secondary bi bi-mask"></i>
-                                </a>    
-                            </td>
-                        <td>
-                            <div class="row">
-                                <div class="col-4">
-                                    <a onClick={() => remove(paper._id)} class="m-1 text-danger">
-                                        <i class="bi bi-trash-fill"></i>
+                        <td classNameName="text-light badge bg-primary"> {paper.status}</td>
+                        <td style={{backgroundColor: '#EBF5FB'}}>
+                            <div className="row">
+                                <div className="col-4">
+                                    <a onClick={() => remove(paper._id)} className="m-1 text-danger">
+                                        <i className="bi bi-trash-fill"></i>
                                     </a>
                                 </div> 
-                                <div class="col-4">
+                                <div className="col-4">
                                     <a onClick={() => update(
                                         paper._id, paper.topic, paper.university, paper.purpose, paper.team_leader, paper.email, paper.phone, paper.document, paper.description
-                                        )} class="m-1">
-                                        <i class="bi bi-pencil-square"></i>
+                                        )} className="m-1">
+                                        <i className="bi bi-pencil-square"></i>
                                     </a>
                                 </div> 
-                                <div class="col-4">
+                                <div className="col-4">
                                     <a onClick={() => show(
                                         paper._id, paper.topic, paper.university, paper.purpose, paper.team_leader, paper.email, paper.phone, paper.document, paper.description
-                                        )} class="m-1">
-                                        <i class="bi bi-filter-square"></i>
+                                        )} className="m-1">
+                                        <i className="bi bi-filter-square  text-info"></i>
                                     </a>
                                 </div>
                             </div>
