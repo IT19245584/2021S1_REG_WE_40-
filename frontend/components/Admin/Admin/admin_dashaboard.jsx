@@ -27,17 +27,84 @@ return (
                           </a>
                         </div>
                         <div className="col-sm-4">
-                          <div className="card">
-                            <div className="card-body">
-                              <h5 className="card-title">Special title treatment</h5>
-                              <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <a className="text-decoration-none" href="Admin_dashboard_user">
+                          <div className="card bg-main-card">
+                            <div className="card-body text-center">
+                              <h1><i className="bi bi-person-circle"></i></h1>
+                              <h4 className="card-title text-capitalize fw-bold">User Management</h4>
                             </div>
                           </div>
+                          </a>
                         </div>
+                           <div className="col-sm-4">
+                          <a className="text-decoration-none" href="Admin_Supplier">
+                          <div className="card bg-main-card">
+                            <div className="card-body text-center">
+                              <h1><i class="bi bi-people-fill"></i></h1>
+                              <h4 className="card-title text-capitalize fw-bold">Suppliers</h4>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div className="row"style={{marginTop:'4%'}}>
+                        <div className="col-sm-4">
+                          <a className="text-decoration-none" href="Admin_keynote">
+                          <div className="card bg-main-card">
+                            <div className="card-body text-center">
+                              <h1><i class="bi bi-person-bounding-box"></i></h1>
+                              <h4 className="card-title text-capitalize fw-bold">Keynote Speaker</h4>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                        <div className="col-sm-4">
+                          <a className="text-decoration-none" href="Admin_dashboard_user">
+                          <div className="card bg-main-card">
+                            <div className="card-body text-center">
+                              <h1><i class="bi bi-clipboard-data"></i></h1>
+                              <h4 className="card-title text-capitalize fw-bold">Past Events</h4>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                           <div className="col-sm-4">
+                          <a className="text-decoration-none" href="Admin_dashboard_user">
+                          <div className="card bg-main-card">
+                            <div className="card-body text-center">
+                              <h1><i class="bi bi-gear-fill"></i></h1>
+                              <h4 className="card-title text-capitalize fw-bold">Technical Commitee</h4>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div className="row"style={{marginTop:'4%'}}>
+                        <div className="col-sm-4">
+                          <a className="text-decoration-none" href="Admin_BudjectView">
+                          <div className="card bg-main-card">
+                            <div className="card-body text-center">
+                              <h1><i class="bi bi-basket2-fill"></i></h1>
+                              <h4 className="card-title text-capitalize fw-bold">Workshop</h4>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                        <div className="col-sm-4">
+                          <a className="text-decoration-none" href="Admin_dashboard_user">
+                          <div className="card bg-main-card">
+                            <div className="card-body text-center">
+                              <h1><i class="bi bi-file-earmark-break-fill"></i></h1>
+                              <h4 className="card-title text-capitalize fw-bold">Documents</h4>
+                            </div>
+                          </div>
+                          </a>
+                        </div>
+                           
                       </div>
                     </div>
                 </main>
-               <Footer/>
+            
             </div>
         </div>
         </div>

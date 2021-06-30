@@ -20,9 +20,34 @@ import ViewImportantDates from './components/Admin/Editor/ImportantDates/ViewImp
 import ViewGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/ViewGuestSpeaker';
 import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes';
 
+
+
+
+
+import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
+import Admin_BudjectView from './components/Admin/Admin/admin_BujectView.jsx';
+import Admin_side_login from './components/Admin/login';
+import Admin_side_registration from './components/Admin/registration';
+import Admin_side_Wait from './components/Admin/waitPage';
+import Admin_side_pass_rest from './components/Admin/resetPassword';
+import Admin_dashboard_user from './components/Admin/Admin/admin_dashboard_user';
+import Admin_dashboard_Add_user from './components/Admin/Admin/admin_Add_new_user';
+import Admin_Reset_password from './components/Admin/Admin/admin_Reset_password';
+import Admin_keynote from './components/Admin/Admin/admin_keynote_person';
+import Admin_Supplier from './components/Admin/Admin/admin_supplier';
+import Admin_add_Supplier from './components/Admin/Admin/admin_add_Supplier';
+
+import Reviewer_Workshop_Edit from './components/Admin/Reviewer/Workshop/reviewer_workshop_edit';
+
+import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
+import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
+
+import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_one';
+
 import Reviewer_Workshop_Edit from './components/Admin/Reviewer/Workshop/reviewer_workshop_edit';
 import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/Workshop/reviewer_workshop_view_table';
 import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_edit';
+
 import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
 import NAV from './components/Admin/Reviewer/reviewer_dashboard';
 
@@ -39,7 +64,7 @@ import ViewAboutUs from './components/Admin/Editor/AboutUs/ViewAboutUs';
 import UpdateKeyNoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/UpdateKeynotes';
 import UpdateGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/UpdateGuestSpeaker';
 import EditorHome from './components/Admin/Editor/EditorHome';
-import ImportantDatePdf from './components/LandingPage/ImportantDates/ImportantDatePdf';
+// import ImportantDatePdf from './components/LandingPage/ImportantDates/ImportantDatePdf';
 
 import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
 import Admin_BudjectView from './components/Admin/Admin/admin_BujectView.jsx';
@@ -98,18 +123,45 @@ function App() {
                     <Route exact path='/update-keynote-speaker'><UpdateKeyNoteSpeaker /></Route>
                     <Route exact path='/update-guest-speaker'><UpdateGuestSpeaker /></Route>
                     <Route exact path='/editor-home'><EditorHome /></Route>
-                    <Route exact path='/dates-pdf'><ImportantDatePdf /></Route>
+                    {/* <Route exact path='/dates-pdf'><ImportantDatePdf /></Route> */}
 
                     {/* Admin Pages */}
                     <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>
+
+
+                    <Route exact path="/Admin_side_login"><Admin_side_login /></Route>
+                    <Route exact path="/Admin_side_registration"><Admin_side_registration /></Route>
+                    <Route exact path="/Admin_side_Wait"><Admin_side_Wait /></Route>
+                    <Route exact path="/Admin_side_pass_rest"><Admin_side_pass_rest /></Route>
+                    <Route exact path="/Admin_dashboard_user"><Admin_dashboard_user /></Route>
+                    <Route exact path="/Admin_dashboard_Add_user"><Admin_dashboard_Add_user /></Route>
+                    <Route exact path="/Admin_Reset_password"><Admin_Reset_password /></Route>
+                    <Route exact path="/Admin_keynote"><Admin_keynote /></Route>
+                    <Route exact path="/Admin_Supplier"><Admin_Supplier /></Route>
+                    <Route exact path="/Admin_add_Supplier"><Admin_add_Supplier /></Route>
+                    
+
                     <Route exact path="/Admin_BudjectView"><Admin_BudjectView /></Route>
 
                     {/* Reviewer's pages */}
                     <Route path="/dashboard" exact component={NAV} />
                     <Route path="/view-all-rp" exact component={Reviewer_ResearchPaper_ViewTable} />
+
+                    {/* <Route path="/update" exact component={Reviewer_ResearchPaper_Edit} />
+                    <Route path="/edit-researchpaper" exact component={Reviewer_ResearchPaper_Edit} /> */}
+
+                    <Route path="/edit-workshop" exact component={Reviewer_Workshop_Edit} />
+
+                    {/* <Route path="/view-ws" exact component={Reviewer_WorkShop_ViewOne} /> */}
+                    {/* <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} /> */}
+
+                    {/* <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} /> */}
+
+
                     <Route path="/view-all-ws" exact component={Reviewer_WorkShop_ViewTable} />
                     <Route path="/update" exact component={Reviewer_ResearchPaper_Edit} />
                     <Route path="/update" exact component={Reviewer_Workshop_Edit} />
+
 
                 </Switch>
             </Router>

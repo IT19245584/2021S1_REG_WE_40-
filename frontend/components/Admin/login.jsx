@@ -86,7 +86,7 @@ function Admin_Side_Login() {
                     </div>
                     <div className="mb-3 mt-3">
                             <label for="exampleFormControlInput1" className="form-label">Passowrd</label>
-                            <input type="email" className="form-control"  placeholder="" onChange={(e) =>{
+                            <input type="password" className="form-control"  placeholder="" onChange={(e) =>{
 						     setPassword(e.target.value);
 						}}/>
                     </div>

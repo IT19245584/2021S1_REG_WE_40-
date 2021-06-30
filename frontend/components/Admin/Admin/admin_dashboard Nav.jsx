@@ -1,6 +1,26 @@
 import React,{useState , useEffect} from "react";
+import Cookies from 'js-cookie';
+import {reactLocalStorage} from 'reactjs-localstorage';
+import Swal from 'sweetalert2';
 
 export default function Admin_dashaboard_Nav(){
+    function LOGOUT(){
+        Cookies.remove('email');
+        reactLocalStorage.clear();
+        Swal.fire({  
+			title: "Success!",
+			text: "Logout Success",
+			icon: 'success',
+			timer: 2000,
+            showConfirmButton: false,
+			type: "success"}).then(okay => {
+				if (okay) {
+					window.location.href = "/";
+				}
+				});
+
+
+    }
 return (
    
         <div>
@@ -18,15 +38,8 @@ return (
                 </form>
         
                 <ul className="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                        <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="#!">Settings</a></li>
-                            <li><a className="dropdown-item" href="#!">Activity Log</a></li>
-                            <li><hr className="dropdown-divider" /></li>
-                            <li><a className="dropdown-item" href="#!">Logout</a></li>
-                        </ul>
-                    </li>
+                    <span className="text-white" style={{cursor:'pointer'}} onClick={LOGOUT}><i class="bi bi-door-closed-fill"></i></span>&nbsp;&nbsp;&nbsp;
+                    <span className="text-white" style={{cursor:'pointer'}}><i class="bi bi-person-circle"></i></span>&nbsp;&nbsp;&nbsp;
                 </ul>
             </nav>
             </div>
