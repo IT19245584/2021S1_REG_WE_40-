@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {reactLocalStorage} from 'reactjs-localstorage';
@@ -14,11 +14,11 @@ export default function Reviewer_ResearchPaper_Edit(){
     const [team_leader, setTeam_leader] = useState(researchpaperUpdate[4]);
     const [email, setEmail] = useState(researchpaperUpdate[5]);
     const [phone, setPhone] = useState(researchpaperUpdate[6]);
-    const [document, setDocument] = useState(researchpaperUpdate[7]); //cloudnary?
+    const [document, setDocument] = useState(researchpaperUpdate[7]); 
     const [description, setDescription] = useState(researchpaperUpdate[8]);
 
     
-    function setUpdate(e){
+    function sendData(e){
         e.preventDefault();
         const updateDetails = {
             topic,
@@ -28,10 +28,10 @@ export default function Reviewer_ResearchPaper_Edit(){
             email,
             phone,
             document,
-            description,
+            description
         }
 
-        axios.put("http://localhost:8080/researchpapers/update/"+id,updateDetails).then(() => {
+        axios.put("http://localhost:6060/researchPaper/update/"+id,updateDetails).then(() => {
             const id = 0;
             Swal.fire({
                 title: "Success!",
@@ -40,7 +40,7 @@ export default function Reviewer_ResearchPaper_Edit(){
                 confirmButtonText: "Ok",
                 type: "success"}).then(done => {
                     if(done){
-                        window.location.href="//view-all-rp";
+                        window.location.href="/view-all-rp";
                     }
                 });
             }).catch((err) => {
@@ -57,8 +57,8 @@ export default function Reviewer_ResearchPaper_Edit(){
             <div className="container">
                 <h3>Edit Research Paper Details.</h3>
               
-                <form class="" onSubmit={setUpdate}>
-                {/* <center> */}
+                <form class="" onSubmit={sendData}>
+               
                 <div className="card mb-1" style={{maxWidth: "fixed"}}>
                     <div className="row g-0">
                         <div className="col-md-5 bg-dark" style={{width:"500px", height:""}}>
@@ -169,7 +169,7 @@ export default function Reviewer_ResearchPaper_Edit(){
                         </div>
                     </div>
                 </div>
-                {/* </center> */}
+              
                 </form>
             </div>      
             

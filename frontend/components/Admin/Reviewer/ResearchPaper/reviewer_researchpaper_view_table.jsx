@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {reactLocalStorage} from 'reactjs-localstorage';
@@ -16,49 +16,14 @@ export default function  Reviewer_ResearchPaper_ViewTable(){
     const [document, setDocument] = useState("");
     const [description, setDescription] = useState("");
 
-    // const queryString = window.location.search;
-    // const urlParams = new URLSearchParams(queryString);
-    // const type = urlParams.get('id');
-    // console.log(type);
-
-    // const setUpload = () => {
-    //     if(document !== 'false'){
-    //         const FormData = new FormData();
-    //         FormData.append("file", document);
-    //         FormData.append("upload_preset", "ml_default");
-
-    //         //link to cloudnary
-    //         axios.post("https://", FormData).then((response) => { 
-    //             const pdf = document.name;
-    //             const addResearchPaper= {
-    //                 topic,
-    //                 university,
-    //                 purpose,
-    //                 team_leader,
-    //                 email,
-    //                 phone,
-    //                 document,
-    //                 description,
-    //             }
-    //         });
-    //     }
-    // }
-
-        // const [papers, setPaper] = useState ([]);
-        // useEffect(() => {
-        //     axios.get("" + id)
-        //     .then(res => setPaper(res.data))
-        //     .catch(error => console.log(error));
-        // });
-
-        useEffect(() => {
-            axios.get("http://localhost:8080/researchpapers/")
-            .then(res => setPapers(res.data))
-            .catch(error => console.log(error));
-        })
+    useEffect(() => {
+        axios.get("http://localhost:6060/researchPaper/view-all")
+        .then(res => setPapers(res.data))
+        .catch(error => console.log(error));
+    })
 
     function remove(id){
-        axios.delete("http://localhost:8080/students/delete/"+id).then(() =>{
+        axios.delete("http://localhost:6060/researchPaper/delete/"+id).then(() =>{
         	Swal.fire({  
                 title: "Success!",
                 text: "Research Paper Deleted",
@@ -66,13 +31,13 @@ export default function  Reviewer_ResearchPaper_ViewTable(){
                 confirmButtonText: "OK",
                 type: "success"}).then(okay => {
                     if (okay) {
-                        window.location.href = "/";
+                        window.location.href = "/view-all-rp";
                     }
                 });
         }).catch((err)=>{
             Swal.fire({  
                 title: "Error!",
-                text: "Research Paper Not Delete",
+                text: "Research Paper Not Deleted",
                 icon: 'error',
                 confirmButtonText: "OK",
                 type: "success"})
@@ -84,6 +49,10 @@ export default function  Reviewer_ResearchPaper_ViewTable(){
         window.location.href = "/update"
     }
 
+    function show(id, topic, university, purpose, team_leader, email, phone, document, description){
+        reactLocalStorage.setObject("Reviewer_ResearchPaper_Show", [id, topic, university, purpose, team_leader, email, phone, document, description]);
+        window.location.href = "/show"
+    }
     return(
         <div class="container">
             <h3>View Research Paper Details</h3>
@@ -105,8 +74,9 @@ export default function  Reviewer_ResearchPaper_ViewTable(){
                 </thead>  
                 <tbody>
                 {papers.map((paper, key) => {
+                    return (
                     <tr>
-                        <td scope="row">1</td>
+                        <td scope="row">{key+1}</td>
                         <td>{paper.topic}</td>
                         <td>{paper.university}</td>
                         <td>{paper.purpose}</td>
@@ -115,28 +85,37 @@ export default function  Reviewer_ResearchPaper_ViewTable(){
                         <td>{paper.phone}</td>
                         <td>{paper.document}</td>
                         <td>{paper.description}</td>
-                        <td>{paper.status}</td> 
-                        <td>
-                            <i class="bi bi-trash-fill"></i>
-                        </td>
+                        <td class="text-secondary"> {paper.status} 
+                                <a> 
+                                    <i class="text-secondary bi bi-mask"></i>
+                                </a>    
+                            </td>
                         <td>
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-4">
                                     <a onClick={() => remove(paper._id)} class="m-1 text-danger">
                                         <i class="bi bi-trash-fill"></i>
                                     </a>
                                 </div> 
-                                <div class="col-6">
+                                <div class="col-4">
                                     <a onClick={() => update(
                                         paper._id, paper.topic, paper.university, paper.purpose, paper.team_leader, paper.email, paper.phone, paper.document, paper.description
                                         )} class="m-1">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
-                                </div>   
+                                </div> 
+                                <div class="col-4">
+                                    <a onClick={() => show(
+                                        paper._id, paper.topic, paper.university, paper.purpose, paper.team_leader, paper.email, paper.phone, paper.document, paper.description
+                                        )} class="m-1">
+                                        <i class="bi bi-filter-square"></i>
+                                    </a>
+                                </div>
                             </div>
                         </td>
                         
                     </tr>   
+                    );
                 })}   
                 </tbody>  
             </table>   

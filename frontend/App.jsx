@@ -20,6 +20,7 @@ import ViewImportantDates from './components/Admin/Editor/ImportantDates/ViewImp
 import ViewGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/ViewGuestSpeaker';
 import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes';
 
+
 import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
 import Admin_BudjectView from './components/Admin/Admin/admin_BujectView.jsx';
 
@@ -87,14 +88,14 @@ function App() {
 
                     {/* Admin Pages */}
                     <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>
+                    <Route exact path="/Admin_BudjectView"><Admin_BudjectView /></Route>
 
                     {/* Reviewer's pages */}
                     <Route path="/dashboard" exact component={ReviewerDashboard} />
                     <Route path="/view-all-rp" exact component={Reviewer_ResearchPaper_ViewTable} />
+                    <Route path="/update" exact component={Reviewer_ResearchPaper_Edit} />
                     <Route path="/edit-researchpaper" exact component={Reviewer_ResearchPaper_Edit} />
                     <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} />
-
-                    <Route exact path="/Admin_BudjectView"><Admin_BudjectView /></Route>
 
                 </Switch>
             </Router>
