@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {reactLocalStorage} from 'reactjs-localstorage';
+import { send } from 'emailjs-com';
 
 export default function Reviewer_ResearchPaper_Edit(){
     
@@ -16,11 +17,14 @@ export default function Reviewer_ResearchPaper_Edit(){
     const [phone, setPhone] = useState(researchpaperUpdate[6]);
     const [document, setDocument] = useState(researchpaperUpdate[7]); 
     const [description, setDescription] = useState(researchpaperUpdate[8]);
-
+    const [status, setStatus] = useState(researchpaperUpdate[9]);
+        const [toSend, setToSend] = useState({
+            from_name: topic,
+          });
     
     function sendData(e){
         e.preventDefault();
-        const updateDetails = {
+        const researchpaperUpdate = {
             topic,
             university,
             purpose,
@@ -28,11 +32,21 @@ export default function Reviewer_ResearchPaper_Edit(){
             email,
             phone,
             document,
-            description
+            description,
+            status
         }
 
-        axios.put("http://localhost:6060/researchPaper/update/"+id,updateDetails).then(() => {
+        axios.put("http://localhost:6060/researchPaper/update/"+id, researchpaperUpdate).then(() => {
             const id = 0;
+            send(
+                'service_zj3eu8g',
+                'template_7z0ihh9',
+                toSend,
+                'user_iaQm5Tj9yssvCrb7KNE72'
+            )
+                .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                               
             Swal.fire({
                 title: "Success!",
                 text: "Successfully Updated!",
@@ -43,6 +57,10 @@ export default function Reviewer_ResearchPaper_Edit(){
                         window.location.href="/view-all-rp";
                     }
                 });
+            })
+            .catch((err) => {
+               console.log('Failed...', err);
+            });
             }).catch((err) => {
                 Swal.fire({
                     title: "Error!",
@@ -175,4 +193,5 @@ export default function Reviewer_ResearchPaper_Edit(){
             
     )
 }
+
 
