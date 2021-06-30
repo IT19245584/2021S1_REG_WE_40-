@@ -27,6 +27,7 @@ import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/Workshop/re
 import NAV from './components/Admin/Reviewer/reviewer_dashboard';
 
 
+
 import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
 import Admin_BudjectView from './components/Admin/Admin/admin_BujectView.jsx';
 import Admin_side_login from './components/Admin/login';
@@ -139,7 +140,6 @@ function App() {
                     {/* <Route path="/update" exact component={Reviewer_ResearchPaper_Edit} /> */}
                     <Route path="/update" exact component={Reviewer_Workshop_Edit} />
 
-
                 </Switch>
             </Router>
         </div>
@@ -147,5 +147,8 @@ function App() {
 }
 
 export default App;
+
+
+
 
 
