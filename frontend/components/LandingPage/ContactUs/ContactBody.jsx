@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 class ContactBody extends Component {
     constructor(props) {
@@ -30,14 +31,28 @@ class ContactBody extends Component {
         }
 
         axios.post('http://localhost:6060/contactdata', Contact)
-            .then(res => {
-                this.setState({
-                    sent: true,
-                }, this.resetForm())
-            }).catch(() => {
-                console.log('Message not sent');
+            .then(() => {
+                Swal.fire({
+                    title: "Success!",
+                    text: "You Message sent. We will contact you soon",
+                    icon: 'success',
+                    confirmButtonText: "OK",
+                    type: "success"
+                }).then(okay => {
+                    if (okay) {
+                        window.location.href = "#";
+                    }
+                });
+            }).catch((err) => {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Unable to send message",
+                    icon: 'error',
+                    confirmButtonText: "OK",
+                    type: "success"
+                })
             })
-    };
+    }
 
     resetForm = () => {
         this.setState({
@@ -96,7 +111,6 @@ class ContactBody extends Component {
                             <div className="form-outline mb-4">
                                 Message: <textarea className="form-control border border-dark mb-3" id="message" rows="4" name="message" value={this.state.message} onChange={this.onChange} required />
                             </div>
-                            <div className={this.state.sent ? 'msg msgAppear' : 'msg'}>Message has been sent</div>
                             <center><button type="submit" className="btn btn-outline-danger btn-block mb-4">Send</button></center>
                         </form>
                     </div>

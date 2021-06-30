@@ -22,8 +22,8 @@ connection.once("open", () => {
   console.log("MongoDB connection successfully")
 })
 
-// const systemReg = require('./routes/systemReg');
-// app.use('/systemReg', systemReg);
+const admin_accept_budject = require('./routers/admin_accept_budject.js');
+app.use('/admin_accept_budject', admin_accept_budject);
 
 const OrganizingCommittee = require("./routers/OrganizingCommittee")
 app.use("/orgCommittee", OrganizingCommittee)
@@ -43,16 +43,19 @@ app.use("/guestSpeaker", GuestSpeaker)
 const KeynoteSpeaker = require("./routers/KeynoteSpeaker")
 app.use("/keynoteSpeaker", KeynoteSpeaker)
 
+const workshops = require("./routers/WorkShop.js")
+app.use("/workshop", workshops)
 
-const workshops = require("./routers/WorkShop.js");
-app.use("/workshop", workshops);
+const ResearchPaper = require("./routers/ResearchPaper")
+app.use("/researchPaper", ResearchPaper)
 
-const ResearchPaper = require("./routers/ResearchPaper");
-app.use("/researchPaper", ResearchPaper);
+const PastProceeding = require("./routers/PastProceeding")
+app.use("/pastProceeding", PastProceeding)
 
-app.listen(port,() =>{
-    console.log(`Server is running on port: ${port}`);
-});
+app.listen(port, () => {
+  console.log(`Server is running on port: ${port}`)
+})
+
 //Contact Us Email sending configuration
 app.post("/contactdata", (req, res) => {
   let data = req.body
@@ -89,4 +92,3 @@ app.post("/contactdata", (req, res) => {
   })
   smtpTransoprt.close()
 })
-

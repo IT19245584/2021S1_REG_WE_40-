@@ -5,6 +5,8 @@ npm i react-dom
 npm i react-router-dom
 npm i google-maps-react
 npm i reactjs-localstorage
+npm i jspdf
+npm i html2canvas
 
 //Backend
 npm i nodemailer
