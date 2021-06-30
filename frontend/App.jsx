@@ -45,6 +45,14 @@ import UpdateGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers
 import EditorHome from './components/Admin/Editor/EditorHome';
 import ImportantDatePdf from './components/LandingPage/ImportantDates/ImportantDatePdf';
 
+import Registration from './components/LandingPage/Signin/Registration';
+import Login from './components/LandingPage/Signin/Login';
+import AddResearch from './components/Admin/User/Research/AddReseacrhPaper';
+import AddWorkshop from './components/Admin/User/workshop/AddWorkshopDetails';
+import Research from './components/Admin/User/Research/HomePage';
+import Workshop from './components/Admin/User/workshop/HomePage';
+import Reset from './components/LandingPage/Signin/UpdatePassword';
+
 function App() {
     return (
         <div>
@@ -59,6 +67,14 @@ function App() {
                     <Route exact path='/about'><AboutUs /></Route>
                     <Route exact path='/date'><ImportantDate /></Route>
                     <Route exact path='/past'><PastProceeding /></Route>
+                    
+                    <Route exact path='/Registration'><Registration /></Route>
+                    <Route exact path='/Login'><Login /></Route>
+                    <Route exact path='/reset'><Reset /></Route>
+                    <Route exact path='/research'><Research /></Route>
+                    <Route exact path='/addResearch'><AddResearch /></Route>
+                    <Route exact path='/workshop'><Workshop /></Route>
+                    <Route exact path='/addWorkshop'><AddWorkshop /></Route>
 
 
                     {/* Editor Pages  */}

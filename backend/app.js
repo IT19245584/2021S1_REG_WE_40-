@@ -50,7 +50,10 @@ const ResearchPaper = require("./routers/ResearchPaper")
 app.use("/researchPaper", ResearchPaper)
 
 const PastProceeding = require("./routers/PastProceeding")
-app.use("/pastProceeding", PastProceeding)
+app.use("/pastProceeding", PastProceeding);
+
+const user = require("./routers/user");
+app.use("/user", user);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`)

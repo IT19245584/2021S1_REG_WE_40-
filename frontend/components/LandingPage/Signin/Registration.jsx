@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import HomePageNav from '../../navbars/homePageNav';
-import Footer from '../../footer/footer';
-import ContactUs from '../ContactUs/ContactBody';
 
 export default function Registration() {
    const [username, setUserName] = useState("");
@@ -57,7 +55,7 @@ export default function Registration() {
            type,
      }
 	
-		axios.post(global.url+"/user/addUser",addUser).then(() =>{
+		axios.post("http://localhost:6060/user/register",addUser).then(() =>{
 
 			Swal.fire({  
 			title: "Success!",
@@ -76,7 +74,7 @@ export default function Registration() {
 
 			Swal.fire({  
 			title: "Error!",
-			text: "Ragistration Unsuccess! Try Again.  Email And Phone Number Must Be Unique",
+			text: "Ragistration Unsuccess! Try Again.",
 			icon: 'error',
 			confirmButtonText: "OK",
             confirmButtonColor: "#F93154",
@@ -88,67 +86,80 @@ export default function Registration() {
   return (
     <div>
           <HomePageNav/>
-          <div>
-          <div className="row row-cols-md-3 ">
-            <div className="col">
-            <h2 style={{display: 'flex',  justifyContent:'center', alignItems:'center',height:"60px"}}>Registrtion</h2>
-            <form method="post" >
-            <div >
-              <div class="mb-3">
-                <label class="form-label">User Name <sup className="text-danger" style={{fontSize:'10px'}}>{Required}</sup></label>
-                <input type="text" class="form-control"  placeholder="Enter Name" onChange={(e) =>{
-                          setUserName(e.target.value);
-                        }}/>
+          <div>          
+          <div className="container">
+          <div class="row mt-5 mb-5">
+              <div class="col-sm-6 pt-5">
+              <img src="https://i.imgur.com/hU7mgwt.jpeg" style={{width:'70%'}} class="img-fluid pt-5" alt="Responsive image"/>
               </div>
-              <div class="mb-3">
-                <label class="form-label">Email <sup className="text-danger" style={{fontSize:'10px'}}>{Required}</sup></label>
-                <input type="email" class="form-control"  placeholder="Enter Email"  onChange={(e) =>{
-                          validateEmail(e.target.value);
-                        }}/>
-                <small className={`message ${isValid ? 'success' : 'error'}`} >
-                  {message}
-                </small>
+              <div class="col-sm-6">
+              <div className="bg-light p-4">
+                        <h2 style={{display: 'flex',  justifyContent:'center', alignItems:'center',height:"60px"}}>Registration</h2>
+                        <form method="post" >
+                        <div >
+                          <div>
+                            <label className="form-label">User Name <sup className="text-danger" style={{fontSize:'10px'}}>{Required}</sup></label>
+                            <input type="text" className="form-control"  placeholder="Enter Name" onChange={(e) =>{
+                                      setUserName(e.target.value);
+                                    }}/>
+                          </div>
+                          <br/>
+                          <div className="mb-3">
+                            <label className="form-label">Email <sup className="text-danger" style={{fontSize:'10px'}}>{Required}</sup></label>
+                            <input type="email" className="form-control"  placeholder="Enter Email"  onChange={(e) =>{
+                                      validateEmail(e.target.value);
+                                    }}/>
+                            <small className={`message ${isValid ? 'success' : 'error'}`} >
+                              {message}
+                            </small>
+                          </div>
+                          <div className="mb-3">
+                            <label className="form-label">Type of the user <sup className="text-danger" style={{fontSize:'10px'}}>{Required}</sup></label>
+                            <select class="form-select" aria-label="Default select example"  onChange={(e) =>{
+                                      setType(e.target.value);
+                                    }}>
+                            <option value="">User Type</option>
+                            <option value="Researcher">Researcher</option>
+                            <option value="Wokshop organizer">Wokshop organizer</option>
+                            <option value="Attendees">Attendees</option>
+                          </select>
+                          
+                          </div>
+                          <div className="mb-3">
+                            <label className="form-label">Password <sup className="text-danger" style={{fontSize:'10px'}}>{Required}</sup></label>
+                            <input type="password" className="form-control"  placeholder="Enter Password" onChange={(e) =>{
+                                      setPassword(e.target.value);
+                                    }}/>
+                          </div>
+                          <div className="mb-3">
+                            <label className="form-label">Confirm Password <sup className="text-danger" style={{fontSize:'10px'}}>{Required}</sup></label>
+                            <input type="password" className="form-control"  placeholder="Enter Confirm Password" onChange={(e) =>{
+                                      setConfirmPassword(e.target.value);
+                                    }}/>
+                            <small className={`messagepassword ${isValidpassword ? 'success' : 'error'}`} >
+                              {messagepassword}
+                            </small>
+                          </div>
+                          <div className="mb-3">
+                            <label className="form-label">NIC Number (Optional)</label>
+                            <input type="text" className="form-control"  placeholder="Enter NIC Number" onChange={(e) =>{
+                                      setNic(e.target.value);
+                                    }}/>
+                          </div>
+                          <div className="text-right pr-4">
+                          <center><button  onClick={sendDate} type="submit" className="btn btn-dark btn-block mb-2" >
+                            Submit <i className="fas fa-angle-double-right"></i>
+                          </button></center>
+                        </div>
+                        </div>
+                        </form>               
+                    </div>
               </div>
-              <div class="mb-3">
-                <label class="form-label">Type of the user <sup className="text-danger" style={{fontSize:'10px'}}>{Required}</sup></label>
-                <input type="tel" maxlength={14}  class="form-control"  placeholder="Type of user" onChange={(e) =>{
-                          setType(e.target.value);
-                        }}/>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Password <sup className="text-danger" style={{fontSize:'10px'}}>{Required}</sup></label>
-                <input type="password" class="form-control"  placeholder="Enter Password" onChange={(e) =>{
-                          setPassword(e.target.value);
-                        }}/>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Confirm Password <sup className="text-danger" style={{fontSize:'10px'}}>{Required}</sup></label>
-                <input type="password" class="form-control"  placeholder="Enter Confirm Password" onChange={(e) =>{
-                          setConfirmPassword(e.target.value);
-                        }}/>
-                 <small className={`messagepassword ${isValidpassword ? 'success' : 'error'}`} >
-                  {messagepassword}
-                </small>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">NIC Number (Optional)</label>
-                <input type="text" class="form-control"  placeholder="Enter NIC Number" onChange={(e) =>{
-                          setNic(e.target.value);
-                        }}/>
-              </div>
-              <div className="text-end pr-4">
-              <center><button  onClick={sendDate} type="submit" className="btn btn-primary btn-block mb-2" >
-                Submit <i class="fas fa-angle-double-right"></i>
-              </button></center>
             </div>
-            </div>
-            </form>
-           
         </div>
         </div>
-        </div>
-        <ContactUs />
-        <Footer/>
+        <br></br>
+   
 
      </div>
   );
