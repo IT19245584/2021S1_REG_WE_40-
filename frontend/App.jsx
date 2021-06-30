@@ -9,7 +9,7 @@ import ContactUs from './components/LandingPage/ContactUs/ContactUs';
 import KeyNotes from './components/LandingPage/KeyNotes/Keynotes';
 import AboutUs from './components/LandingPage/AboutUs/AboutUs';
 
-import ImportantDate from './components/LandingPage/ImportantDates/ImportantDates';
+// import ImportantDate from './components/LandingPage/ImportantDates/ImportantDates';
 
 import PastProceeding from './components/LandingPage/PastProceeding/PastProceeding';
 import AddOrg from './components/Admin/Editor/Committee/OrganizingCommittee/AddOrganizingCommittee';
@@ -33,7 +33,7 @@ import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/Research
 import ReviewerDashboard from './components/Admin/Reviewer/reviewer_dashboard';
 import Reviewer_Workshop_Edit from './components/Admin/Reviewer/Workshop/reviewer_workshop_edit';
 import Reviewer_Workshop_ViewTable from './components/Admin/Reviewer/Workshop/reviewer_workshop_view_table';
-import Reviewer_Workshop_Edit from './components/Admin/Reviewer/Workshop/reviewer_workshop_edit';
+// import Reviewer_Workshop_Edit from './components/Admin/Reviewer/Workshop/reviewer_workshop_edit';
 
 import ViewOrgCommittee from './components/Admin/Editor/Committee/OrganizingCommittee/ViewOrganizingCommittee';
 import ViewTechCommittee from './components/Admin/Editor/Committee/TechnicalCommittee/ViewTechnicalCommittee';
@@ -48,7 +48,7 @@ import ViewAboutUs from './components/Admin/Editor/AboutUs/ViewAboutUs';
 import UpdateKeyNoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/UpdateKeynotes';
 import UpdateGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/UpdateGuestSpeaker';
 import EditorHome from './components/Admin/Editor/EditorHome';
-import ImportantDatePdf from './components/LandingPage/ImportantDates/ImportantDatePdf';
+// import ImportantDatePdf from './components/LandingPage/ImportantDates/ImportantDatePdf';
 
 function App() {
     return (
@@ -62,7 +62,7 @@ function App() {
                     <Route exact path='/contact'><ContactUs /></Route>
                     <Route exact path='/keynote'><KeyNotes /></Route>
                     <Route exact path='/about'><AboutUs /></Route>
-                    <Route exact path='/date'><ImportantDate /></Route>
+                    {/* <Route exact path='/date'><ImportantDate /></Route> */}
                     <Route exact path='/past'><PastProceeding /></Route>
 
 
@@ -88,7 +88,7 @@ function App() {
                     <Route exact path='/update-keynote-speaker'><UpdateKeyNoteSpeaker /></Route>
                     <Route exact path='/update-guest-speaker'><UpdateGuestSpeaker /></Route>
                     <Route exact path='/editor-home'><EditorHome /></Route>
-                    <Route exact path='/dates-pdf'><ImportantDatePdf /></Route>
+                    {/* <Route exact path='/dates-pdf'><ImportantDatePdf /></Route> */}
 
                     {/* Admin Pages */}
                     <Route exact path="/Admin_dashbord"><Admin_dashbord /></Route>
