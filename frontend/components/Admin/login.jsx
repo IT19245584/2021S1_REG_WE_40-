@@ -46,7 +46,7 @@ function Admin_Side_Login() {
                     confirmButtonText: "OK",
                     }).then(okay => {
                         if (okay) {
-                        window.location.href = "/phioffficerPanel";
+                        window.location.href = "/editor-home";
                         }
                     });
             }else{

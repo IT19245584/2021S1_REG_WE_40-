@@ -12,7 +12,8 @@ class AddImportantDates extends Component {
             submitDate: '',
             dueDate: '',
             description: '',
-            status: 'Pending'
+            status: 'Pending',
+            admin:[]
         }
     };
 
@@ -60,9 +61,22 @@ class AddImportantDates extends Component {
                 });
             })
     }
+    componentDidMount() {
+        axios.get('http://localhost:6060/admin_side_user/searchUser')
+            .then(response => {
+                const admin = response.data;
+                this.setState({ admin });
+                console.log("response", response);
+            }).catch(error => {
+                alert(error.message);
+                console.log("Error", error);
+            });
+    }
 
     render() {
+        const admin = this.state.admin;
         return (
+            
             <div>
                 <div className="d-flex p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
                     <h1 tag='div' className='display-1 pb-3 mb-3 border-bottom'>Add Important Dates</h1>
@@ -84,11 +98,18 @@ class AddImportantDates extends Component {
                             </div>
                             <div className="form-outline mb-4">
                                 Status:
-                                <select className="form-select" aria-label="Default select example" id="status" name="status" value={this.state.status} onChange={this.onChange}>
-                                    <option selected>Pending</option>
-                                    <option>Post</option>
-                                    <option>Rejected</option>
-                                </select>
+                                {admin.type === "Admin" ?
+                                    <select className="form-select" aria-label="Default select example" disabled={false} id="status" name="status" value={this.state.status} onChange={this.onChange}>
+                                        <option selected>Pending</option>
+                                        <option>Post</option>
+                                        <option>Rejected</option>
+                                    </select> :
+                                    <select className="form-select" aria-label="Default select example" disabled={true} id="status" name="status" value={this.state.status} onChange={this.onChange}>
+                                        <option selected>Pending</option>
+                                        <option>Post</option>
+                                        <option>Rejected</option>
+                                    </select>
+                                }
                             </div>
                             <button type="submit" className="btn btn-primary btn-block mb-4">Save</button>
                         </form>
