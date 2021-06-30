@@ -11263,3 +11263,19 @@ body {
 .d-letter-spacing{
   letter-spacing:1px;
 }
+
+.hero-image {
+  background-image: url('https://i.imgur.com/pu7qPcP.jpeg');
+  height: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.error{
+  color:red;
+}
+.success{
+  color:green;
+}
