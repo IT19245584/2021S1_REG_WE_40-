@@ -101,7 +101,7 @@ export default function  Reviewer_WorkShop_ViewTable(){
                                 <td>{workshop.to_time}</td>
                                 <td>{workshop.document}</td>
                                 <td>{workshop.description}</td>
-                                <td className="text-secondary"> {workshop.status}</td>
+                                <td className="text-light badge bg-dark">{workshop.status}</td>
                                 <td>
                                 <div className="row">
                                     <div className="col-1">
