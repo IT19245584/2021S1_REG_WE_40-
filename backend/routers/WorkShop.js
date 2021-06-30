@@ -41,6 +41,7 @@ router.route('/add').post((req,res) => {
     })
 })
 
+//workshop->url
 //view all (through table)
 router.route("/view-all").get((req, res) => {
     WorkShop.find().then((WorkShop) => {
@@ -55,7 +56,6 @@ router.route("/update/:id").put(async (req, res) => {
     let workshopId = req.params.id;
     const { topic, organization, presenter, qualification, email, phone, platform, date, from_time, to_time, document, description
     } = req.body;
-    const status ="Pending";
 
     const updateWorkShop = {
         topic,
@@ -69,8 +69,7 @@ router.route("/update/:id").put(async (req, res) => {
         from_time,
         to_time,
         document,
-        description,
-        status
+        description
     }
 
     const update = await WorkShop.findByIdAndUpdate(workshopId, updateWorkShop)
