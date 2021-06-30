@@ -54,8 +54,7 @@ router.route("/view-all").get((req, res) => {
 //update
 router.route("/update/:id").put(async (req, res) => {
     let workshopId = req.params.id;
-    const { topic, organization, presenter, qualification, email, phone, platform, date, from_time, to_time, document, description
-    } = req.body;
+    const { topic, organization, presenter, qualification, email, phone, platform, date, from_time, to_time, document, description, status } = req.body;
 
     const updateWorkShop = {
         topic,
@@ -69,7 +68,8 @@ router.route("/update/:id").put(async (req, res) => {
         from_time,
         to_time,
         document,
-        description
+        description,
+        status
     }
 
     const update = await WorkShop.findByIdAndUpdate(workshopId, updateWorkShop)
