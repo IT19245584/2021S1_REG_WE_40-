@@ -22,11 +22,7 @@ import ViewImportantDates from './components/Admin/Editor/ImportantDates/ViewImp
 import ViewGuestSpeaker from './components/Admin/Editor/KeyNotes/GuestSpeakers/ViewGuestSpeaker';
 import ViewKeynoteSpeaker from './components/Admin/Editor/KeyNotes/KeyNoteSpeakers/ViewKeyNotes';
 
-import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/reviewer_workshop_view_table';
-import Reviewer_WorkShop_ViewOne from './components/Admin/Reviewer/reviewer_workshop_view_one';
-import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/reviewer_researchpaper_view_table';
-import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/reviewer_researchpaper_view_one';
-import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/reviewer_researchpaper_edit';
+
 import Admin_dashbord from './components/Admin/Admin/admin_dashaboard.jsx';
 
 
@@ -34,9 +30,6 @@ import Reviewer_WorkShop_ViewTable from './components/Admin/Reviewer/Workshop/re
 import Reviewer_WorkShop_ViewOne from './components/Admin/Reviewer/Workshop/reviewer_workshop_view_one';
 import Reviewer_Workshop_Edit from './components/Admin/Reviewer/Workshop/reviewer_workshop_edit';
 
-import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
-import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_one';
-import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_edit';
 import Reviewer_ResearchPaper_ViewTable from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_table';
 import Reviewer_ResearchPaper_ViewOne from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_view_one';
 import Reviewer_ResearchPaper_Edit from './components/Admin/Reviewer/ResearchPaper/reviewer_researchpaper_edit';
@@ -88,8 +81,8 @@ function App() {
                     <Route path="/dashboard" exact component={ReviewerDashboard} />
                     <Route path="/view-all-ws" exact component={Reviewer_WorkShop_ViewTable} />
                     <Route path="/view-all-rp" exact component={Reviewer_ResearchPaper_ViewTable} />
-                    <Route path="/edit-researchpaper" exact component={Reviewer_ResearchPaper_Edit} />
-                    <Route path="/edit-workshop" exact component={Reviewer_Workshop_Edit} />
+                    <Route path="/update" exact component={Reviewer_ResearchPaper_Edit} />
+                    <Route path="/update" exact component={Reviewer_Workshop_Edit} />
 
                     <Route path="/view-ws" exact component={Reviewer_WorkShop_ViewOne} />
                     <Route path="/view-researchpaper" exact component={Reviewer_ResearchPaper_ViewOne} />
