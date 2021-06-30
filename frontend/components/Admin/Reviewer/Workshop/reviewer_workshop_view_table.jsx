@@ -57,18 +57,6 @@ export default function  Reviewer_WorkShop_ViewTable(){
         reactLocalStorage.setObject("Reviewer_Workshop_Show", [id, topic, organization, purpose, team_leader, presenter, phone, email, qualification, platform, date, from_time, to_time, document, description]);
         window.location.href = "/show"
     }
-    
-//     function turn(){
-// if (this.status=="pending") this.status = "Open Curtain";
-//         else this.status = "Close Curtain";
-//     }
-
-    function change() // no ';' here
-    {
-        if (this.value=="Close Curtain") this.value = "Open Curtain";
-        else this.value = "Close Curtain";
-    }
-
 
     return(
             <div className="container">
@@ -95,12 +83,8 @@ export default function  Reviewer_WorkShop_ViewTable(){
                         </tr>  
                     </thead>  
                     <tbody>
-                       
-                    {/* {Workshops.map(workshop => {
-			             return ( */}
-                          {Workshops.map((workshop, key) => {
-			             return (
-           
+                            {Workshops.map((workshop, key) => {
+			                return (
                         <tr>
                             <td className="" scope="row">{key+1}</td>
                             <td>{workshop.topic}</td>
@@ -116,9 +100,9 @@ export default function  Reviewer_WorkShop_ViewTable(){
                             <td>{workshop.document}</td>
                             <td>{workshop.description}</td>
                             <td class="text-secondary"> {workshop.status} 
-                                <a  onClick={change(workshop.status="approved")}> 
+                                {/* <a  onClick={change(workshop.status="approved")}> 
                                     <i class="text-secondary bi bi-mask"></i>
-                                </a>    
+                                </a>     */}
                             </td>
                             <td>
                                 <div className="row">
